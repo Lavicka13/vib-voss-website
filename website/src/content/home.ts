@@ -3,46 +3,72 @@ export const home = {
     eyebrow: "V.I.B. Voß Immobilien Beratung",
     headline: "Verkaufen aus Leidenschaft.",
     subline:
-      "Seit fast 30 Jahren begleite ich Eigentümer im Rhein-Neckar-Raum beim Verkauf besonderer Immobilien — persönlich, diskret und mit einem Netzwerk, das schon vor der Veröffentlichung wirkt.",
-    primaryCta: { label: "Mein Immobilien-Anliegen besprechen", href: "#kontakt" },
-    secondaryCta: { label: "Diskret nach Immobilien suchen", href: "/immobiliensuche" },
-    trustStrip: ["30 Jahre Erfahrung", "Rhein-Neckar & überregional", "Off-Market-Netzwerk"],
+      "Seit fast 29 Jahren mit Leidenschaft und Herzblut als selbstständige Vollblutmaklerin im Immobilienmarkt Rhein-Neckar — bis Karlsruhe und Umgebung, vorderer Odenwald, Rheinland-Pfalz und auch überregional tätig.",
+    primaryCta: { label: "Mit mir sprechen", href: "#kontakt" },
+    secondaryCta: { label: "Über mich", href: "#ueber-mich" },
+    trustStrip: ["29 Jahre Erfahrung", "Rhein-Neckar & überregional", "Off-Market-Netzwerk"],
   },
   intro: {
     body: [
-      "Wer eine besondere Immobilie verkauft, sucht nicht irgendeine Maklerin – sondern eine Persönlichkeit mit Erfahrung, Feingefühl und dem richtigen Gespür für Menschen und Märkte.",
-      "Seit fast 30 Jahren begleite ich Eigentümer beim erfolgreichen Verkauf ihrer Immobilien – diskret, professionell und mit einer Leidenschaft, die man spürt. Mein Schwerpunkt liegt nicht in leeren Versprechen oder standardisierten Verkaufsstrategien. Mein Erfolg basiert auf etwas viel Wertvollerem: einem außergewöhnlichen Netzwerk, fundierter Marktkenntnis und der Fähigkeit, Käufer und Verkäufer auf menschlicher Ebene zusammenzubringen.",
+      "Mir geht es nicht darum, die typischen Eigenschaften aufzuzählen, die die meisten Makler nennen — Diskretion, Vertrauen, beste Wertermittlung.",
+      "Mein Schwerpunkt sind drei Dinge: mein Gespür für die beste Verkaufsmöglichkeit, mein weit über die Grenzen hinausgehendes Netzwerk und das professionelle Auftreten sowie der persönliche Umgang mit Käufer und Verkäufer.",
     ],
   },
   usps: [
-    { icon: "diamond", title: "Gespür für die richtige Verkaufsmöglichkeit", body: "Statt Online-Schätzungen erhalten Sie eine fundierte, marktgerechte Einschätzung — basierend auf drei Jahrzehnten Erfahrung im Rhein-Neckar-Raum." },
-    { icon: "hub", title: "Ein Netzwerk, das vor der Veröffentlichung wirkt", body: "Bereits vor der offiziellen Vermarktung kontaktiere ich passende Käufer aus meinem gewachsenen, solventen Kundenstamm — diskret und ohne öffentliche Listung." },
-    { icon: "person", title: "Niveauvolle Persönlichkeit, persönlicher Umgang", body: "Transparente Kommunikation, professionelles Auftreten und ein respektvoller Umgang mit allen Beteiligten — das ist mein Maßstab." },
+    {
+      icon: "diamond",
+      title: "Gespür für die beste Verkaufsmöglichkeit",
+      body: "Aufgrund meiner langjährigen Tätigkeit berate ich Sie realistisch, präzise und fundiert — ohne die gängigen Online-Wertermittlungen.",
+    },
+    {
+      icon: "hub",
+      title: "Mein Netzwerk wirkt vor der Veröffentlichung",
+      body: "Als die etwas andere Maklerin liegt meine Stärke darin, ein Objekt zu sehen und vor Veröffentlichung passende Käufer aus meinem Kundenstamm zu kontaktieren.",
+    },
+    {
+      icon: "person",
+      title: "Professionelles Auftreten, persönlicher Umgang",
+      body: "Ein kleines, sehr angesehenes Maklerbüro — transparent, unbürokratisch, auch am Wochenende erreichbar.",
+    },
   ],
-  services: [
-    { title: "Fundierte Wertberatung", body: "Realistische, präzise Einschätzung — basierend auf Marktkenntnis und Erfahrung, nicht auf Online-Tools wie ImmoScout oder Sprengnetter." },
-    { title: "Off-Market-Vermarktung", body: "Bevor Ihre Immobilie öffentlich gezeigt wird, kontaktiere ich passende Käufer aus meinem Netzwerk. Einige meiner Kunden haben die Käufer erst beim Notartermin kennengelernt." },
-    { title: "Unterlagen-Beschaffung", body: "Ich kümmere mich um alle objektbezogenen Unterlagen — bei Bedarf direkt mit den zuständigen Ämtern." },
-    { title: "Professionelles Exposé", body: "Optimale Darstellung Ihrer Immobilie in einem stilvollen, klar strukturierten Exposé." },
-    { title: "Verhandlung & Finanzierung", body: "Ich führe alle Verhandlungen mit Kaufinteressenten und kläre die Finanzierungslage — bis zur notariellen Beurkundung." },
-    { title: "Home Staging", body: "Damit Ihre Immobilie ihr volles Potenzial entfaltet — klassisch oder digital." },
-  ],
-  homeStaging: {
-    eyebrow: "Home Staging",
-    headline: "Weil Ihre Immobilie es wert ist.",
-    body: "Ein stimmungsvoll inszenierter Raum spricht nicht nur den Verstand an — sondern das Herz. Mit gezieltem Home Staging gewinnen leerstehende oder schwer verkäufliche Immobilien an Wärme, Charakter und Vorstellungskraft. Genau das hilft Interessenten, eine Verbindung aufzubauen — und steigert spürbar den Verkaufserfolg.",
+  ueberMich: {
+    eyebrow: "Über mich",
+    headline: "Edith Voss",
+    paragraphs: [
+      "Seit fast 29 Jahren bin ich mit Leidenschaft und Herzblut als selbstständige Vollblutmaklerin im Immobilienmarkt der Rhein-Neckar-Region tätig — über 20 Jahre mit Sitz in Weinheim, dazu Karlsruhe und Umgebung, vorderer Odenwald, Rheinland-Pfalz und überregional.",
+      "Mein Anfang der 2000er Jahre gegründetes Unternehmen Edith Voss Immobilien in Weinheim habe ich mit viel Fleiß und Freude am Makeln zu einem der etabliertesten Maklerbüros aufgebaut und 2015 verkauft — mein Name ist noch heute das Aushängeschild der Firma, die weiter erfolgreich geführt wird.",
+      "Meine Philosophie: „Verkaufen aus Leidenschaft.“ Mein Motto, nach Heraklit von Ephesus: „Nichts ist so beständig wie der Wandel.“",
+      "Ein Kunde schrieb mir nach erfolgreichem Verkauf seiner Immobilie, dass ich das Negativ-Image meines Berufstandes eindrucksvoll widerlege — darauf bin ich stolz.",
+    ],
+  },
+  leistungen: {
+    eyebrow: "Was ich für Sie tue",
+    headline: "Vom ersten Gespräch bis zur Beurkundung",
+    items: [
+      "Fundierte Wertberatung — realistisch, präzise, ohne Online-Tools",
+      "Off-Market-Vermarktung über meinen Kundenstamm",
+      "Beschaffung objektbezogener Unterlagen — bei Bedarf direkt mit den Ämtern",
+      "Professionelles Exposé mit optimaler Darstellung",
+      "Verhandlungen mit potenziellen Kaufinteressenten",
+      "Klärung der Finanzierung",
+      "Begleitung bis zur notariellen Beurkundung",
+      "Auch am Wochenende erreichbar",
+    ],
+    schwerpunkt:
+      "Schwerpunkt: exklusive Villen und Mehrfamilienhäuser, aber auch gemütliche Einfamilienhäuser, Wohnungen oder das kleine Apartment mitten in der Stadt.",
   },
   region: {
     headline: "Regional verwurzelt — überregional erfolgreich.",
-    body: "Seit vielen Jahren bin ich in der Rhein-Neckar-Region, Weinheim, Karlsruhe, dem Odenwald, Rheinland-Pfalz und darüber hinaus erfolgreich tätig. Mein Name steht für Qualität, Vertrauen und nachhaltige Verkaufserfolge.",
+    body: "Mein Tätigkeitsgebiet umfasst die Rhein-Neckar-Region mit Schwerpunkt Weinheim, dazu Karlsruhe und Umgebung, den vorderen Odenwald, Rheinland-Pfalz — und auf Anfrage darüber hinaus.",
     orte: ["Weinheim", "Mannheim", "Heidelberg", "Karlsruhe", "Bergstraße", "Ilvesheim", "Vorderer Odenwald", "Rheinland-Pfalz"],
   },
   testimonial: {
-    quote: "Ein Kunde schrieb mir nach erfolgreichem Verkauf seiner Immobilie, dass ich das Negativ-Image meines Berufsstandes eindrucksvoll widerlege.",
-    attribution: "— aus Ediths Erfahrungsschatz",
+    quote: "Einige meiner Kunden haben die Käufer erst anlässlich des Notartermins kennengelernt.",
+    attribution: "Edith Voss",
   },
   cta: {
-    headline: "Lassen Sie uns gemeinsam den besten Weg für Ihre Immobilie finden.",
-    sub: "Persönlich. Diskret. Erfolgreich.",
+    headline: "Lassen Sie uns über Ihre Immobilie sprechen.",
+    sub: "Persönlich. Diskret.",
+    schluss: "Man lebt nur einmal — wir zeigen Ihnen wo.",
   },
 } as const;

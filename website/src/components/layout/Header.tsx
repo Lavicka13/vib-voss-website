@@ -2,13 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { IconMenu2, IconX } from "@tabler/icons-react";
 import { navItems } from "@/content/nav";
 
 export function Header() {
-  const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
   return (
@@ -30,22 +28,15 @@ export function Header() {
           />
         </Link>
         <nav className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => {
-            const active = pathname === item.href;
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`font-body text-label-caps transition-colors duration-300 ${
-                  active
-                    ? "text-primary border-b border-secondary pb-1"
-                    : "text-on-surface-variant hover:text-primary"
-                }`}
-              >
-                {item.label}
-              </Link>
-            );
-          })}
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="font-body text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300"
+            >
+              {item.label}
+            </Link>
+          ))}
         </nav>
         <button
           aria-label={open ? "Menü schließen" : "Menü öffnen"}
@@ -62,9 +53,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`font-body text-label-caps ${
-                  pathname === item.href ? "text-primary" : "text-on-surface-variant"
-                }`}
+                className="font-body text-label-caps text-on-surface-variant"
                 onClick={() => setOpen(false)}
               >
                 {item.label}

@@ -22,7 +22,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "V.I.B. Voß Immobilien Beratung — Edith Voss",
   description:
-    "Verkaufen aus Leidenschaft. Seit fast 30 Jahren begleite ich Eigentümer im Rhein-Neckar-Raum beim Verkauf besonderer Immobilien — persönlich, diskret und mit einem Netzwerk, das schon vor der Veröffentlichung wirkt.",
+    "Edith Voss — V.I.B. Voß Immobilien Beratung. Seit fast 29 Jahren als selbstständige Vollblutmaklerin im Rhein-Neckar-Raum. Verkaufen aus Leidenschaft.",
   metadataBase: new URL("https://e-vib.de"),
   icons: {
     icon: [

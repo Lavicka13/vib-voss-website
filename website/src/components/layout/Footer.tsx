@@ -32,7 +32,7 @@ export function Footer() {
           <Link href="/datenschutz" className="font-body text-body-md text-muted-text hover:text-secondary transition-colors">
             Datenschutz
           </Link>
-          <Link href="/kontakt" className="font-body text-body-md text-muted-text hover:text-secondary transition-colors">
+          <Link href="/#kontakt" className="font-body text-body-md text-muted-text hover:text-secondary transition-colors">
             Kontakt
           </Link>
           <p className="font-body text-body-md text-muted-text mt-8">
