@@ -58,6 +58,18 @@
     background-color: var(--color-zartrosa);
     color: var(--color-primary);
   }
+
+  input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%) rotate(45deg);
+    width: 4px;
+    height: 9px;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+  }
 }
 
 /* Custom utilities not covered by Tailwind 4 namespace inference */
