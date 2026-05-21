@@ -5,6 +5,7 @@ import { USPGrid } from "@/components/sections/USPGrid";
 import { TestimonialBlock } from "@/components/sections/TestimonialBlock";
 import { CTABlock } from "@/components/sections/CTABlock";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { ReferenzenCarousel } from "@/components/sections/ReferenzenCarousel";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { home } from "@/content/home";
 
@@ -243,29 +244,7 @@ export default function HomePage() {
           </div>
         </RevealOnScroll>
         <RevealOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-            {home.referenzen.items.map((item) => (
-              <article key={item.slug} className="flex flex-col gap-4">
-                <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container-low">
-                  <Image
-                    src={item.image}
-                    alt={item.titel}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="flex flex-col gap-2">
-                  <h3 className="font-display text-body-lg text-primary leading-tight">
-                    {item.titel}
-                  </h3>
-                  <span className="font-body text-body-md text-muted-text">
-                    {item.ort}
-                  </span>
-                </div>
-              </article>
-            ))}
-          </div>
+          <ReferenzenCarousel items={home.referenzen.items} />
         </RevealOnScroll>
       </section>
 
