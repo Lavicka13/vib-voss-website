@@ -1,0 +1,69 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { IconMenu2, IconX } from "@tabler/icons-react";
+import { navItems } from "@/content/nav";
+
+export function Header() {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+
+  return (
+    <header className="bg-surface border-b border-border-taupe sticky top-0 z-50 w-full">
+      <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-container-max mx-auto">
+        <Link
+          href="/"
+          className="text-headline-md font-display tracking-tighter text-primary hover:opacity-80 transition-opacity"
+          onClick={() => setOpen(false)}
+        >
+          V.I.B.
+        </Link>
+        <nav className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => {
+            const active = pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`font-body text-label-caps transition-colors duration-300 ${
+                  active
+                    ? "text-primary border-b border-secondary pb-1"
+                    : "text-on-surface-variant hover:text-primary"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </nav>
+        <button
+          aria-label={open ? "Menü schließen" : "Menü öffnen"}
+          className="md:hidden text-primary"
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? <IconX size={28} /> : <IconMenu2 size={28} />}
+        </button>
+      </div>
+      {open && (
+        <div className="md:hidden border-t border-border-taupe bg-surface">
+          <nav className="flex flex-col px-margin-mobile py-6 gap-6">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`font-body text-label-caps ${
+                  pathname === item.href ? "text-primary" : "text-on-surface-variant"
+                }`}
+                onClick={() => setOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
+    </header>
+  );
+}
