@@ -22,7 +22,7 @@ export function Header() {
         >
           <Image
             src="/logo-mark.svg"
-            alt="V.I.B."
+            alt="V.I.B. Voß Immobilien Beratung"
             width={110}
             height={40}
             priority

@@ -30,7 +30,7 @@ export function ExposeHero({ immobilie }: Props) {
           {imageSrc ? (
             <Image
               src={imageSrc}
-              alt={immobilie.titel}
+              alt={`${immobilie.titel} — Stimmungsbild`}
               fill
               sizes="(min-width: 1280px) 1280px, 100vw"
               className="object-cover"
