@@ -4,6 +4,7 @@ export const navItems = [
   { label: "IMMOBILIEN", href: "#immobilien" },
   { label: "REFERENZEN", href: "#referenzen" },
   { label: "REGION", href: "#region" },
+  { label: "ERFOLG", href: "#erfolgsschluessel" },
   { label: "TIPPGEBER", href: "#tippgeber" },
   { label: "BEWERTUNGEN", href: "#bewertungen" },
   { label: "KONTAKT", href: "#kontakt" },

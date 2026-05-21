@@ -304,6 +304,42 @@ export default function HomePage() {
       </section>
 
       <section
+        id="erfolgsschluessel"
+        className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe"
+      >
+        <RevealOnScroll>
+          <div className="flex flex-col gap-6 max-w-3xl mb-12">
+            <span className="font-body text-label-caps text-muted-text uppercase tracking-widest">
+              {home.erfolgsschluessel.eyebrow}
+            </span>
+            <h2 className="font-display text-display-lg-mobile md:text-display-lg text-primary">
+              {home.erfolgsschluessel.headline}
+            </h2>
+            <p className="font-body text-body-lg text-on-surface-variant leading-relaxed">
+              {home.erfolgsschluessel.body}
+            </p>
+          </div>
+        </RevealOnScroll>
+        <RevealOnScroll>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border-taupe border border-border-taupe rounded-lg overflow-hidden">
+            {home.erfolgsschluessel.items.map((item) => (
+              <div
+                key={item.nr}
+                className="bg-surface p-8 md:p-10 flex flex-col gap-3 hover:bg-surface-ivory transition-colors duration-500"
+              >
+                <span className="font-display text-headline-md text-secondary">
+                  {item.nr}
+                </span>
+                <h3 className="font-display text-body-lg font-medium text-primary leading-tight">
+                  {item.title}
+                </h3>
+              </div>
+            ))}
+          </div>
+        </RevealOnScroll>
+      </section>
+
+      <section
         id="tippgeber"
         className="w-full bg-zartrosa/30 border-y border-border-taupe"
       >

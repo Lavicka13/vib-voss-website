@@ -18,12 +18,12 @@ export const home = {
     {
       icon: "diamond",
       title: "Gespür für die beste Verkaufsmöglichkeit",
-      body: "Aufgrund meiner langjährigen Tätigkeit berate ich Sie realistisch, präzise und fundiert — ohne die gängigen Online-Wertermittlungen.",
+      body: "Aufgrund meiner langjährigen Tätigkeit berate ich Sie realistisch, präzise und fundiert — ohne die gängigen Online-Wertermittlungen wie ImmoScout, Sprengnetter und andere.",
     },
     {
       icon: "hub",
       title: "Mein Netzwerk wirkt vor der Veröffentlichung",
-      body: "Als die etwas andere Maklerin liegt meine Stärke darin, ein Objekt zu sehen und vor Veröffentlichung passende Käufer aus meinem Kundenstamm zu kontaktieren.",
+      body: "Als die etwas andere Maklerin liegt meine Stärke darin, ein Objekt zu sehen und vor Veröffentlichung passende Käufer aus meinem Kundenstamm zu kontaktieren. Für viele meiner Verkäufer und Kunden bin ich seit Jahren Ansprechpartner.",
     },
     {
       icon: "person",
@@ -125,6 +125,17 @@ export const home = {
     headline: "Regional verwurzelt — überregional erfolgreich.",
     body: "Mein Tätigkeitsgebiet umfasst die Rhein-Neckar-Region mit Schwerpunkt Weinheim, dazu Karlsruhe und Umgebung, den vorderen Odenwald, Rheinland-Pfalz — und auf Anfrage darüber hinaus.",
     orte: ["Weinheim", "Mannheim", "Heidelberg", "Karlsruhe", "Bergstraße", "Ilvesheim", "Vorderer Odenwald", "Rheinland-Pfalz"],
+  },
+  erfolgsschluessel: {
+    eyebrow: "Mein Schlüssel zum Erfolg",
+    headline: "Die Kombination macht den Unterschied.",
+    body: "Fairness, Fachwissen, fundierte persönliche Betreuung und Beratung — sowie kompetente Unterstützung von Käufer und Kaufinteressenten.",
+    items: [
+      { nr: "01", title: "Fairness" },
+      { nr: "02", title: "Fachwissen" },
+      { nr: "03", title: "Persönliche Betreuung" },
+      { nr: "04", title: "Kompetente Unterstützung" },
+    ],
   },
   testimonial: {
     quote: "Einige meiner Kunden haben die Käufer erst anlässlich des Notartermins kennengelernt.",
