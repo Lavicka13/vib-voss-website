@@ -6,12 +6,12 @@
   --color-secondary: #71594e;
   --color-background: #fcf9f8;
   --color-surface: #fcf9f8;
-  --color-surface-ivory: #FDFBFB;
+  --color-surface-ivory: #fdfbfb;
   --color-surface-container-low: #f6f3f2;
-  --color-muted-text: #6B6B6B;
+  --color-muted-text: #6b6b6b;
   --color-on-surface-variant: #444748;
-  --color-border-taupe: #E6D9D2;
-  --color-zartrosa: #F4D4C6;
+  --color-border-taupe: #e6d9d2;
+  --color-zartrosa: #f4d4c6;
   --color-on-primary: #ffffff;
   --color-error: #ba1a1a;
 
@@ -25,9 +25,13 @@
   /* Container */
   --container-max: 1280px;
 
-  /* Typography — font families (Task 1.4 will wire up next/font variables) */
-  --font-display: "Playfair Display", serif;
-  --font-body: "Manrope", sans-serif;
+  /* Typography — font families
+     next/font injects --font-body and --font-display as CSS custom properties
+     on the <html> element at runtime. Referencing them here with a safe fallback
+     ensures the optimized variable font wins when loaded, with named fallbacks
+     for the pre-load moment. */
+  --font-display: var(--font-display), "Playfair Display", serif;
+  --font-body: var(--font-body), "Manrope", sans-serif;
 
   /* Typography — font sizes */
   --text-display-lg: 64px;
@@ -45,8 +49,43 @@
   --radius-full: 0.75rem;
 }
 
-body {
-  background: var(--color-background);
-  color: var(--color-primary);
-  font-family: var(--font-body);
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: var(--color-zartrosa);
+    color: var(--color-primary);
+  }
+}
+
+/* Custom utilities not covered by Tailwind 4 namespace inference */
+
+@utility max-w-container-max {
+  max-width: var(--container-max);
+}
+
+@utility px-margin-mobile {
+  padding-left: var(--spacing-margin-mobile);
+  padding-right: var(--spacing-margin-mobile);
+}
+
+@utility px-margin-desktop {
+  padding-left: var(--spacing-margin-desktop);
+  padding-right: var(--spacing-margin-desktop);
+}
+
+@utility py-section-gap {
+  padding-top: var(--spacing-section-gap);
+  padding-bottom: var(--spacing-section-gap);
+}
+
+@utility py-section-gap-mobile {
+  padding-top: var(--spacing-section-gap-mobile);
+  padding-bottom: var(--spacing-section-gap-mobile);
+}
+
+@utility gap-gutter {
+  gap: var(--spacing-gutter);
 }
