@@ -21,7 +21,7 @@ export function Footer() {
             </a>
           </p>
           <p className="font-display italic text-body-md text-primary mt-4">
-            „Man lebt nur einmal — wir zeigen Ihnen wo."
+            &bdquo;Man lebt nur einmal &mdash; wir zeigen Ihnen wo.&ldquo;
           </p>
         </div>
         <nav className="flex flex-col gap-4">
