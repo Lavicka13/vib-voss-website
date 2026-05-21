@@ -69,6 +69,33 @@ export default function HomePage() {
             </div>
           </div>
         </RevealOnScroll>
+
+        <RevealOnScroll>
+          <div className="mt-16 pt-12 border-t border-border-taupe grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+            <div className="md:col-span-7 flex flex-col gap-4 order-2 md:order-1">
+              <span className="font-body text-label-caps text-muted-text uppercase tracking-widest">
+                {home.presse.eyebrow}
+              </span>
+              <h3 className="font-display italic text-signature-quote text-primary">
+                {home.presse.headline}
+              </h3>
+              <p className="font-body text-body-md text-muted-text leading-relaxed">
+                {home.presse.zitat}
+              </p>
+            </div>
+            <div className="md:col-span-4 md:col-start-9 order-1 md:order-2">
+              <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-low">
+                <Image
+                  src={home.presse.image.src}
+                  alt={home.presse.image.alt}
+                  fill
+                  sizes="(min-width: 768px) 30vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </RevealOnScroll>
       </section>
 
       <section
@@ -106,6 +133,38 @@ export default function HomePage() {
             </div>
           </div>
         </RevealOnScroll>
+      </section>
+
+      <section
+        id="home-staging"
+        className="w-full bg-surface-ivory border-y border-border-taupe"
+      >
+        <div className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
+          <RevealOnScroll>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+              <div className="flex flex-col gap-6">
+                <span className="font-body text-label-caps text-muted-text uppercase tracking-widest">
+                  {home.homeStaging.eyebrow}
+                </span>
+                <h2 className="font-display text-display-lg-mobile md:text-display-lg text-primary">
+                  {home.homeStaging.headline}
+                </h2>
+                <p className="font-body text-body-lg text-on-surface-variant leading-relaxed">
+                  {home.homeStaging.body}
+                </p>
+              </div>
+              <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container-low">
+                <Image
+                  src={home.homeStaging.image.src}
+                  alt={home.homeStaging.image.alt}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </RevealOnScroll>
+        </div>
       </section>
 
       <section
@@ -158,6 +217,53 @@ export default function HomePage() {
                 </a>
               </div>
             </div>
+          </div>
+        </RevealOnScroll>
+      </section>
+
+      <section
+        id="referenzen"
+        className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe"
+      >
+        <RevealOnScroll>
+          <div className="flex flex-col gap-6 max-w-3xl mb-12">
+            <span className="font-body text-label-caps text-muted-text uppercase tracking-widest">
+              {home.referenzen.eyebrow}
+            </span>
+            <h2 className="font-display text-display-lg-mobile md:text-display-lg text-primary">
+              {home.referenzen.headline}
+            </h2>
+            <p className="font-body text-body-lg text-on-surface-variant leading-relaxed">
+              {home.referenzen.body}
+            </p>
+            <p className="font-body text-body-md text-muted-text italic border-l-2 border-zartrosa pl-4">
+              {home.referenzen.hinweis}
+            </p>
+          </div>
+        </RevealOnScroll>
+        <RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+            {home.referenzen.items.map((item) => (
+              <article key={item.slug} className="flex flex-col gap-4">
+                <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container-low">
+                  <Image
+                    src={item.image}
+                    alt={item.titel}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <h3 className="font-display text-body-lg text-primary leading-tight">
+                    {item.titel}
+                  </h3>
+                  <span className="font-body text-body-md text-muted-text">
+                    {item.ort}
+                  </span>
+                </div>
+              </article>
+            ))}
           </div>
         </RevealOnScroll>
       </section>

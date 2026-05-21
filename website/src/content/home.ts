@@ -67,6 +67,60 @@ export const home = {
     ctaVerkauf: { label: "Immobilie verkaufen", href: "#kontakt" },
     ctaKauf: { label: "Suchprofil hinterlegen", href: "#kontakt" },
   },
+  homeStaging: {
+    eyebrow: "Home Staging",
+    headline: "Weil Ihre Immobilie es wert ist.",
+    body:
+      "Ein stimmungsvoll inszenierter Raum spricht nicht nur den Verstand an — sondern das Herz. Bei Bedarf vermittle ich Home Staging, klassisch vor Ort oder digital. Gerade leerstehende oder schwer verkäufliche Immobilien gewinnen so an Wärme, Charakter und Vorstellungskraft.",
+    image: {
+      src: "/images/home-staging-original-1600.jpg",
+      alt: "Stilvoll inszenierter Esszimmer-Raum mit Designerstühlen und Kunstwerk — Beispiel für die Wirkung von Home Staging",
+    },
+  },
+  referenzen: {
+    eyebrow: "Aus meiner Vermittlungs-Erfahrung",
+    headline: "Ein Blick auf bisher vermittelte Objekte",
+    body:
+      "Eine kleine Auswahl an Immobilien aus meinen drei Jahrzehnten als Maklerin im Rhein-Neckar-Raum. Diese Beispiele zeigen die Bandbreite und Qualität der Objekte, mit denen ich arbeite.",
+    hinweis:
+      "Hinweis: Dies sind Referenzobjekte aus früheren Vermarktungen — keine aktuell verfügbaren Listings.",
+    items: [
+      {
+        slug: "juwel-bergstrasse",
+        titel: "Juwel an der Bergstraße — Exklusive Villa in Panorama-Lage",
+        ort: "Bergstraße",
+        image: "/images/referenzen/ref-juwel-bergstrasse-1600.jpg",
+      },
+      {
+        slug: "villa-rheinebene",
+        titel: "Reizvolle Villa in Bestlage mit Blick in die Rheinebene",
+        ort: "Rhein-Neckar",
+        image: "/images/referenzen/ref-villa-rheinebene-1600.jpg",
+      },
+      {
+        slug: "denkmal-mfh",
+        titel: "Denkmalgeschütztes Mehrfamilienhaus mit Altstadtblick",
+        ort: "Bergstraße",
+        image: "/images/referenzen/ref-denkmal-mfh-1600.jpg",
+      },
+      {
+        slug: "familien-efh",
+        titel: "Familienglück in gemütlichem Einfamilienhaus",
+        ort: "Bretten",
+        image: "/images/referenzen/ref-familien-efh-1600.jpg",
+      },
+    ],
+  },
+  presse: {
+    eyebrow: "Aus der Presse",
+    headline: "„Die Philosophie lautet: Verkaufen aus Leidenschaft!“",
+    zitat:
+      "Über mein Engagement im Immobilienmarkt der Rhein-Neckar-Region berichtete die regionale Presse — Weinheimer Nachrichten / Aus dem Geschäftsleben, 2020.",
+    image: {
+      src: "/images/presse-2020-1600.jpg",
+      alt: "Zeitungsartikel aus den Weinheimer Nachrichten 2020 über Edith Voss und ihre Maklertätigkeit",
+    },
+  },
   region: {
     headline: "Regional verwurzelt — überregional erfolgreich.",
     body: "Mein Tätigkeitsgebiet umfasst die Rhein-Neckar-Region mit Schwerpunkt Weinheim, dazu Karlsruhe und Umgebung, den vorderen Odenwald, Rheinland-Pfalz — und auf Anfrage darüber hinaus.",
