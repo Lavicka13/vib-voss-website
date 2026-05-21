@@ -1,20 +1,38 @@
 import type { Metadata } from "next";
+import { Hero } from "@/components/sections/Hero";
+import { StorytellingBlock } from "@/components/sections/StorytellingBlock";
+import { TestimonialBlock } from "@/components/sections/TestimonialBlock";
+import { ValuesGrid } from "@/components/sections/ValuesGrid";
+import { CTABlock } from "@/components/sections/CTABlock";
+import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import { ueberMich } from "@/content/ueber-mich";
 
 export const metadata: Metadata = {
   title: "Über mich | V.I.B. Voß Immobilien Beratung",
-  description:
-    "Edith Voss — Maklerin mit Leidenschaft im Rhein-Neckar-Raum seit fast 30 Jahren.",
+  description: ueberMich.hero.subline,
 };
 
 export default function UeberMichPage() {
   return (
-    <div className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
-      <h1 className="font-display text-display-lg-mobile md:text-display-lg text-primary">
-        Über mich
-      </h1>
-      <p className="font-body text-body-lg text-muted-text mt-8">
-        [Skelett — Inhalt in Welle 2]
-      </p>
-    </div>
+    <>
+      <Hero headline={ueberMich.hero.headline} subline={ueberMich.hero.subline} />
+      <RevealOnScroll>
+        <StorytellingBlock
+          eyebrow={ueberMich.story.eyebrow}
+          headline={ueberMich.story.headline}
+          paragraphs={ueberMich.story.paragraphs}
+        />
+      </RevealOnScroll>
+      <RevealOnScroll>
+        <TestimonialBlock
+          quote={ueberMich.philosophy.quote}
+          attribution={ueberMich.philosophy.attribution}
+        />
+      </RevealOnScroll>
+      <RevealOnScroll>
+        <ValuesGrid items={ueberMich.values} />
+      </RevealOnScroll>
+      <CTABlock headline={ueberMich.cta.headline} button={ueberMich.cta.button} />
+    </>
   );
 }
