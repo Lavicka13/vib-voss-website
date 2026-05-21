@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type ImageProp = { src: string; alt: string };
 
 type Props = {
@@ -22,11 +24,12 @@ export function HomeStagingSpotlight({ eyebrow, headline, body, image }: Props) 
         </div>
         <div className="order-1 md:order-2 w-full aspect-[4/5] md:aspect-[1/1] rounded-lg bg-zartrosa/30 overflow-hidden relative">
           {image ? (
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${image.src})` }}
-              role="img"
-              aria-label={image.alt}
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center text-muted-text font-body text-label-caps uppercase tracking-widest">

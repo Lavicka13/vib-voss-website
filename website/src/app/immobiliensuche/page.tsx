@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Hero } from "@/components/sections/Hero";
 import { SuchprofilForm } from "@/components/forms/SuchprofilForm";
 
@@ -27,6 +28,15 @@ export default function ImmobiliensuchePage() {
                 <li className="flex items-start gap-2"><span className="text-secondary mt-1">—</span><span>Passgenaue Vorschläge nach Ihren Kriterien</span></li>
                 <li className="flex items-start gap-2"><span className="text-secondary mt-1">—</span><span>Absolute Diskretion garantiert</span></li>
               </ul>
+            </div>
+            <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden">
+              <Image
+                src="/images/immobiliensuche-decor-1600.jpg"
+                alt="Stilvolles, lichtdurchflutetes Interieur — Atmosphäre der Objekte aus dem Off-Market-Netzwerk"
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="object-cover"
+              />
             </div>
           </aside>
           <div className="md:col-span-8">

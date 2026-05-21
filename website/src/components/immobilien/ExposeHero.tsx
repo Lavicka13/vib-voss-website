@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { StatusBadge } from "./StatusBadge";
 import { IconMapPin } from "@tabler/icons-react";
 import type { Immobilie } from "@/content/immobilien";
@@ -6,7 +7,14 @@ type Props = {
   immobilie: Immobilie;
 };
 
+const imageMap: Record<string, string> = {
+  "object-mock-1": "/images/object-mock-1-1600.jpg",
+  "object-mock-2": "/images/object-mock-2-1600.jpg",
+  "object-mock-3": "/images/object-mock-3-1600.jpg",
+};
+
 export function ExposeHero({ immobilie }: Props) {
+  const imageSrc = imageMap[immobilie.imageSlot];
   return (
     <section className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-section-gap-mobile md:pt-section-gap">
       <div className="flex flex-col gap-6">
@@ -19,9 +27,20 @@ export function ExposeHero({ immobilie }: Props) {
           <span>{immobilie.ort}</span>
         </div>
         <div className="relative w-full aspect-[16/9] overflow-hidden rounded-lg bg-surface-container-low">
-          <div className="absolute inset-0 flex items-center justify-center text-muted-text font-body text-label-caps uppercase tracking-widest opacity-40">
-            {immobilie.imageSlot}
-          </div>
+          {imageSrc ? (
+            <Image
+              src={imageSrc}
+              alt={immobilie.titel}
+              fill
+              sizes="(min-width: 1280px) 1280px, 100vw"
+              className="object-cover"
+              priority
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center text-muted-text font-body text-label-caps uppercase tracking-widest opacity-40">
+              {immobilie.imageSlot}
+            </div>
+          )}
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-gutter border-t border-b border-border-taupe py-8">
           <div>

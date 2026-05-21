@@ -21,6 +21,10 @@ export default function HomePage() {
         primaryCta={home.hero.primaryCta}
         secondaryCta={home.hero.secondaryCta}
         trustStrip={home.hero.trustStrip}
+        image={{
+          src: "/images/hero-interior-1600.jpg",
+          alt: "Stilvoll inszeniertes, lichtdurchflutetes Wohnzimmer — symbolisch für die exklusiven Immobilien, die Edith Voß vermittelt",
+        }}
       />
       <RevealOnScroll>
         <IntroQuote body={home.intro.body} />
@@ -39,6 +43,10 @@ export default function HomePage() {
           eyebrow={home.homeStaging.eyebrow}
           headline={home.homeStaging.headline}
           body={home.homeStaging.body}
+          image={{
+            src: "/images/home-staging-mood-1600.jpg",
+            alt: "Stilvoll inszenierter Wohnraum — Beispiel für die Wirkung von Home Staging",
+          }}
         />
       </RevealOnScroll>
       <RevealOnScroll>
