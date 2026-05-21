@@ -1,20 +1,31 @@
 import type { Metadata } from "next";
+import { Hero } from "@/components/sections/Hero";
+import { ImmobilienGrid } from "@/components/sections/ImmobilienGrid";
+import { CTABlock } from "@/components/sections/CTABlock";
+import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import { immobilien } from "@/content/immobilien";
 
 export const metadata: Metadata = {
-  title: "Immobilien | V.I.B.",
+  title: "Immobilien | V.I.B. Voß Immobilien Beratung",
   description:
-    "Aktuelle und diskret vermittelte Immobilien im Rhein-Neckar-Raum.",
+    "Aktuelle und diskret vermittelte Immobilien im Rhein-Neckar-Raum. Viele Objekte werden vor Veröffentlichung über das Netzwerk vermittelt.",
 };
 
 export default function ImmobilienPage() {
   return (
-    <div className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
-      <h1 className="font-display text-display-lg-mobile md:text-display-lg text-primary">
-        Immobilien
-      </h1>
-      <p className="font-body text-body-lg text-muted-text mt-8">
-        [Skelett — Inhalt in Welle 2]
-      </p>
-    </div>
+    <>
+      <Hero
+        headline="Exklusive Immobilien im Rhein-Neckar-Raum"
+        subline="Viele unserer exklusivsten Immobilien vermitteln wir im Off-Market-Bereich — absolut diskret und zielgerichtet, fernab der üblichen Portale, um die Privatsphäre meiner Mandanten zu wahren."
+      />
+      <RevealOnScroll>
+        <ImmobilienGrid items={immobilien} />
+      </RevealOnScroll>
+      <CTABlock
+        headline="Sie suchen ein bestimmtes Objekt?"
+        sub="Hinterlegen Sie Ihr Suchprofil — diskret und ohne Verpflichtung."
+        button={{ label: "Suchprofil anlegen", href: "/immobiliensuche" }}
+      />
+    </>
   );
 }
