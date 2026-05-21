@@ -15,7 +15,14 @@ export const metadata: Metadata = {
 export default function UeberMichPage() {
   return (
     <>
-      <Hero headline={ueberMich.hero.headline} subline={ueberMich.hero.subline} />
+      <Hero
+        headline={ueberMich.hero.headline}
+        subline={ueberMich.hero.subline}
+        image={{
+          src: "/images/portraet-edith-1200.jpg",
+          alt: "Edith Voss, Inhaberin V.I.B. Voß Immobilien Beratung",
+        }}
+      />
       <RevealOnScroll>
         <StorytellingBlock
           eyebrow={ueberMich.story.eyebrow}

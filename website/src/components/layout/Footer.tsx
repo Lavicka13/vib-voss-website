@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function Footer() {
@@ -5,7 +6,7 @@ export function Footer() {
     <footer className="bg-surface-container-low border-t border-border-taupe mt-auto">
       <div className="flex flex-col md:flex-row justify-between items-start px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap w-full max-w-container-max mx-auto gap-12 md:gap-0">
         <div className="flex flex-col gap-4 max-w-sm">
-          <span className="text-headline-md font-display text-primary">V.I.B.</span>
+          <Image src="/logo-mark.svg" alt="V.I.B." width={140} height={50} unoptimized className="mb-2" />
           <p className="font-body text-body-md text-muted-text">
             Voß Immobilien Beratung — Edith Voss
             <br />

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 
 type CTA = { label: string; href: string };
@@ -73,12 +74,13 @@ export function Hero({
         </div>
         {image && (
           <div className="relative w-full aspect-[3/4] md:aspect-[4/5] overflow-hidden rounded-lg bg-surface-container-low">
-            {/* Placeholder for next/image — Welle 3 will wire actual <Image> */}
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${image.src})` }}
-              role="img"
-              aria-label={image.alt}
+            <Image
+              src={image.src}
+              alt={image.alt}
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+              priority
             />
           </div>
         )}

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -15,10 +16,18 @@ export function Header() {
       <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-container-max mx-auto">
         <Link
           href="/"
-          className="text-headline-md font-display tracking-tighter text-primary hover:opacity-80 transition-opacity"
+          className="block transition-opacity hover:opacity-80"
           onClick={() => setOpen(false)}
+          aria-label="V.I.B. — Startseite"
         >
-          V.I.B.
+          <Image
+            src="/logo-mark.svg"
+            alt="V.I.B."
+            width={110}
+            height={40}
+            priority
+            unoptimized
+          />
         </Link>
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => {
