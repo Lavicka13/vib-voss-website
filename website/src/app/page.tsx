@@ -37,35 +37,36 @@ export default function HomePage() {
         className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap"
       >
         <RevealOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
-            <div className="md:col-span-5 order-2 md:order-1">
-              <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-low">
-                <Image
-                  src="/images/portraet-edith-800.jpg"
-                  alt="Edith Voss, Inhaberin V.I.B. Voß Immobilien Beratung"
-                  fill
-                  sizes="(min-width: 768px) 40vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
-            <div className="md:col-span-6 md:col-start-7 order-1 md:order-2 flex flex-col gap-6">
+          <div className="relative w-full aspect-[2/1] md:aspect-[21/9] rounded-lg overflow-hidden bg-surface-container-low mb-12">
+            <Image
+              src="/images/portraet-edith-1600.jpg"
+              alt="Edith Voss, Inhaberin V.I.B. Voß Immobilien Beratung"
+              fill
+              sizes="(min-width: 1280px) 1280px, 100vw"
+              className="object-cover object-top"
+              priority
+            />
+          </div>
+        </RevealOnScroll>
+        <RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+            <div className="md:col-span-4 flex flex-col gap-4">
               <span className="font-body text-label-caps text-muted-text uppercase tracking-widest">
                 {home.ueberMich.eyebrow}
               </span>
               <h2 className="font-display text-display-lg-mobile md:text-display-lg text-primary">
                 {home.ueberMich.headline}
               </h2>
-              <div className="flex flex-col gap-5 mt-2">
-                {home.ueberMich.paragraphs.map((p, i) => (
-                  <p
-                    key={i}
-                    className="font-body text-body-lg text-on-surface-variant leading-relaxed"
-                  >
-                    {p}
-                  </p>
-                ))}
-              </div>
+            </div>
+            <div className="md:col-span-7 md:col-start-6 flex flex-col gap-5">
+              {home.ueberMich.paragraphs.map((p, i) => (
+                <p
+                  key={i}
+                  className="font-body text-body-lg text-on-surface-variant leading-relaxed"
+                >
+                  {p}
+                </p>
+              ))}
             </div>
           </div>
         </RevealOnScroll>
