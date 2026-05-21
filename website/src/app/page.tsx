@@ -1,7 +1,7 @@
+import Image from "next/image";
 import { Hero } from "@/components/sections/Hero";
 import { IntroQuote } from "@/components/sections/IntroQuote";
 import { USPGrid } from "@/components/sections/USPGrid";
-import { RegionBlock } from "@/components/sections/RegionBlock";
 import { TestimonialBlock } from "@/components/sections/TestimonialBlock";
 import { CTABlock } from "@/components/sections/CTABlock";
 import { ContactSection } from "@/components/sections/ContactSection";
@@ -32,26 +32,67 @@ export default function HomePage() {
         <USPGrid items={home.usps} />
       </RevealOnScroll>
 
-      <section id="ueber-mich" className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
+      <section
+        id="ueber-mich"
+        className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap"
+      >
         <RevealOnScroll>
-          <div className="max-w-3xl mx-auto flex flex-col gap-6">
-            <span className="font-body text-label-caps text-muted-text uppercase tracking-widest">{home.ueberMich.eyebrow}</span>
-            <h2 className="font-display text-display-lg-mobile md:text-display-lg text-primary">{home.ueberMich.headline}</h2>
-            <div className="flex flex-col gap-5 mt-4">
-              {home.ueberMich.paragraphs.map((p, i) => (
-                <p key={i} className="font-body text-body-lg text-on-surface-variant leading-relaxed">{p}</p>
-              ))}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+            <div className="md:col-span-5 order-2 md:order-1">
+              <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-low">
+                <Image
+                  src="/images/portraet-edith-800.jpg"
+                  alt="Edith Voss, Inhaberin V.I.B. Voß Immobilien Beratung"
+                  fill
+                  sizes="(min-width: 768px) 40vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <div className="md:col-span-6 md:col-start-7 order-1 md:order-2 flex flex-col gap-6">
+              <span className="font-body text-label-caps text-muted-text uppercase tracking-widest">
+                {home.ueberMich.eyebrow}
+              </span>
+              <h2 className="font-display text-display-lg-mobile md:text-display-lg text-primary">
+                {home.ueberMich.headline}
+              </h2>
+              <div className="flex flex-col gap-5 mt-2">
+                {home.ueberMich.paragraphs.map((p, i) => (
+                  <p
+                    key={i}
+                    className="font-body text-body-lg text-on-surface-variant leading-relaxed"
+                  >
+                    {p}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
         </RevealOnScroll>
       </section>
 
-      <section id="leistungen" className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe">
+      <section
+        id="leistungen"
+        className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe"
+      >
         <RevealOnScroll>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
             <div className="md:col-span-4 flex flex-col gap-4">
-              <span className="font-body text-label-caps text-muted-text uppercase tracking-widest">{home.leistungen.eyebrow}</span>
-              <h2 className="font-display text-display-lg-mobile md:text-headline-md text-primary">{home.leistungen.headline}</h2>
+              <span className="font-body text-label-caps text-muted-text uppercase tracking-widest">
+                {home.leistungen.eyebrow}
+              </span>
+              <h2 className="font-display text-display-lg-mobile md:text-headline-md text-primary">
+                {home.leistungen.headline}
+              </h2>
+              <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-low mt-6 hidden md:block">
+                <Image
+                  src="/images/ueber-mich-architecture-800.jpg"
+                  alt="Stilvolles architektonisches Detail — symbolisch für die Qualität der Immobilien aus dem Netzwerk"
+                  fill
+                  sizes="(min-width: 768px) 30vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
             <div className="md:col-span-7 md:col-start-6 flex flex-col gap-6">
               <ul className="space-y-3 font-body text-body-lg text-on-surface-variant">
@@ -70,14 +111,46 @@ export default function HomePage() {
         </RevealOnScroll>
       </section>
 
-      <section id="region">
+      <section
+        id="region"
+        className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe"
+      >
         <RevealOnScroll>
-          <RegionBlock headline={home.region.headline} body={home.region.body} orte={home.region.orte} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+            <div className="flex flex-col gap-6">
+              <h2 className="font-display text-display-lg-mobile md:text-display-lg text-primary">
+                {home.region.headline}
+              </h2>
+              <p className="font-body text-body-lg text-muted-text leading-relaxed">
+                {home.region.body}
+              </p>
+              <ul className="grid grid-cols-2 gap-x-6 gap-y-3 font-body text-body-md text-primary mt-2">
+                {home.region.orte.map((ort) => (
+                  <li key={ort} className="flex items-start gap-2">
+                    <span className="text-secondary mt-1">—</span>
+                    <span>{ort}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="relative w-full aspect-[4/5] md:aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-low">
+              <Image
+                src="/images/region-bergstrasse-1600.jpg"
+                alt="Landschaft der Bergstraße und Rhein-Neckar-Region — Tätigkeitsgebiet von Edith Voss"
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
         </RevealOnScroll>
       </section>
 
       <RevealOnScroll>
-        <TestimonialBlock quote={home.testimonial.quote} attribution={home.testimonial.attribution} />
+        <TestimonialBlock
+          quote={home.testimonial.quote}
+          attribution={home.testimonial.attribution}
+        />
       </RevealOnScroll>
 
       <RevealOnScroll>
