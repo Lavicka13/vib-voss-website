@@ -29,7 +29,7 @@ export function ImmobilienCard({ immobilie }: Props) {
             <IconMapPin size={16} />
             <span>{immobilie.ort}</span>
           </div>
-          <div className="flex items-center gap-3 text-on-surface-variant font-body text-body-md border-t border-border-taupe pt-3 mt-2">
+          <div className="flex flex-wrap items-center gap-3 text-on-surface-variant font-body text-body-md border-t border-border-taupe pt-3 mt-2">
             <span>{immobilie.preis}</span>
             <span className="text-border-taupe">|</span>
             <span>ca. {immobilie.wohnflaeche} m²</span>

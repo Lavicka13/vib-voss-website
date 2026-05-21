@@ -9,7 +9,7 @@ type Props = {
 export function CTABlock({ headline, sub, button }: Props) {
   return (
     <section className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
-      <div className="border border-border-taupe rounded-lg bg-surface-ivory p-12 md:p-24 text-center flex flex-col items-center gap-8">
+      <div className="border border-border-taupe rounded-lg bg-surface-ivory p-8 md:p-12 lg:p-24 text-center flex flex-col items-center gap-8">
         <h2 className="font-display text-display-lg-mobile md:text-headline-md text-primary max-w-3xl">
           {headline}
         </h2>

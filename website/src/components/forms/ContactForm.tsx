@@ -65,7 +65,7 @@ export function ContactForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="border border-border-taupe rounded-lg p-8 md:p-10 bg-surface-ivory flex flex-col gap-6"
+      className="relative border border-border-taupe rounded-lg p-8 md:p-10 bg-surface-ivory flex flex-col gap-6"
       noValidate
     >
       {/* Honeypot — hidden, never filled by real users */}

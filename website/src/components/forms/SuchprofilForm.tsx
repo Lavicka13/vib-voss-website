@@ -105,7 +105,7 @@ export function SuchprofilForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="border border-border-taupe rounded-lg p-8 md:p-10 bg-surface-ivory flex flex-col gap-8"
+      className="relative border border-border-taupe rounded-lg p-8 md:p-10 bg-surface-ivory flex flex-col gap-8"
       noValidate
     >
       {/* Honeypot */}
