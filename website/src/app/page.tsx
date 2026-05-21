@@ -103,9 +103,60 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
-              <p className="font-display italic text-body-lg text-primary border-t border-border-taupe pt-6 mt-2">
-                {home.leistungen.schwerpunkt}
+            </div>
+          </div>
+        </RevealOnScroll>
+      </section>
+
+      <section
+        id="immobilien"
+        className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe"
+      >
+        <RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+            <div className="relative w-full aspect-[4/5] md:aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low order-2 md:order-1">
+              <Image
+                src="/images/immobiliensuche-decor-1600.jpg"
+                alt="Lichtdurchflutetes Premium-Interieur — Atmosphäre der Objekte aus dem Off-Market-Netzwerk"
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="flex flex-col gap-6 order-1 md:order-2">
+              <span className="font-body text-label-caps text-muted-text uppercase tracking-widest">
+                {home.immobilien.eyebrow}
+              </span>
+              <h2 className="font-display text-display-lg-mobile md:text-display-lg text-primary">
+                {home.immobilien.headline}
+              </h2>
+              <div className="flex flex-col gap-4">
+                {home.immobilien.body.map((p, i) => (
+                  <p
+                    key={i}
+                    className="font-body text-body-lg text-on-surface-variant leading-relaxed"
+                  >
+                    {p}
+                  </p>
+                ))}
+              </div>
+              <p className="font-display italic text-body-md text-primary border-t border-border-taupe pt-6 mt-2">
+                {home.immobilien.schwerpunkt}
               </p>
+              <div className="flex flex-col sm:flex-row gap-4 mt-2">
+                <a
+                  href={home.immobilien.ctaVerkauf.href}
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded font-body text-label-caps tracking-widest bg-primary text-on-primary hover:bg-secondary transition-colors duration-300"
+                >
+                  {home.immobilien.ctaVerkauf.label}
+                </a>
+                <a
+                  href={home.immobilien.ctaKauf.href}
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded font-body text-label-caps tracking-widest bg-transparent border border-primary text-primary hover:bg-surface-container-low transition-colors duration-300"
+                >
+                  {home.immobilien.ctaKauf.label}
+                </a>
+              </div>
             </div>
           </div>
         </RevealOnScroll>

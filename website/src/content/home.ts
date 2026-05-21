@@ -54,8 +54,18 @@ export const home = {
       "Begleitung bis zur notariellen Beurkundung",
       "Auch am Wochenende erreichbar",
     ],
+  },
+  immobilien: {
+    eyebrow: "Immobilien",
+    headline: "Aktuelle Objekte vermittle ich diskret.",
+    body: [
+      "Bereits vor der offiziellen Vermarktung greife ich auf meinen gewachsenen, solventen Kundenstamm zurück. Oft entstehen erfolgreiche Verkäufe schon durch gezielte persönliche Kontakte — diskret und ohne öffentliche Vermarktung.",
+      "Wenn Sie suchen oder verkaufen möchten, sprechen Sie mich direkt an.",
+    ],
     schwerpunkt:
       "Schwerpunkt: exklusive Villen und Mehrfamilienhäuser, aber auch gemütliche Einfamilienhäuser, Wohnungen oder das kleine Apartment mitten in der Stadt.",
+    ctaVerkauf: { label: "Immobilie verkaufen", href: "#kontakt" },
+    ctaKauf: { label: "Suchprofil hinterlegen", href: "#kontakt" },
   },
   region: {
     headline: "Regional verwurzelt — überregional erfolgreich.",

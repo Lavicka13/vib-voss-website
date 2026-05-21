@@ -1,6 +1,7 @@
 export const navItems = [
   { label: "ÜBER MICH", href: "#ueber-mich" },
   { label: "LEISTUNGEN", href: "#leistungen" },
+  { label: "IMMOBILIEN", href: "#immobilien" },
   { label: "REGION", href: "#region" },
   { label: "KONTAKT", href: "#kontakt" },
 ] as const;
