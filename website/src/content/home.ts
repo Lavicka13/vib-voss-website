@@ -130,6 +130,33 @@ export const home = {
     quote: "Einige meiner Kunden haben die Käufer erst anlässlich des Notartermins kennengelernt.",
     attribution: "Edith Voss",
   },
+  google: {
+    eyebrow: "Bewertungen",
+    headline: "Was meine Kunden sagen",
+    rating: "5,0", // TODO_VON_EDITH: tatsächlichen Wert aus Google-Profil eintragen
+    ratingLabel: "Exzellent",
+    bewertungen: "TODO", // TODO_VON_EDITH: Anzahl Bewertungen (z.B. "12 Google-Bewertungen")
+    profilUrl: "TODO_VON_EDITH", // TODO_VON_EDITH: URL zum Google-Business-Profil (z.B. https://maps.google.com/...)
+    hinweis:
+      "Bewertungen werden auf Google öffentlich gesammelt. Sobald das Google-Business-Profil aktiv ist, erscheinen hier echte Kundenbewertungen.",
+    reviews: [
+      {
+        quote:
+          "Frau Voss hat unsere Immobilie weit über dem Erwartungswert verkauft — und das ganz diskret, ohne öffentliche Vermarktung. Persönliche Betreuung auf höchstem Niveau.",
+        author: "Beispiel-Bewertung",
+      },
+      {
+        quote:
+          "Mein Anliegen war komplex — Erbschaft, mehrere Parteien, schnelle Abwicklung. Frau Voss hat alles fundiert und transparent begleitet, immer erreichbar.",
+        author: "Beispiel-Bewertung",
+      },
+      {
+        quote:
+          "Die etwas andere Maklerin: keine Standardphrasen, sondern echtes Gespür für Menschen und Märkte. Klare Empfehlung.",
+        author: "Beispiel-Bewertung",
+      },
+    ],
+  },
   tippgeber: {
     eyebrow: "Tippgeber",
     headline: "Sie kennen jemanden, der verkaufen möchte?",

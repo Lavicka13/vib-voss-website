@@ -5,6 +5,7 @@ export const navItems = [
   { label: "REFERENZEN", href: "#referenzen" },
   { label: "REGION", href: "#region" },
   { label: "TIPPGEBER", href: "#tippgeber" },
+  { label: "BEWERTUNGEN", href: "#bewertungen" },
   { label: "KONTAKT", href: "#kontakt" },
 ] as const;
 
