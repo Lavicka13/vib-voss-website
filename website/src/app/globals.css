@@ -1,26 +1,52 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  /* Colors */
+  --color-primary: #000000;
+  --color-secondary: #71594e;
+  --color-background: #fcf9f8;
+  --color-surface: #fcf9f8;
+  --color-surface-ivory: #FDFBFB;
+  --color-surface-container-low: #f6f3f2;
+  --color-muted-text: #6B6B6B;
+  --color-on-surface-variant: #444748;
+  --color-border-taupe: #E6D9D2;
+  --color-zartrosa: #F4D4C6;
+  --color-on-primary: #ffffff;
+  --color-error: #ba1a1a;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Spacing */
+  --spacing-gutter: 32px;
+  --spacing-margin-desktop: 80px;
+  --spacing-margin-mobile: 24px;
+  --spacing-section-gap: 120px;
+  --spacing-section-gap-mobile: 64px;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Container */
+  --container-max: 1280px;
+
+  /* Typography — font families (Task 1.4 will wire up next/font variables) */
+  --font-display: "Playfair Display", serif;
+  --font-body: "Manrope", sans-serif;
+
+  /* Typography — font sizes */
+  --text-display-lg: 64px;
+  --text-display-lg--mobile: 40px;
+  --text-headline-md: 32px;
+  --text-signature-quote: 24px;
+  --text-body-lg: 18px;
+  --text-body-md: 16px;
+  --text-label-caps: 12px;
+
+  /* Border radius */
+  --radius: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-primary);
+  font-family: var(--font-body);
 }
