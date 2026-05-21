@@ -3,6 +3,7 @@ import { Manrope, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { realEstateAgentSchema } from "@/lib/seo";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -40,6 +41,10 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${manrope.variable} ${playfair.variable}`}>
       <body className="bg-background text-on-surface-variant font-body antialiased min-h-screen flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(realEstateAgentSchema) }}
+        />
         <Header />
         <main className="flex-grow w-full">{children}</main>
         <Footer />

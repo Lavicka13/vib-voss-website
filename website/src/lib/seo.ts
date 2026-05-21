@@ -1,0 +1,31 @@
+export const realEstateAgentSchema = {
+  "@context": "https://schema.org",
+  "@type": "RealEstateAgent",
+  name: "V.I.B. Voß Immobilien Beratung",
+  alternateName: "V.I.B.",
+  description:
+    "Verkaufen aus Leidenschaft — Edith Voss begleitet seit fast 30 Jahren Eigentümer im Rhein-Neckar-Raum beim Verkauf besonderer Immobilien. Off-Market-Netzwerk, persönliche Betreuung, fundierte Marktkenntnis.",
+  url: "https://e-vib.de",
+  telephone: "+491733601936",
+  email: "info@e-vib.de",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Alte Schulstraße 28",
+    postalCode: "68549",
+    addressLocality: "Ilvesheim",
+    addressCountry: "DE",
+  },
+  areaServed: [
+    "Rhein-Neckar-Region",
+    "Weinheim",
+    "Mannheim",
+    "Heidelberg",
+    "Karlsruhe",
+    "Bergstraße",
+    "Vorderer Odenwald",
+    "Rheinland-Pfalz",
+  ],
+  founder: { "@type": "Person", name: "Edith Voß" },
+  knowsLanguage: ["de"],
+  slogan: "Verkaufen aus Leidenschaft.",
+} as const;
