@@ -3,6 +3,7 @@ export const navItems = [
   { label: "LEISTUNGEN", href: "#leistungen" },
   { label: "IMMOBILIEN", href: "#immobilien" },
   { label: "REGION", href: "#region" },
+  { label: "TIPPGEBER", href: "#tippgeber" },
   { label: "KONTAKT", href: "#kontakt" },
 ] as const;
 

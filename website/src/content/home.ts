@@ -76,6 +76,42 @@ export const home = {
     quote: "Einige meiner Kunden haben die Käufer erst anlässlich des Notartermins kennengelernt.",
     attribution: "Edith Voss",
   },
+  tippgeber: {
+    eyebrow: "Tippgeber",
+    headline: "Sie kennen jemanden, der verkaufen möchte?",
+    body: "Wenn Sie mir einen Tipp zu einer Immobilie geben und es zum erfolgreichen Verkauf kommt, erhalten Sie eine Tippgeber-Prämie. Zwei Wochen nach der notariellen Beurkundung überweise ich Ihnen die vereinbarte Provision.",
+    steps: [
+      {
+        nr: "01",
+        title: "Sie geben mir den Tipp",
+        body: "Über mein Kontaktformular oder unverbindlich per Anruf.",
+      },
+      {
+        nr: "02",
+        title: "Ich prüfe das Objekt",
+        body: "Ist die Immobilie noch nicht unter Vertrag bei einem anderen Maklerbüro, starte ich den Prozess.",
+      },
+      {
+        nr: "03",
+        title: "Bei Verkauf erhalten Sie Ihre Provision",
+        body: "Zwei Wochen nach der notariellen Beurkundung überweise ich Ihnen die vereinbarte Tippgeber-Prämie.",
+      },
+    ],
+    staffelHinweis:
+      "Provisionsstaffel (vorläufig — wird im Erstgespräch individuell bestätigt):",
+    staffel: [
+      { range: "bis 400.000 €", provision: "1.500 €" },
+      { range: "ab 500.000 €", provision: "3.000 €" },
+      { range: "ab 700.000 €", provision: "4.500 €" },
+      { range: "ab 900.000 €", provision: "5.000 €" },
+      { range: "ab 1.000.000 €", provision: "individuell" },
+    ],
+    bedingungen: [
+      "Der Eigentümer muss mit der Weitergabe seiner Daten einverstanden sein.",
+      "Ihre Angaben behandle ich absolut vertraulich.",
+    ],
+    cta: { label: "Objekt empfehlen", href: "#kontakt" },
+  },
   cta: {
     headline: "Lassen Sie uns über Ihre Immobilie sprechen.",
     sub: "Persönlich. Diskret.",

@@ -197,6 +197,85 @@ export default function HomePage() {
         </RevealOnScroll>
       </section>
 
+      <section
+        id="tippgeber"
+        className="w-full bg-zartrosa/30 border-y border-border-taupe"
+      >
+        <div className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
+          <RevealOnScroll>
+            <div className="flex flex-col gap-6 max-w-3xl mb-12">
+              <span className="font-body text-label-caps text-muted-text uppercase tracking-widest">
+                {home.tippgeber.eyebrow}
+              </span>
+              <h2 className="font-display text-display-lg-mobile md:text-display-lg text-primary">
+                {home.tippgeber.headline}
+              </h2>
+              <p className="font-body text-body-lg text-on-surface-variant leading-relaxed">
+                {home.tippgeber.body}
+              </p>
+            </div>
+          </RevealOnScroll>
+
+          <RevealOnScroll>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-12">
+              {home.tippgeber.steps.map((step) => (
+                <div
+                  key={step.nr}
+                  className="bg-surface border border-border-taupe rounded-lg p-8 flex flex-col gap-4"
+                >
+                  <span className="font-display text-headline-md text-secondary">
+                    {step.nr}
+                  </span>
+                  <h3 className="font-display text-body-lg font-medium text-primary">
+                    {step.title}
+                  </h3>
+                  <p className="font-body text-body-md text-muted-text leading-relaxed">
+                    {step.body}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </RevealOnScroll>
+
+          <RevealOnScroll>
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+              <div className="md:col-span-7">
+                <p className="font-body text-label-caps text-muted-text uppercase tracking-widest mb-4">
+                  {home.tippgeber.staffelHinweis}
+                </p>
+                <ul className="bg-surface border border-border-taupe rounded-lg divide-y divide-border-taupe">
+                  {home.tippgeber.staffel.map((row) => (
+                    <li
+                      key={row.range}
+                      className="flex justify-between items-center px-6 py-4 font-body text-body-md"
+                    >
+                      <span className="text-on-surface-variant">{row.range}</span>
+                      <span className="font-display text-primary">{row.provision}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="md:col-span-5 flex flex-col gap-6">
+                <ul className="space-y-3 font-body text-body-md text-muted-text">
+                  {home.tippgeber.bedingungen.map((b, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <span className="text-secondary mt-1.5">—</span>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={home.tippgeber.cta.href}
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded font-body text-label-caps tracking-widest bg-primary text-on-primary hover:bg-secondary transition-colors duration-300 mt-2"
+                >
+                  {home.tippgeber.cta.label}
+                </a>
+              </div>
+            </div>
+          </RevealOnScroll>
+        </div>
+      </section>
+
       <RevealOnScroll>
         <TestimonialBlock
           quote={home.testimonial.quote}
