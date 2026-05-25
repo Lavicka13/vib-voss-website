@@ -176,9 +176,9 @@ export function Hero({
         {/* ─── Hero composition: type + portrait pillar ─── */}
         <div className="relative flex-1 grid grid-cols-12 gap-x-4 md:gap-x-6 items-start">
 
-          {/* ── Portrait pillar — asymmetric, right side, overlapping ── */}
+          {/* ── Portrait pillar — absolute positioned, overlaps the type from the right ── */}
           <motion.div
-            className="hidden md:block col-start-9 col-span-4 lg:col-start-9 lg:col-span-4 relative h-[68vh] max-h-[640px] z-[3] -mt-4"
+            className="hidden md:block absolute top-0 right-0 w-[38%] max-w-[440px] aspect-[3/4] z-[2] pointer-events-none"
             initial={shouldReduce ? { opacity: 0 } : { opacity: 0, scale: 1.06, filter: "blur(14px)" }}
             animate={shouldReduce ? { opacity: 1 } : { opacity: 1, scale: 1, filter: "blur(0px)" }}
             transition={{ duration: 1.8, ease: EASE_CINEMA, delay: 0.75 }}
@@ -189,7 +189,7 @@ export function Hero({
                 alt="Edith Voss, Inhaberin V.I.B. Voß Immobilien Beratung"
                 fill
                 sizes="(min-width: 1280px) 38vw, 40vw"
-                className="object-cover object-[60%_15%]"
+                className="object-cover object-[35%_40%]"
                 priority
               />
               {/* warm color-grade overlay */}
@@ -198,6 +198,14 @@ export function Hero({
                 style={{
                   background:
                     "linear-gradient(180deg, rgba(244,212,198,0.28) 0%, rgba(113,89,78,0.18) 100%)",
+                }}
+              />
+              {/* left edge fade — softer overlap with type */}
+              <div
+                className="absolute inset-y-0 left-0 w-1/3 pointer-events-none"
+                style={{
+                  background:
+                    "linear-gradient(to right, #fcf9f8 0%, rgba(252,249,248,0.4) 50%, transparent 100%)",
                 }}
               />
               {/* bottom fade into cream */}
@@ -210,7 +218,7 @@ export function Hero({
               />
             </div>
             {/* caption ticker under portrait */}
-            <div className="absolute -bottom-2 left-0 right-0 flex items-center gap-3">
+            <div className="absolute -bottom-6 left-0 right-0 flex items-center gap-3">
               <span className="block h-px flex-1 bg-primary/25" />
               <span className="font-body text-[10px] tracking-[0.3em] uppercase text-secondary whitespace-nowrap">
                 Edith Voss · Maklerin
@@ -255,7 +263,7 @@ export function Hero({
               Middle word ("aus") is outlined for editorial tension.
               Words cascade with blur→sharp choreography. */}
           <h1
-            className="col-span-12 md:col-start-1 md:col-span-10 lg:col-span-10 relative z-[4] font-display leading-[0.92] tracking-[-0.02em] text-primary"
+            className="col-span-12 relative z-[4] font-display leading-[0.92] tracking-[-0.02em] text-primary"
             aria-label={headline}
           >
             <span className="sr-only">{headline}</span>
