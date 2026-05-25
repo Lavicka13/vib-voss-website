@@ -181,33 +181,6 @@ export function Hero({
         {/* ─── Hero composition: type + portrait pillar ─── */}
         <div className="relative flex-1 grid grid-cols-12 gap-x-4 md:gap-x-6 items-start">
 
-          {/* ── Brand wappen — top right, replaces decorative ampersand ── */}
-          <motion.div
-            className="hidden md:flex absolute -top-2 right-0 flex-col items-end gap-4 z-[2] pointer-events-none"
-            initial={shouldReduce ? { opacity: 0 } : { opacity: 0, y: -16 }}
-            animate={shouldReduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
-            transition={{ duration: 1.4, ease: EASE_CINEMA, delay: 0.75 }}
-          >
-            <div className="relative">
-              {/* subtle pink wash plate behind logo — editorial wappen */}
-              <div
-                className="absolute -inset-4 lg:-inset-6 bg-zartrosa/35 -z-10"
-                aria-hidden="true"
-              />
-              <Image
-                src="/images/logo/logo-mono-480.png"
-                alt="V.I.B. Voß Immobilien Beratung"
-                width={110}
-                height={168}
-                priority
-                className="w-[88px] lg:w-[110px] h-auto select-none"
-              />
-            </div>
-            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-secondary/80">
-              Persönlich · Diskret
-            </span>
-          </motion.div>
-
           {/* ── HEADLINE TYPOGRAPHY ──
               Spans 9 cols, overlaps portrait. Three weighted lines.
               Middle word ("aus") is outlined for editorial tension.
@@ -318,7 +291,7 @@ export function Hero({
             )}
           </div>
 
-          {/* ── Trust strip — bottom-right, magazine footer style ── */}
+          {/* ── Trust strip — bottom row with logo closer on the right ── */}
           {trustStrip && trustStrip.length > 0 && (
             <motion.div
               className="col-span-12 md:col-start-1 md:col-span-12 mt-8 md:mt-auto md:pt-10 relative z-[4]"
@@ -327,40 +300,64 @@ export function Hero({
               transition={{ duration: 0.9, ease: EASE_OUT, delay: 2.3 }}
             >
               <div className="h-px w-full bg-primary/15 mb-5" aria-hidden="true" />
-              <ul className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8 lg:gap-12">
-                {trustStrip.map((item, i) => (
-                  <li
-                    key={item}
-                    className="flex items-baseline gap-3 group"
-                  >
-                    <span
-                      className="font-display italic text-[14px] text-secondary leading-none"
-                      aria-hidden="true"
+              <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-12">
+                <ul className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8 lg:gap-12">
+                  {trustStrip.map((item, i) => (
+                    <li
+                      key={item}
+                      className="flex items-baseline gap-3 group"
                     >
-                      {["i", "ii", "iii", "iv", "v"][i] ?? String(i + 1)}.
-                    </span>
-                    <span className="font-body text-[11px] tracking-[0.24em] uppercase text-primary/80">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+                      <span
+                        className="font-display italic text-[14px] text-secondary leading-none"
+                        aria-hidden="true"
+                      >
+                        {["i", "ii", "iii", "iv", "v"][i] ?? String(i + 1)}.
+                      </span>
+                      <span className="font-body text-[11px] tracking-[0.24em] uppercase text-primary/80">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <motion.div
+                  className="flex items-center gap-4 self-start md:self-end shrink-0"
+                  initial={shouldReduce ? { opacity: 0 } : { opacity: 0, x: 12 }}
+                  animate={shouldReduce ? { opacity: 1 } : { opacity: 1, x: 0 }}
+                  transition={{ duration: 1.0, ease: EASE_CINEMA, delay: 2.45 }}
+                  aria-hidden="true"
+                >
+                  <span className="font-body text-[10px] tracking-[0.4em] uppercase text-secondary/80 leading-[1.7] text-right">
+                    Persönlich
+                    <br />
+                    Diskret
+                  </span>
+                  <span className="block w-px h-10 bg-primary/30" />
+                  <Image
+                    src="/images/logo/logo-mono-480.png"
+                    alt="V.I.B."
+                    width={42}
+                    height={64}
+                    priority
+                    className="h-12 lg:h-14 w-auto select-none"
+                  />
+                </motion.div>
+              </div>
             </motion.div>
           )}
         </div>
 
-        {/* ─── Bottom-right edition mark ─── */}
+        {/* ─── Scroll cue — bottom-left, away from logo closer on the right ─── */}
         <motion.div
-          className="hidden md:flex absolute bottom-6 right-margin-desktop items-center gap-3 z-[7]"
+          className="hidden md:flex absolute bottom-6 left-[120px] items-center gap-3 z-[7]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.9, delay: 2.4, ease: EASE_OUT }}
+          transition={{ duration: 0.9, delay: 2.6, ease: EASE_OUT }}
           aria-hidden="true"
         >
-          <span className="block w-8 h-px bg-primary/35" />
           <span className="font-body text-[10px] tracking-[0.36em] uppercase text-secondary">
             scroll · weiterlesen
           </span>
+          <span className="block w-8 h-px bg-primary/35" />
         </motion.div>
       </div>
     </section>

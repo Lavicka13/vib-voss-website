@@ -10,8 +10,8 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="bg-surface border-b border-border-taupe sticky top-0 z-50 w-full">
-      <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-container-max mx-auto">
+    <header className="bg-surface/95 backdrop-blur-sm border-b border-border-taupe sticky top-0 z-50 w-full">
+      <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 md:py-5 w-full max-w-container-max mx-auto">
         <Link
           href="/"
           className="block transition-opacity hover:opacity-80"
@@ -19,12 +19,12 @@ export function Header() {
           aria-label="V.I.B. — Startseite"
         >
           <Image
-            src="/logo-mark.svg"
+            src="/images/logo/logo-mono-480.png"
             alt="V.I.B. Voß Immobilien Beratung"
-            width={110}
-            height={40}
+            width={42}
+            height={64}
             priority
-            unoptimized
+            className="h-12 md:h-14 w-auto"
           />
         </Link>
         <nav className="hidden md:flex items-center gap-8">
