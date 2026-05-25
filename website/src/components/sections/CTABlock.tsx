@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/Button";
+import { EditorialButton } from "@/components/ui/EditorialButton";
 
 type Props = {
   headline: string;
@@ -9,8 +9,15 @@ type Props = {
 export function CTABlock({ headline, sub, button }: Props) {
   return (
     <section className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
-      <div className="border border-border-taupe rounded-lg bg-surface-ivory p-8 md:p-12 lg:p-24 text-center flex flex-col items-center gap-8">
-        <h2 className="font-display text-display-lg-mobile md:text-headline-md text-primary max-w-3xl">
+      <div className="relative bg-surface-ivory border-t border-b border-primary/30 p-8 md:p-14 lg:p-20 text-center flex flex-col items-center gap-8">
+        <div className="flex items-center justify-center gap-4">
+          <span className="block h-px w-12 bg-primary/40" aria-hidden="true" />
+          <span className="font-body text-[10px] tracking-[0.4em] uppercase text-secondary">
+            Ihre Einladung
+          </span>
+          <span className="block h-px w-12 bg-primary/40" aria-hidden="true" />
+        </div>
+        <h2 className="font-display text-display-lg-mobile md:text-headline-md text-primary leading-[0.95] max-w-3xl">
           {headline}
         </h2>
         {sub && (
@@ -18,7 +25,11 @@ export function CTABlock({ headline, sub, button }: Props) {
             {sub}
           </p>
         )}
-        {button && <Button href={button.href}>{button.label}</Button>}
+        {button && (
+          <EditorialButton variant="primary" href={button.href}>
+            {button.label}
+          </EditorialButton>
+        )}
       </div>
     </section>
   );

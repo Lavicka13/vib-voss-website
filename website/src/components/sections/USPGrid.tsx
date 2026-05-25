@@ -10,20 +10,27 @@ type Props = {
   items: readonly USP[];
 };
 
+const ROMAN_LOWER = ["i", "ii", "iii", "iv", "v"] as const;
+
 export function USPGrid({ items }: Props) {
   return (
     <section className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-        {items.map((usp) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-gutter gap-y-12">
+        {items.map((usp, i) => (
           <article
             key={usp.title}
-            className="bg-surface-ivory border border-border-taupe p-10 rounded-lg flex flex-col gap-6 hover:border-secondary transition-colors duration-500"
+            className="group border-t border-primary/30 pt-6 pb-2 flex flex-col gap-5"
           >
-            <Icon name={usp.icon} size={32} className="text-secondary" />
-            <h3 className="font-display text-headline-md text-primary">
+            <div className="flex items-baseline justify-between">
+              <span className="font-display italic text-[42px] md:text-[52px] leading-none text-primary group-hover:text-secondary transition-colors duration-500">
+                {ROMAN_LOWER[i] ?? String(i + 1)}.
+              </span>
+              <Icon name={usp.icon} size={26} className="text-secondary/70 group-hover:text-secondary transition-colors duration-500" />
+            </div>
+            <h3 className="font-display text-headline-md text-primary leading-tight mt-2">
               {usp.title}
             </h3>
-            <p className="font-body text-body-md text-muted-text">{usp.body}</p>
+            <p className="font-body text-body-md text-muted-text leading-relaxed">{usp.body}</p>
           </article>
         ))}
       </div>
