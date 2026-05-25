@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
@@ -127,9 +128,14 @@ export function Hero({
         <span className="font-body text-[10px] tracking-[0.35em] uppercase text-secondary [writing-mode:vertical-rl] rotate-180">
           {EDITION.vol}
         </span>
-        <span className="font-display italic text-[18px] text-primary/70">
-          v.i.b
-        </span>
+        <Image
+          src="/images/logo/logo-mono-240.png"
+          alt="V.I.B. Voß Immobilien Beratung"
+          width={36}
+          height={55}
+          priority
+          className="opacity-80 select-none"
+        />
         <span className="font-body text-[10px] tracking-[0.35em] uppercase text-secondary [writing-mode:vertical-rl] rotate-180">
           {EDITION.folio}
         </span>
@@ -175,18 +181,29 @@ export function Hero({
         {/* ─── Hero composition: type + portrait pillar ─── */}
         <div className="relative flex-1 grid grid-cols-12 gap-x-4 md:gap-x-6 items-start">
 
-          {/* ── Decorative editorial mark replacing portrait — top right ── */}
+          {/* ── Brand wappen — top right, replaces decorative ampersand ── */}
           <motion.div
-            className="hidden md:flex absolute top-2 right-0 flex-col items-end gap-3 z-[2] pointer-events-none"
-            initial={shouldReduce ? { opacity: 0 } : { opacity: 0, y: -20 }}
+            className="hidden md:flex absolute -top-2 right-0 flex-col items-end gap-4 z-[2] pointer-events-none"
+            initial={shouldReduce ? { opacity: 0 } : { opacity: 0, y: -16 }}
             animate={shouldReduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
             transition={{ duration: 1.4, ease: EASE_CINEMA, delay: 0.75 }}
-            aria-hidden="true"
           >
-            <span className="font-display italic text-secondary text-[80px] lg:text-[120px] leading-none opacity-25 select-none">
-              &amp;
-            </span>
-            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-secondary/70">
+            <div className="relative">
+              {/* subtle pink wash plate behind logo — editorial wappen */}
+              <div
+                className="absolute -inset-4 lg:-inset-6 bg-zartrosa/35 -z-10"
+                aria-hidden="true"
+              />
+              <Image
+                src="/images/logo/logo-mono-480.png"
+                alt="V.I.B. Voß Immobilien Beratung"
+                width={110}
+                height={168}
+                priority
+                className="w-[88px] lg:w-[110px] h-auto select-none"
+              />
+            </div>
+            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-secondary/80">
               Persönlich · Diskret
             </span>
           </motion.div>
