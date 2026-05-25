@@ -2,13 +2,14 @@
 
 import { useRef, useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 
 type Item = {
   slug: string;
   titel: string;
   ort: string;
-  image: string;
+  image: string | null;
 };
 
 type Props = {
@@ -98,25 +99,44 @@ export function ReferenzenCarousel({ items }: Props) {
           <article
             key={item.slug}
             data-card
-            className="snap-start shrink-0 w-[85%] sm:w-[60%] md:w-[48%] lg:w-[32%] flex flex-col gap-4"
+            className="snap-start shrink-0 w-[85%] sm:w-[60%] md:w-[48%] lg:w-[32%]"
           >
-            <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container-low">
-              <Image
-                src={item.image}
-                alt={item.titel}
-                fill
-                sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 85vw"
-                className="object-cover"
-              />
-            </div>
-            <div className="flex flex-col gap-2">
-              <h3 className="font-display text-body-lg text-primary leading-tight">
-                {item.titel}
-              </h3>
-              <span className="font-body text-body-md text-muted-text">
-                {item.ort}
-              </span>
-            </div>
+            <Link
+              href={`/immobilien/${item.slug}`}
+              className="group flex flex-col gap-4 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded-lg"
+            >
+              <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container-low">
+                {item.image ? (
+                  <Image
+                    src={item.image}
+                    alt={item.titel}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 85vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="flex flex-col items-center justify-center w-full h-full px-4 text-center">
+                    <span className="font-display italic text-signature-quote text-secondary">
+                      Diskretes Objekt
+                    </span>
+                    <span className="font-body text-body-md text-muted-text mt-2">
+                      Bilder auf Anfrage
+                    </span>
+                  </div>
+                )}
+              </div>
+              <div className="flex flex-col gap-2">
+                <h3 className="font-display text-body-lg text-primary leading-tight group-hover:text-secondary transition-colors duration-300">
+                  {item.titel}
+                </h3>
+                <span className="font-body text-body-md text-muted-text">
+                  {item.ort}
+                </span>
+                <span className="font-body text-label-caps uppercase tracking-widest text-secondary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  Details ansehen &rarr;
+                </span>
+              </div>
+            </Link>
           </article>
         ))}
       </div>
