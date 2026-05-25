@@ -149,7 +149,7 @@ export default function HomePage() {
         </RevealOnScroll>
 
         <RevealOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter md:items-stretch">
             <div className="md:col-span-4 hidden md:block">
               <div className="relative w-full aspect-[3/4] overflow-hidden bg-surface-container-low">
                 <Image
@@ -161,8 +161,8 @@ export default function HomePage() {
                 />
               </div>
             </div>
-            <div className="md:col-span-7 md:col-start-6 flex flex-col gap-6">
-              <ul className="space-y-4 font-body text-body-lg text-on-surface-variant">
+            <div className="md:col-span-7 md:col-start-6 flex flex-col">
+              <ul className="font-body text-body-lg text-on-surface-variant flex-1 flex flex-col justify-between gap-5 md:gap-0">
                 {home.leistungen.items.map((item, i) => (
                   <li key={item} className="flex items-baseline gap-4 group">
                     <span className="font-display italic text-[13px] text-secondary leading-none w-8 shrink-0" aria-hidden="true">
