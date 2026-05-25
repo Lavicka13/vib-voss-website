@@ -85,14 +85,14 @@ export default function HomePage() {
                 {home.presse.zitat}
               </p>
             </div>
-            <div className="md:col-span-4 md:col-start-9 order-1 md:order-2">
-              <div className="relative w-full aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-low">
+            <div className="md:col-span-12 order-1 md:order-2 mt-8">
+              <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden bg-surface-container-low border border-border-taupe">
                 <Image
                   src={home.presse.image.src}
                   alt={home.presse.image.alt}
                   fill
-                  sizes="(min-width: 768px) 30vw, 100vw"
-                  className="object-cover"
+                  sizes="(min-width: 1280px) 1280px, 100vw"
+                  className="object-contain"
                 />
               </div>
             </div>
