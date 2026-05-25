@@ -21,8 +21,8 @@ export function Header() {
           <Image
             src="/images/logo/logo-mono-480.png"
             alt="V.I.B. Voß Immobilien Beratung"
-            width={42}
-            height={64}
+            width={157}
+            height={240}
             priority
             className="h-12 md:h-14 w-auto"
           />

@@ -9,9 +9,9 @@ export function Footer() {
           <Image
             src="/images/logo/logo-plaque-480.png"
             alt="V.I.B. Voß Immobilien Beratung"
-            width={120}
-            height={184}
-            className="h-24 md:h-28 w-auto mb-2"
+            width={157}
+            height={240}
+            className="h-auto w-28 md:w-32 mb-2"
           />
           <p className="font-body text-body-md text-muted-text">
             Voß Immobilien Beratung — Edith Voss

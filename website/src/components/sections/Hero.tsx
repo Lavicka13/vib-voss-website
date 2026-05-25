@@ -131,10 +131,10 @@ export function Hero({
         <Image
           src="/images/logo/logo-mono-240.png"
           alt="V.I.B. Voß Immobilien Beratung"
-          width={36}
-          height={55}
+          width={157}
+          height={240}
           priority
-          className="opacity-80 select-none"
+          className="w-9 h-auto opacity-80 select-none"
         />
         <span className="font-body text-[10px] tracking-[0.35em] uppercase text-secondary [writing-mode:vertical-rl] rotate-180">
           {EDITION.folio}
@@ -335,8 +335,8 @@ export function Hero({
                   <Image
                     src="/images/logo/logo-mono-480.png"
                     alt="V.I.B."
-                    width={42}
-                    height={64}
+                    width={157}
+                    height={240}
                     priority
                     className="h-12 lg:h-14 w-auto select-none"
                   />
