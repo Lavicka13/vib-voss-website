@@ -121,13 +121,14 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="md:col-span-12 order-1 md:order-2 mt-8">
-                <div className="relative w-full aspect-[16/10] overflow-hidden bg-surface-container-low border border-border-taupe">
+                <div className="relative w-full overflow-hidden">
                   <Image
                     src={home.presse.image.src}
                     alt={home.presse.image.alt}
-                    fill
-                    sizes="(min-width: 1280px) 1280px, 100vw"
-                    className="object-contain"
+                    width={1600}
+                    height={970}
+                    sizes="(min-width: 1280px) 1200px, 100vw"
+                    className="w-full h-auto block"
                   />
                 </div>
               </div>
