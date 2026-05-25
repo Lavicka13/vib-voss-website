@@ -3,7 +3,6 @@ import { Hero } from "@/components/sections/Hero";
 import { IntroQuote } from "@/components/sections/IntroQuote";
 import { USPGrid } from "@/components/sections/USPGrid";
 import { TestimonialBlock } from "@/components/sections/TestimonialBlock";
-import { CTABlock } from "@/components/sections/CTABlock";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { ReferenzenCarousel } from "@/components/sections/ReferenzenCarousel";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
@@ -341,22 +340,22 @@ export default function HomePage() {
         </RevealOnScroll>
       </section>
 
-      {/* ─────────────── VII. ERFOLGSSCHLÜSSEL (Full-Editorial) ─────────────── */}
+      {/* ─────────────── VII. ERFOLGSSCHLÜSSEL (Full-Editorial, full-bleed BG) ─────────────── */}
       <section
         id="erfolgsschluessel"
-        className="relative w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe"
+        className="relative w-full py-section-gap-mobile md:py-section-gap border-t border-border-taupe overflow-hidden"
       >
         <div className="bg-grain absolute inset-0 opacity-[0.04] mix-blend-multiply pointer-events-none" aria-hidden="true" />
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background:
-              "radial-gradient(60% 50% at 88% 18%, rgba(244,212,198,0.32) 0%, rgba(244,212,198,0) 65%)",
+              "radial-gradient(45% 60% at 85% 20%, rgba(250,206,194,0.45) 0%, rgba(250,206,194,0) 70%), radial-gradient(50% 60% at 10% 80%, rgba(250,206,194,0.25) 0%, rgba(250,206,194,0) 65%)",
           }}
           aria-hidden="true"
         />
 
-        <div className="relative">
+        <div className="relative w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <RevealOnScroll>
             <SectionHead
               numeral="VII"
@@ -426,11 +425,11 @@ export default function HomePage() {
                   key={step.nr}
                   className="bg-surface border-t border-primary/30 pt-6 pb-8 px-2 flex flex-col gap-4"
                 >
-                  <div className="flex items-baseline justify-between">
+                  <div className="flex items-baseline gap-5">
                     <span className="font-display italic text-[48px] md:text-[64px] leading-none text-primary">
                       {romanize(i + 1)}.
                     </span>
-                    <span className="font-body text-[10px] tracking-[0.32em] uppercase text-secondary/70">
+                    <span className="font-body text-[14px] md:text-[16px] tracking-[0.28em] uppercase text-secondary/80 pb-2">
                       Schritt
                     </span>
                   </div>
@@ -591,8 +590,6 @@ export default function HomePage() {
       <RevealOnScroll>
         <ContactSection />
       </RevealOnScroll>
-
-      <CTABlock headline={home.cta.headline} sub={home.cta.sub} />
 
       {/* ─────────────── XI. SCHLUSS (Hero-Echo) ─────────────── */}
       <section className="relative w-full overflow-hidden border-t border-border-taupe">

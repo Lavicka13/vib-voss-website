@@ -26,6 +26,7 @@ export function ReferenzenCarousel({ items }: Props) {
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(true);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [pageCount, setPageCount] = useState(items.length);
 
   const updateState = useCallback(() => {
     const el = scrollerRef.current;
@@ -33,13 +34,17 @@ export function ReferenzenCarousel({ items }: Props) {
     const max = el.scrollWidth - el.clientWidth;
     setCanPrev(el.scrollLeft > 8);
     setCanNext(el.scrollLeft < max - 8);
-    // approximate active index via card width
     const firstCard = el.querySelector<HTMLElement>("[data-card]");
     if (firstCard) {
       const cardW = firstCard.offsetWidth + 24; // + gap
-      setActiveIndex(Math.round(el.scrollLeft / cardW));
+      const idx = Math.round(el.scrollLeft / cardW);
+      // dynamic page count = how many distinct scroll positions are reachable
+      const pages = max > 0 ? Math.max(1, Math.ceil(max / cardW) + 1) : 1;
+      const cappedPages = Math.min(items.length, pages);
+      setPageCount(cappedPages);
+      setActiveIndex(Math.min(idx, cappedPages - 1));
     }
-  }, []);
+  }, [items.length]);
 
   useEffect(() => {
     const el = scrollerRef.current;
@@ -152,7 +157,7 @@ export function ReferenzenCarousel({ items }: Props) {
       </div>
 
       <div className="flex items-end justify-center gap-7 md:gap-10 mt-10">
-        {items.map((_, idx) => {
+        {Array.from({ length: pageCount }).map((_, idx) => {
           const isActive = idx === activeIndex;
           const numeral = ROMAN_LOWER[idx] ?? String(idx + 1);
           return (
