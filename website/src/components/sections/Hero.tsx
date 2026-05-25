@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 
@@ -176,87 +175,21 @@ export function Hero({
         {/* ─── Hero composition: type + portrait pillar ─── */}
         <div className="relative flex-1 grid grid-cols-12 gap-x-4 md:gap-x-6 items-start">
 
-          {/* ── Portrait pillar — absolute positioned, overlaps the type from the right ── */}
+          {/* ── Decorative editorial mark replacing portrait — top right ── */}
           <motion.div
-            className="hidden md:block absolute top-0 right-0 w-[38%] max-w-[440px] aspect-[3/4] z-[2] pointer-events-none"
-            initial={shouldReduce ? { opacity: 0 } : { opacity: 0, scale: 1.06, filter: "blur(14px)" }}
-            animate={shouldReduce ? { opacity: 1 } : { opacity: 1, scale: 1, filter: "blur(0px)" }}
-            transition={{ duration: 1.8, ease: EASE_CINEMA, delay: 0.75 }}
+            className="hidden md:flex absolute top-2 right-0 flex-col items-end gap-3 z-[2] pointer-events-none"
+            initial={shouldReduce ? { opacity: 0 } : { opacity: 0, y: -20 }}
+            animate={shouldReduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
+            transition={{ duration: 1.4, ease: EASE_CINEMA, delay: 0.75 }}
+            aria-hidden="true"
           >
-            <div className="relative w-full h-full overflow-hidden">
-              <Image
-                src="/images/portraet-edith-1600.jpg"
-                alt="Edith Voss, Inhaberin V.I.B. Voß Immobilien Beratung"
-                fill
-                sizes="(min-width: 1280px) 38vw, 40vw"
-                className="object-cover object-[35%_40%]"
-                priority
-              />
-              {/* warm color-grade overlay */}
-              <div
-                className="absolute inset-0 mix-blend-soft-light pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(244,212,198,0.28) 0%, rgba(113,89,78,0.18) 100%)",
-                }}
-              />
-              {/* left edge fade — softer overlap with type */}
-              <div
-                className="absolute inset-y-0 left-0 w-1/3 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(to right, #fcf9f8 0%, rgba(252,249,248,0.4) 50%, transparent 100%)",
-                }}
-              />
-              {/* bottom fade into cream */}
-              <div
-                className="absolute inset-x-0 bottom-0 h-32 pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(to bottom, transparent, #fcf9f8 95%)",
-                }}
-              />
-            </div>
-            {/* caption ticker under portrait */}
-            <div className="absolute -bottom-6 left-0 right-0 flex items-center gap-3">
-              <span className="block h-px flex-1 bg-primary/25" />
-              <span className="font-body text-[10px] tracking-[0.3em] uppercase text-secondary whitespace-nowrap">
-                Edith Voss · Maklerin
-              </span>
-            </div>
+            <span className="font-display italic text-secondary text-[80px] lg:text-[120px] leading-none opacity-25 select-none">
+              &amp;
+            </span>
+            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-secondary/70">
+              Persönlich · Diskret
+            </span>
           </motion.div>
-
-          {/* ── Mobile: portrait below meta ── */}
-          <div className="block md:hidden col-span-12 mb-8 relative">
-            <motion.div
-              className="relative w-full aspect-[4/5] overflow-hidden"
-              initial={shouldReduce ? { opacity: 0 } : { opacity: 0, scale: 1.06, filter: "blur(10px)" }}
-              animate={shouldReduce ? { opacity: 1 } : { opacity: 1, scale: 1, filter: "blur(0px)" }}
-              transition={{ duration: 1.6, ease: EASE_CINEMA, delay: 0.55 }}
-            >
-              <Image
-                src="/images/portraet-edith-1600.jpg"
-                alt="Edith Voss, Inhaberin V.I.B. Voß Immobilien Beratung"
-                fill
-                sizes="100vw"
-                className="object-cover object-[60%_15%]"
-                priority
-              />
-              <div
-                className="absolute inset-0 mix-blend-soft-light pointer-events-none"
-                style={{
-                  background:
-                    "linear-gradient(180deg, rgba(244,212,198,0.28) 0%, rgba(113,89,78,0.18) 100%)",
-                }}
-              />
-              <div
-                className="absolute inset-x-0 bottom-0 h-20 pointer-events-none"
-                style={{
-                  background: "linear-gradient(to bottom, transparent, #fcf9f8)",
-                }}
-              />
-            </motion.div>
-          </div>
 
           {/* ── HEADLINE TYPOGRAPHY ──
               Spans 9 cols, overlaps portrait. Three weighted lines.
