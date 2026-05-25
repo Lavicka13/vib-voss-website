@@ -7,11 +7,11 @@ export function Footer() {
       <div className="flex flex-col md:flex-row justify-between items-start px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap w-full max-w-container-max mx-auto gap-12 md:gap-0">
         <div className="flex flex-col gap-4 max-w-sm">
           <Image
-            src="/images/logo/logo-mono-480.png"
+            src="/images/logo/logo-plaque-480.png"
             alt="V.I.B. Voß Immobilien Beratung"
-            width={50}
-            height={76}
-            className="h-16 md:h-20 w-auto mb-2"
+            width={120}
+            height={184}
+            className="h-24 md:h-28 w-auto mb-2"
           />
           <p className="font-body text-body-md text-muted-text">
             Voß Immobilien Beratung — Edith Voss
