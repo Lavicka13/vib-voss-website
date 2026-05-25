@@ -19,12 +19,12 @@ export function Header() {
           aria-label="V.I.B. — Startseite"
         >
           <Image
-            src="/images/logo/logo-mono-480.png"
+            src="/images/logo/logo-monogram-480.png"
             alt="V.I.B. Voß Immobilien Beratung"
-            width={157}
-            height={240}
+            width={83}
+            height={122}
             priority
-            className="h-12 md:h-14 w-auto"
+            className="h-10 md:h-12 w-auto"
           />
         </Link>
         <nav className="hidden md:flex items-center gap-8">
