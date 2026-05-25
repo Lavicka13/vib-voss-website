@@ -15,10 +15,10 @@ export function Footer() {
       <div className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-16 md:pt-20 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
           {/* ── Brand column ── */}
-          <div className="md:col-span-5 flex flex-col gap-6">
+          <div className="md:col-span-5 flex flex-row items-center gap-6 md:gap-8">
             <Link
               href="/"
-              className="inline-block transition-opacity hover:opacity-90"
+              className="block shrink-0 transition-opacity hover:opacity-90"
               aria-label="V.I.B. — Startseite"
             >
               <Image
@@ -29,7 +29,7 @@ export function Footer() {
                 className="h-28 md:h-32 w-auto"
               />
             </Link>
-            <p className="font-display italic text-signature-quote text-primary max-w-sm leading-snug mt-2">
+            <p className="font-display italic text-signature-quote text-primary leading-snug max-w-xs">
               &bdquo;Man lebt nur einmal &mdash; wir zeigen Ihnen wo.&ldquo;
             </p>
           </div>
