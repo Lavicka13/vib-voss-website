@@ -125,7 +125,7 @@ export default function HomePage() {
                     src={home.presse.image.src}
                     alt={home.presse.image.alt}
                     width={1600}
-                    height={970}
+                    height={733}
                     sizes="(min-width: 1280px) 1200px, 100vw"
                     className="w-full h-auto block"
                   />
@@ -376,7 +376,7 @@ export default function HomePage() {
               {home.erfolgsschluessel.items.map((item, i) => (
                 <article
                   key={item.nr}
-                  className="border-t border-primary/30 pt-6 pb-8 flex flex-col gap-4 group"
+                  className="border-t border-primary/30 pt-8 md:pt-10 pb-10 md:pb-14 flex flex-col gap-5 group"
                 >
                   <div className="flex items-baseline justify-between">
                     <span className="font-display italic text-[60px] md:text-[80px] leading-none text-primary group-hover:text-secondary transition-colors duration-500">
@@ -386,7 +386,7 @@ export default function HomePage() {
                       .{String(i + 1).padStart(2, "0")}
                     </span>
                   </div>
-                  <h3 className="font-display text-headline-md text-primary leading-tight mt-2">
+                  <h3 className="font-display text-headline-md text-primary leading-tight mt-3">
                     {item.title}
                   </h3>
                 </article>
@@ -423,7 +423,7 @@ export default function HomePage() {
               {home.tippgeber.steps.map((step, i) => (
                 <div
                   key={step.nr}
-                  className="bg-surface border-t border-primary/30 pt-6 pb-8 px-2 flex flex-col gap-4"
+                  className="bg-surface border-t border-primary/30 pt-9 md:pt-10 pb-10 md:pb-12 px-7 md:px-9 flex flex-col gap-5"
                 >
                   <div className="flex items-baseline gap-5">
                     <span className="font-display italic text-[48px] md:text-[64px] leading-none text-primary">
@@ -433,7 +433,7 @@ export default function HomePage() {
                       Schritt
                     </span>
                   </div>
-                  <h3 className="font-display text-body-lg font-medium text-primary mt-2">
+                  <h3 className="font-display text-body-lg font-medium text-primary mt-3">
                     {step.title}
                   </h3>
                   <p className="font-body text-body-md text-muted-text leading-relaxed">
@@ -454,7 +454,7 @@ export default function HomePage() {
                   {home.tippgeber.staffel.map((row) => (
                     <li
                       key={row.range}
-                      className="flex justify-between items-center px-6 py-4 font-body text-body-md"
+                      className="flex justify-between items-center px-8 md:px-10 py-5 font-body text-body-md"
                     >
                       <span className="text-on-surface-variant">{row.range}</span>
                       <span className="font-display text-primary">{row.provision}</span>
@@ -547,7 +547,7 @@ export default function HomePage() {
               {home.google.reviews.map((review, idx) => (
                 <article
                   key={idx}
-                  className="border-t border-primary/30 pt-6 flex flex-col gap-4"
+                  className="border-t border-primary/30 pt-8 pb-6 flex flex-col gap-5"
                 >
                   <div className="flex items-baseline justify-between">
                     <span className="font-display italic text-[42px] leading-none text-primary">
@@ -561,10 +561,10 @@ export default function HomePage() {
                       ))}
                     </div>
                   </div>
-                  <p className="font-body text-body-md text-on-surface-variant leading-relaxed">
+                  <p className="font-body text-body-md text-on-surface-variant leading-relaxed mt-2">
                     &bdquo;{review.quote}&ldquo;
                   </p>
-                  <span className="font-body text-label-caps text-muted-text uppercase tracking-widest mt-auto">
+                  <span className="font-body text-label-caps text-muted-text uppercase tracking-widest mt-auto pt-2">
                     {review.author}
                   </span>
                 </article>
