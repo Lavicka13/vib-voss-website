@@ -85,18 +85,49 @@ export function Hero({
       className="relative w-full min-h-[100svh] overflow-hidden bg-background text-primary"
       aria-label="Hero"
     >
+      {/* ── Architectural atmosphere: classical stucco + arch, right-aligned ── */}
+      <div
+        className="hidden md:block absolute inset-y-0 right-0 w-[60%] lg:w-[55%] xl:w-[50%] z-[1] pointer-events-none select-none"
+        aria-hidden="true"
+      >
+        <Image
+          src="/images/ueber-mich-architecture-1600.jpg"
+          alt=""
+          fill
+          sizes="(min-width: 1280px) 640px, (min-width: 768px) 50vw, 0vw"
+          priority
+          className="object-cover object-center opacity-[0.32]"
+        />
+        {/* Left-edge fade: image dissolves into background */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to right, var(--color-background) 0%, rgba(252,249,248,0.85) 18%, rgba(252,249,248,0.25) 45%, transparent 70%)",
+          }}
+        />
+        {/* Bottom fade for type closer area */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-1/3"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(252,249,248,0.9) 0%, transparent 100%)",
+          }}
+        />
+      </div>
+
       {/* ── Atmospheric grain layer ── */}
       <div
         className="bg-grain absolute inset-0 opacity-[0.07] mix-blend-multiply pointer-events-none z-[5]"
         aria-hidden="true"
       />
 
-      {/* ── Soft vignette glow from upper right (pink wash) ── */}
+      {/* ── Soft vignette glow from upper right (logo-rose wash, tints the arch) ── */}
       <div
-        className="absolute inset-0 pointer-events-none z-[1]"
+        className="absolute inset-0 pointer-events-none z-[2]"
         style={{
           background:
-            "radial-gradient(80% 60% at 78% 18%, rgba(244,212,198,0.42) 0%, rgba(244,212,198,0) 60%)",
+            "radial-gradient(80% 60% at 78% 18%, rgba(250,206,194,0.42) 0%, rgba(250,206,194,0) 60%)",
         }}
         aria-hidden="true"
       />
