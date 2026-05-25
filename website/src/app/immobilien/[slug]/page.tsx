@@ -112,21 +112,21 @@ export default async function ImmobilieDetailPage({
       {quickKpis.length > 0 && (
         <section className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16">
           <RevealOnScroll>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-gutter gap-y-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-5 sm:gap-x-8 md:gap-x-gutter gap-y-7 md:gap-y-8">
               {quickKpis.map((kpi, i) => (
                 <div
                   key={kpi.label}
-                  className="border-t border-primary/30 pt-5 flex flex-col gap-3"
+                  className="border-t border-primary/30 pt-4 md:pt-5 flex flex-col gap-2 md:gap-3 min-w-0"
                 >
-                  <div className="flex items-baseline justify-between">
-                    <span className="font-display italic text-[28px] md:text-[34px] leading-none text-primary">
+                  <div className="flex items-baseline gap-3 md:justify-between">
+                    <span className="font-display italic text-[20px] md:text-[34px] leading-none text-primary shrink-0">
                       {KPI_NUMERALS[i] ?? String(i + 1)}.
                     </span>
-                    <span className="font-body text-[10px] tracking-[0.32em] uppercase text-secondary/80">
+                    <span className="font-body text-[9px] md:text-[10px] tracking-[0.28em] md:tracking-[0.32em] uppercase text-secondary/80 truncate">
                       {kpi.label}
                     </span>
                   </div>
-                  <span className="font-display text-headline-md text-primary leading-tight mt-1">
+                  <span className="font-display text-[22px] md:text-headline-md text-primary leading-tight mt-1 break-words">
                     {kpi.value}
                   </span>
                 </div>

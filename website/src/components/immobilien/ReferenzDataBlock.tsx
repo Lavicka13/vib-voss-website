@@ -78,12 +78,12 @@ export function ReferenzDataBlock({ eckdaten, bauinfo, verfuegbar }: Props) {
 
 function Block({ title, rows, index }: { title: string; rows: Row[]; index: number }) {
   return (
-    <div className="border-t border-primary/30 pt-6 flex flex-col gap-5">
-      <div className="flex items-baseline justify-between">
-        <span className="font-display italic text-[42px] md:text-[52px] leading-none text-primary">
+    <div className="border-t border-primary/30 pt-5 md:pt-6 flex flex-col gap-4 md:gap-5">
+      <div className="flex items-baseline gap-4 md:gap-0 md:justify-between">
+        <span className="font-display italic text-[32px] md:text-[52px] leading-none text-primary">
           {(BLOCK_NUMERALS[index] ?? String(index + 1)).toString()}.
         </span>
-        <span className="font-body text-[10px] tracking-[0.32em] uppercase text-secondary/80">
+        <span className="font-body text-[11px] md:text-[10px] tracking-[0.28em] md:tracking-[0.32em] uppercase text-secondary/80">
           {title}
         </span>
       </div>
