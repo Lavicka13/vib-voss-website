@@ -16,6 +16,11 @@ type Props = {
   items: readonly Item[];
 };
 
+const ROMAN_LOWER = [
+  "i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x",
+  "xi", "xii", "xiii", "xiv", "xv",
+] as const;
+
 export function ReferenzenCarousel({ items }: Props) {
   const scrollerRef = useRef<HTMLDivElement | null>(null);
   const [canPrev, setCanPrev] = useState(false);
@@ -66,24 +71,29 @@ export function ReferenzenCarousel({ items }: Props) {
 
   return (
     <div className="relative">
-      <div className="flex justify-end gap-3 mb-6">
+      <div className="flex items-center justify-end gap-6 md:gap-8 mb-8">
         <button
           type="button"
           onClick={() => scrollBy(-1)}
           disabled={!canPrev}
           aria-label="Vorheriges Objekt"
-          className="w-12 h-12 flex items-center justify-center rounded-full border border-border-taupe text-primary hover:bg-surface-container-low transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          className="group inline-flex items-center gap-3 font-body text-[10px] md:text-[11px] tracking-[0.32em] uppercase text-primary hover:text-secondary transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
         >
-          <IconArrowLeft size={20} />
+          <span className="block w-6 h-px bg-current transition-all duration-500 group-hover:w-10 group-disabled:group-hover:w-6" />
+          <IconArrowLeft size={14} strokeWidth={1.5} />
+          <span>Zurück</span>
         </button>
+        <span className="block w-px h-4 bg-primary/25" aria-hidden="true" />
         <button
           type="button"
           onClick={() => scrollBy(1)}
           disabled={!canNext}
           aria-label="Nächstes Objekt"
-          className="w-12 h-12 flex items-center justify-center rounded-full border border-border-taupe text-primary hover:bg-surface-container-low transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+          className="group inline-flex items-center gap-3 font-body text-[10px] md:text-[11px] tracking-[0.32em] uppercase text-primary hover:text-secondary transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
         >
-          <IconArrowRight size={20} />
+          <span>Weiter</span>
+          <IconArrowRight size={14} strokeWidth={1.5} />
+          <span className="block w-6 h-px bg-current transition-all duration-500 group-hover:w-10 group-disabled:group-hover:w-6" />
         </button>
       </div>
 
@@ -141,20 +151,39 @@ export function ReferenzenCarousel({ items }: Props) {
         ))}
       </div>
 
-      <div className="flex justify-center gap-2 mt-6">
-        {items.map((_, idx) => (
-          <button
-            key={idx}
-            type="button"
-            onClick={() => scrollToIndex(idx)}
-            aria-label={`Objekt ${idx + 1} anzeigen`}
-            className={`h-1.5 rounded-full transition-all duration-300 ${
-              idx === activeIndex
-                ? "w-8 bg-primary"
-                : "w-1.5 bg-border-taupe hover:bg-muted-text"
-            }`}
-          />
-        ))}
+      <div className="flex items-end justify-center gap-7 md:gap-10 mt-10">
+        {items.map((_, idx) => {
+          const isActive = idx === activeIndex;
+          const numeral = ROMAN_LOWER[idx] ?? String(idx + 1);
+          return (
+            <button
+              key={idx}
+              type="button"
+              onClick={() => scrollToIndex(idx)}
+              aria-label={`Objekt ${idx + 1} anzeigen`}
+              aria-current={isActive ? "true" : undefined}
+              className="group flex flex-col items-center gap-2 cursor-pointer focus:outline-none"
+            >
+              <span
+                className={`font-display italic leading-none transition-all duration-500 ${
+                  isActive
+                    ? "text-[22px] text-primary"
+                    : "text-[16px] text-muted-text/70 group-hover:text-primary"
+                }`}
+              >
+                {numeral}.
+              </span>
+              <span
+                className={`block h-px transition-all duration-500 ${
+                  isActive
+                    ? "w-8 bg-primary"
+                    : "w-3 bg-border-taupe group-hover:w-5 group-hover:bg-primary/60"
+                }`}
+                aria-hidden="true"
+              />
+            </button>
+          );
+        })}
       </div>
     </div>
   );
