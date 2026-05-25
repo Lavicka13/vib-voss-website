@@ -29,6 +29,8 @@ type Props = {
 
 type Row = { label: string; value: string };
 
+const BLOCK_NUMERALS = ["i", "ii", "iii"] as const;
+
 export function ReferenzDataBlock({ eckdaten, bauinfo, verfuegbar }: Props) {
   const objektRows: Row[] = [];
   if (eckdaten.wohnflaeche) objektRows.push({ label: "Wohnfläche", value: eckdaten.wohnflaeche });
@@ -58,25 +60,39 @@ export function ReferenzDataBlock({ eckdaten, bauinfo, verfuegbar }: Props) {
   if (bauinfo.heizung) energieRows.push({ label: "Heizungsart", value: bauinfo.heizung });
   if (bauinfo.warmwasser) energieRows.push({ label: "Warmwasser", value: "Ja" });
 
+  const blocks: { title: string; rows: Row[] }[] = [
+    { title: "Objektdaten", rows: objektRows },
+    { title: "Bauinformation", rows: bauRows },
+    { title: "Energie & Heizung", rows: energieRows },
+  ];
+  const visible = blocks.filter((b) => b.rows.length > 0);
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-      <Block title="Objektdaten" rows={objektRows} />
-      <Block title="Bauinformation" rows={bauRows} />
-      <Block title="Energie & Heizung" rows={energieRows} />
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-x-gutter gap-y-10">
+      {visible.map((b, i) => (
+        <Block key={b.title} index={i} title={b.title} rows={b.rows} />
+      ))}
     </div>
   );
 }
 
-function Block({ title, rows }: { title: string; rows: Row[] }) {
-  if (rows.length === 0) return null;
+function Block({ title, rows, index }: { title: string; rows: Row[]; index: number }) {
   return (
-    <div className="bg-surface border border-border-taupe rounded-lg p-6 md:p-8 flex flex-col gap-4">
-      <h3 className="font-body text-label-caps uppercase tracking-widest text-muted-text">
-        {title}
-      </h3>
-      <dl className="flex flex-col divide-y divide-border-taupe">
+    <div className="border-t border-primary/30 pt-6 flex flex-col gap-5">
+      <div className="flex items-baseline justify-between">
+        <span className="font-display italic text-[42px] md:text-[52px] leading-none text-primary">
+          {(BLOCK_NUMERALS[index] ?? String(index + 1)).toString()}.
+        </span>
+        <span className="font-body text-[10px] tracking-[0.32em] uppercase text-secondary/80">
+          {title}
+        </span>
+      </div>
+      <dl className="flex flex-col divide-y divide-border-taupe mt-2">
         {rows.map((row) => (
-          <div key={row.label} className="flex justify-between items-start gap-4 py-3 first:pt-0 last:pb-0">
+          <div
+            key={row.label}
+            className="flex justify-between items-start gap-4 py-3 first:pt-0 last:pb-0"
+          >
             <dt className="font-body text-body-md text-muted-text shrink-0">{row.label}</dt>
             <dd className="font-body text-body-md text-primary text-right">{row.value}</dd>
           </div>

@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Link from "next/link";
 import { home } from "@/content/home";
 import { ReferenzDisclaimer } from "@/components/immobilien/ReferenzDisclaimer";
 import { ReferenzHero } from "@/components/immobilien/ReferenzHero";
 import { ReferenzDataBlock } from "@/components/immobilien/ReferenzDataBlock";
 import { ReferenzAusstattungList } from "@/components/immobilien/ReferenzAusstattungList";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import { SectionHead } from "@/components/ui/SectionHead";
+import { EditorialButton } from "@/components/ui/EditorialButton";
 
 type Eckdaten = {
   wohnflaeche?: string;
@@ -94,6 +95,8 @@ export default async function ImmobilieDetailPage({
   if (item.eckdaten.schlafzimmer !== undefined) quickKpis.push({ label: "Schlafzimmer", value: String(item.eckdaten.schlafzimmer) });
   if (item.eckdaten.wohnflaeche) quickKpis.push({ label: "Wohnfläche", value: item.eckdaten.wohnflaeche });
 
+  const KPI_NUMERALS = ["i", "ii", "iii", "iv"] as const;
+
   return (
     <>
       <ReferenzDisclaimer />
@@ -105,23 +108,32 @@ export default async function ImmobilieDetailPage({
         image={item.image}
       />
 
+      {/* ─────────────── KPI strip (editorial) ─────────────── */}
       {quickKpis.length > 0 && (
         <section className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12 md:py-16">
           <RevealOnScroll>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-border-taupe border border-border-taupe rounded-lg overflow-hidden">
-              {quickKpis.map((kpi) => (
-                <div key={kpi.label} className="bg-surface p-6 md:p-8 flex flex-col gap-2">
-                  <span className="font-body text-label-caps uppercase tracking-widest text-muted-text">
-                    {kpi.label}
-                  </span>
-                  <span className="font-display text-headline-md text-primary leading-tight">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-x-gutter gap-y-8">
+              {quickKpis.map((kpi, i) => (
+                <div
+                  key={kpi.label}
+                  className="border-t border-primary/30 pt-5 flex flex-col gap-3"
+                >
+                  <div className="flex items-baseline justify-between">
+                    <span className="font-display italic text-[28px] md:text-[34px] leading-none text-primary">
+                      {KPI_NUMERALS[i] ?? String(i + 1)}.
+                    </span>
+                    <span className="font-body text-[10px] tracking-[0.32em] uppercase text-secondary/80">
+                      {kpi.label}
+                    </span>
+                  </div>
+                  <span className="font-display text-headline-md text-primary leading-tight mt-1">
                     {kpi.value}
                   </span>
                 </div>
               ))}
             </div>
             {item.preisSeinerzeit && (
-              <p className="font-body text-body-md text-muted-text italic mt-4">
+              <p className="font-body text-body-md text-muted-text italic mt-6 max-w-3xl">
                 Die Preisangabe bezieht sich auf die seinerzeitige Vermarktung. Aktuelle Verfügbarkeit und Konditionen auf Anfrage.
               </p>
             )}
@@ -129,98 +141,145 @@ export default async function ImmobilieDetailPage({
         </section>
       )}
 
-      <section className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe">
-        <RevealOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-            <div className="md:col-span-4">
-              <h2 className="font-display text-display-lg-mobile md:text-headline-md text-primary">
-                Beschreibung
-              </h2>
+      {/* ─────────────── II. BESCHREIBUNG ─────────────── */}
+      <section className="relative w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe">
+        <div className="bg-grain absolute inset-0 opacity-[0.03] mix-blend-multiply pointer-events-none" aria-hidden="true" />
+        <div className="relative">
+          <RevealOnScroll>
+            <SectionHead
+              numeral="II"
+              eyebrow="Konzept"
+              headline="Beschreibung des Objekts."
+              accentIndex={2}
+              headlineClassName="text-display-lg-mobile md:text-headline-md"
+            />
+          </RevealOnScroll>
+          <RevealOnScroll>
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+              <div className="md:col-span-4 md:col-start-1 hidden md:block">
+                <div className="font-display italic text-secondary text-[60px] lg:text-[80px] leading-none opacity-30 select-none -mt-2">
+                  &mdash;
+                </div>
+                <span className="font-body text-[10px] tracking-[0.4em] uppercase text-secondary/70 block mt-4">
+                  Ein Portrait
+                </span>
+              </div>
+              <div className="md:col-span-7 md:col-start-6 flex flex-col gap-5">
+                {item.beschreibung.map((p, i) => (
+                  <p
+                    key={i}
+                    className="font-body text-body-lg text-on-surface-variant leading-relaxed"
+                  >
+                    {p}
+                  </p>
+                ))}
+              </div>
             </div>
-            <div className="md:col-span-7 md:col-start-6 flex flex-col gap-5">
-              {item.beschreibung.map((p, i) => (
-                <p key={i} className="font-body text-body-lg text-on-surface-variant leading-relaxed">
-                  {p}
-                </p>
-              ))}
-            </div>
-          </div>
-        </RevealOnScroll>
+          </RevealOnScroll>
+        </div>
       </section>
 
+      {/* ─────────────── III. LAGE ─────────────── */}
       {item.lage && (
         <section className="w-full bg-surface-ivory border-y border-border-taupe">
           <div className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
             <RevealOnScroll>
+              <SectionHead
+                numeral="III"
+                eyebrow="Umgebung"
+                headline="Lage & Anbindung."
+                accentIndex={2}
+                headlineClassName="text-display-lg-mobile md:text-headline-md"
+              />
+            </RevealOnScroll>
+            <RevealOnScroll>
               <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-                <div className="md:col-span-4">
-                  <h2 className="font-display text-display-lg-mobile md:text-headline-md text-primary">
-                    Lage
-                  </h2>
-                </div>
-                <div className="md:col-span-7 md:col-start-6">
-                  <p className="font-body text-body-lg text-on-surface-variant leading-relaxed">
-                    {item.lage}
-                  </p>
-                </div>
+                <p className="font-body text-body-lg text-on-surface-variant leading-relaxed md:col-span-7 md:col-start-6">
+                  {item.lage}
+                </p>
               </div>
             </RevealOnScroll>
           </div>
         </section>
       )}
 
-      <section className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
+      {/* ─────────────── IV. ECKDATEN ─────────────── */}
+      <section className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe">
         <RevealOnScroll>
-          <div className="flex flex-col gap-8">
-            <h2 className="font-display text-display-lg-mobile md:text-headline-md text-primary">
-              Eckdaten im Überblick
-            </h2>
-            <ReferenzDataBlock
-              eckdaten={item.eckdaten}
-              bauinfo={item.bauinfo}
-              verfuegbar={item.verfuegbar}
-            />
-          </div>
+          <SectionHead
+            numeral="IV"
+            eyebrow="Daten & Fakten"
+            headline="Eckdaten im Überblick."
+            accentIndex={2}
+            headlineClassName="text-display-lg-mobile md:text-headline-md"
+          />
+        </RevealOnScroll>
+        <RevealOnScroll>
+          <ReferenzDataBlock
+            eckdaten={item.eckdaten}
+            bauinfo={item.bauinfo}
+            verfuegbar={item.verfuegbar}
+          />
         </RevealOnScroll>
       </section>
 
+      {/* ─────────────── V. AUSSTATTUNG ─────────────── */}
       {item.ausstattung.length > 0 && (
         <section className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe">
+          <RevealOnScroll>
+            <SectionHead
+              numeral="V"
+              eyebrow="Inventar"
+              headline="Ausstattung im Detail."
+              accentIndex={2}
+              headlineClassName="text-display-lg-mobile md:text-headline-md"
+            />
+          </RevealOnScroll>
           <RevealOnScroll>
             <ReferenzAusstattungList items={item.ausstattung} />
           </RevealOnScroll>
         </section>
       )}
 
-      <section className="w-full bg-zartrosa/30 border-y border-border-taupe">
-        <div className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
-          <RevealOnScroll>
-            <div className="flex flex-col items-center text-center gap-6 max-w-3xl mx-auto">
-              <span className="font-body text-label-caps uppercase tracking-widest text-muted-text">
-                Sie suchen ein ähnliches Objekt?
+      {/* ─────────────── Closer (Hero-echo) ─────────────── */}
+      <section className="relative w-full overflow-hidden bg-zartrosa/25 border-y border-border-taupe">
+        <div className="bg-grain absolute inset-0 opacity-[0.05] mix-blend-multiply pointer-events-none" aria-hidden="true" />
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(70% 60% at 50% 30%, rgba(244,212,198,0.4) 0%, rgba(244,212,198,0) 65%)",
+          }}
+          aria-hidden="true"
+        />
+        <div className="relative w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
+          <div className="flex flex-col items-center text-center gap-8 max-w-3xl mx-auto">
+            <div className="flex items-center justify-center gap-4">
+              <span className="block h-px w-12 bg-primary/40" aria-hidden="true" />
+              <span className="font-body text-[10px] tracking-[0.4em] uppercase text-secondary">
+                Coda · Folio MMXXVI
               </span>
-              <h2 className="font-display text-display-lg-mobile md:text-display-lg text-primary">
-                Sprechen Sie mich an.
-              </h2>
-              <p className="font-body text-body-lg text-on-surface-variant leading-relaxed">
-                Aktuelle Objekte vermittle ich diskret aus meinem gewachsenen Netzwerk — oft schon vor der offiziellen Vermarktung. Hinterlegen Sie Ihr Suchprofil oder besprechen Sie Ihre Verkaufsabsicht persönlich mit mir.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 mt-2">
-                <Link
-                  href="/#kontakt"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded font-body text-label-caps tracking-widest bg-primary text-on-primary hover:bg-secondary transition-colors duration-300"
-                >
-                  Mit mir sprechen
-                </Link>
-                <Link
-                  href="/#referenzen"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded font-body text-label-caps tracking-widest bg-transparent border border-primary text-primary hover:bg-surface-container-low transition-colors duration-300"
-                >
-                  Weitere Referenzen
-                </Link>
-              </div>
+              <span className="block h-px w-12 bg-primary/40" aria-hidden="true" />
             </div>
-          </RevealOnScroll>
+            <h2
+              className="font-display text-primary leading-[0.95]"
+              style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
+            >
+              Sie suchen ein ähnliches{" "}
+              <span className="italic font-light text-edge-light">Objekt?</span>
+            </h2>
+            <p className="font-body text-body-lg text-on-surface-variant leading-relaxed">
+              Aktuelle Objekte vermittle ich diskret aus meinem gewachsenen Netzwerk — oft schon vor der offiziellen Vermarktung. Hinterlegen Sie Ihr Suchprofil oder besprechen Sie Ihre Verkaufsabsicht persönlich mit mir.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 mt-2">
+              <EditorialButton variant="primary" href="/#kontakt">
+                Mit mir sprechen
+              </EditorialButton>
+              <EditorialButton variant="secondary" href="/#referenzen">
+                Weitere Referenzen
+              </EditorialButton>
+            </div>
+          </div>
         </div>
       </section>
     </>
