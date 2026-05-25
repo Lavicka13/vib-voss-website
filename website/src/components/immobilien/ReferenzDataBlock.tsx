@@ -78,23 +78,24 @@ export function ReferenzDataBlock({ eckdaten, bauinfo, verfuegbar }: Props) {
 
 function Block({ title, rows, index }: { title: string; rows: Row[]; index: number }) {
   return (
-    <div className="border-t border-primary/30 pt-7 md:pt-9 pb-2 flex flex-col gap-5 md:gap-6">
-      <div className="flex items-baseline gap-4 md:gap-0 md:justify-between">
-        <span className="font-display italic text-[32px] md:text-[52px] leading-none text-primary">
+    <div className="border-t border-primary/30 pt-7 md:pt-9 pb-2 flex flex-col gap-7 md:gap-8">
+      <div className="flex items-baseline gap-4 md:gap-5">
+        <span className="font-display italic text-[32px] md:text-[42px] leading-none text-primary">
           {(BLOCK_NUMERALS[index] ?? String(index + 1)).toString()}.
         </span>
-        <span className="font-body text-[11px] md:text-[10px] tracking-[0.28em] md:tracking-[0.32em] uppercase text-secondary/80">
+        <span className="font-body text-[10px] md:text-[11px] tracking-[0.28em] uppercase text-secondary/80">
           {title}
         </span>
       </div>
-      <dl className="flex flex-col divide-y divide-border-taupe mt-2">
+      <dl className="flex flex-col gap-5">
         {rows.map((row) => (
-          <div
-            key={row.label}
-            className="flex justify-between items-start gap-4 py-4 first:pt-0 last:pb-0"
-          >
-            <dt className="font-body text-body-md text-muted-text shrink-0">{row.label}</dt>
-            <dd className="font-body text-body-md text-primary text-right">{row.value}</dd>
+          <div key={row.label} className="flex flex-col gap-1">
+            <dt className="font-body text-[10px] tracking-[0.24em] uppercase text-muted-text">
+              {row.label}
+            </dt>
+            <dd className="font-body text-body-md text-primary leading-snug">
+              {row.value}
+            </dd>
           </div>
         ))}
       </dl>
