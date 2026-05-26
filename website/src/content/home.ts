@@ -66,24 +66,6 @@ export const home = {
       "Schwerpunkt: exklusive Villen und Mehrfamilienhäuser, aber auch gemütliche Einfamilienhäuser, Wohnungen oder das kleine Apartment mitten in der Stadt.",
     ctaVerkauf: { label: "Immobilie verkaufen", href: "#kontakt" },
     ctaKauf: { label: "Suchprofil hinterlegen", href: "#kontakt" },
-  },
-  homeStaging: {
-    eyebrow: "Home Staging",
-    headline: "Weil Ihre Immobilie es wert ist.",
-    body:
-      "Ein stimmungsvoll inszenierter Raum spricht nicht nur den Verstand an — sondern das Herz. Bei Bedarf vermittle ich Home Staging, klassisch vor Ort oder digital. Gerade leerstehende oder schwer verkäufliche Immobilien gewinnen so an Wärme, Charakter und Vorstellungskraft.",
-    image: {
-      src: "/images/home-staging-original-1600.jpg",
-      alt: "Stilvoll inszenierter Esszimmer-Raum mit Designerstühlen und Kunstwerk — Beispiel für die Wirkung von Home Staging",
-    },
-  },
-  referenzen: {
-    eyebrow: "Aus meiner Vermittlungs-Erfahrung",
-    headline: "Ein Blick auf bisher vermittelte Objekte",
-    body:
-      "Eine kleine Auswahl an Immobilien aus meinen drei Jahrzehnten als Maklerin im Rhein-Neckar-Raum. Diese Beispiele zeigen die Bandbreite und Qualität der Objekte, mit denen ich arbeite.",
-    hinweis:
-      "Hinweis: Dies sind Referenzobjekte aus früheren Vermarktungen — keine aktuell verfügbaren Listings.",
     items: [
       {
         slug: "juwel-bergstrasse",
@@ -91,7 +73,7 @@ export const home = {
         untertitel: "Exklusive Villa in traumhafter Panorama-Lage",
         ort: "69469 Weinheim",
         image: "/images/referenzen/ref-juwel-bergstrasse-1600.jpg",
-        preisSeinerzeit: "auf Anfrage",
+        preis: "auf Anfrage",
         eckdaten: {
           wohnflaeche: "ca. 515 m²",
           grundstueck: "ca. 2.069 m²",
@@ -147,7 +129,7 @@ export const home = {
         untertitel: "Großzügiges Villenanwesen in privilegierter Höhenlage",
         ort: "69469 Weinheim",
         image: "/images/referenzen/ref-villa-rheinebene-1600.jpg",
-        preisSeinerzeit: "2.450.000 € (seinerzeit)",
+        preis: "2.450.000 €",
         eckdaten: {
           wohnflaeche: "ca. 262 m²",
           grundstueck: "ca. 846 m²",
@@ -206,7 +188,7 @@ export const home = {
         untertitel: "Historischer Charme in zentraler Lage",
         ort: "69469 Weinheim",
         image: "/images/referenzen/ref-denkmal-mfh-1600.jpg",
-        preisSeinerzeit: "1.300.000 € (seinerzeit)",
+        preis: "1.300.000 €",
         eckdaten: {
           wohnflaeche: "ca. 280 m²",
           grundstueck: "ca. 650 m²",
@@ -253,7 +235,7 @@ export const home = {
         untertitel: "EFH in guter Lage — Bretten",
         ort: "75015 Bretten",
         image: "/images/referenzen/ref-familien-efh-1600.jpg",
-        preisSeinerzeit: "695.000 € (seinerzeit)",
+        preis: "695.000 €",
         eckdaten: {
           wohnflaeche: "ca. 216 m²",
           grundstueck: "ca. 695 m²",
@@ -305,7 +287,7 @@ export const home = {
         untertitel: "Villa sucht neuen Besitzer — diskretes Angebot auf Anfrage",
         ort: "Rhein-Neckar-Raum",
         image: null,
-        preisSeinerzeit: "3.100.000 € (seinerzeit)",
+        preis: "3.100.000 €",
         eckdaten: {
           wohnflaeche: "ca. 240 m²",
           grundstueck: "ca. 1.800 m²",
@@ -354,6 +336,16 @@ export const home = {
         ],
       },
     ],
+  },
+  homeStaging: {
+    eyebrow: "Home Staging",
+    headline: "Weil Ihre Immobilie es wert ist.",
+    body:
+      "Ein stimmungsvoll inszenierter Raum spricht nicht nur den Verstand an — sondern das Herz. Bei Bedarf vermittle ich Home Staging, klassisch vor Ort oder digital. Gerade leerstehende oder schwer verkäufliche Immobilien gewinnen so an Wärme, Charakter und Vorstellungskraft.",
+    image: {
+      src: "/images/home-staging-original-1600.jpg",
+      alt: "Stilvoll inszenierter Esszimmer-Raum mit Designerstühlen und Kunstwerk — Beispiel für die Wirkung von Home Staging",
+    },
   },
   presse: {
     eyebrow: "Aus der Presse",

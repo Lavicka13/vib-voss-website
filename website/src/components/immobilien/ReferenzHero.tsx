@@ -60,7 +60,7 @@ export function ReferenzHero({ titel, untertitel, ort, image }: Props) {
           aria-hidden="true"
         />
         <span className="font-body text-[10px] md:text-[11px] tracking-[0.36em] uppercase text-secondary">
-          Referenz · {ort}
+          Immobilie · {ort}
         </span>
       </motion.div>
 
@@ -144,7 +144,7 @@ export function ReferenzHero({ titel, untertitel, ort, image }: Props) {
             I.
           </span>
           <span className="font-body text-[10px] tracking-[0.32em] uppercase text-primary/80">
-            Referenz · Folio MMXXVI
+            Immobilie · Folio MMXXVI
           </span>
         </div>
       </motion.div>

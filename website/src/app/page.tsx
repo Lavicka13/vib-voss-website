@@ -227,7 +227,7 @@ export default function HomePage() {
           />
         </RevealOnScroll>
         <RevealOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center mb-16">
             <div className="relative w-full aspect-[4/5] md:aspect-[4/5] overflow-hidden bg-surface-container-low order-2 md:order-1">
               <Image
                 src="/images/immobiliensuche-decor-1600.jpg"
@@ -262,46 +262,19 @@ export default function HomePage() {
             </div>
           </div>
         </RevealOnScroll>
-      </section>
-
-      {/* ─────────────── V. REFERENZEN ─────────────── */}
-      <section
-        id="referenzen"
-        className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe"
-      >
         <RevealOnScroll>
-          <SectionHead
-            numeral="V"
-            eyebrow={home.referenzen.eyebrow}
-            headline={home.referenzen.headline}
-            accentIndex={3}
-          />
-        </RevealOnScroll>
-        <RevealOnScroll>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-12">
-            <div className="md:col-span-7 md:col-start-2">
-              <p className="font-body text-body-lg text-on-surface-variant leading-relaxed mb-5">
-                {home.referenzen.body}
-              </p>
-              <p className="font-body text-body-md text-muted-text italic border-l-2 border-zartrosa pl-4">
-                {home.referenzen.hinweis}
-              </p>
-            </div>
-          </div>
-        </RevealOnScroll>
-        <RevealOnScroll>
-          <ReferenzenCarousel items={home.referenzen.items} />
+          <ReferenzenCarousel items={home.immobilien.items} />
         </RevealOnScroll>
       </section>
 
-      {/* ─────────────── VI. REGION ─────────────── */}
+      {/* ─────────────── V. REGION ─────────────── */}
       <section
         id="region"
         className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe"
       >
         <RevealOnScroll>
           <SectionHead
-            numeral="VI"
+            numeral="V"
             eyebrow="Tätigkeitsgebiet"
             headline={home.region.headline}
             accentIndex={2}
@@ -337,7 +310,7 @@ export default function HomePage() {
         </RevealOnScroll>
       </section>
 
-      {/* ─────────────── VII. ERFOLGSSCHLÜSSEL (Full-Editorial, full-bleed BG) ─────────────── */}
+      {/* ─────────────── VI. ERFOLGSSCHLÜSSEL (Full-Editorial, full-bleed BG) ─────────────── */}
       <section
         id="erfolgsschluessel"
         className="relative w-full py-section-gap-mobile md:py-section-gap border-t border-border-taupe overflow-hidden"
@@ -355,7 +328,7 @@ export default function HomePage() {
         <div className="relative w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <RevealOnScroll>
             <SectionHead
-              numeral="VII"
+              numeral="VI"
               eyebrow={home.erfolgsschluessel.eyebrow}
               headline={home.erfolgsschluessel.headline}
               accentIndex={3}
@@ -393,7 +366,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─────────────── VIII. TIPPGEBER ─────────────── */}
+      {/* ─────────────── VII. TIPPGEBER ─────────────── */}
       <section
         id="tippgeber"
         className="w-full bg-zartrosa/30 border-y border-border-taupe"
@@ -401,7 +374,7 @@ export default function HomePage() {
         <div className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
           <RevealOnScroll>
             <SectionHead
-              numeral="VIII"
+              numeral="VII"
               eyebrow={home.tippgeber.eyebrow}
               headline={home.tippgeber.headline}
               accentIndex={4}
@@ -488,7 +461,7 @@ export default function HomePage() {
         />
       </RevealOnScroll>
 
-      {/* ─────────────── IX. BEWERTUNGEN ─────────────── */}
+      {/* ─────────────── VIII. BEWERTUNGEN ─────────────── */}
       <section
         id="bewertungen"
         className="w-full bg-surface-ivory border-y border-border-taupe"
@@ -496,7 +469,7 @@ export default function HomePage() {
         <div className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
           <RevealOnScroll>
             <SectionHead
-              numeral="IX"
+              numeral="VIII"
               eyebrow={home.google.eyebrow}
               headline={home.google.headline}
               accentIndex={2}

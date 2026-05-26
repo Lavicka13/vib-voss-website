@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { home } from "@/content/home";
-import { ReferenzDisclaimer } from "@/components/immobilien/ReferenzDisclaimer";
 import { ReferenzHero } from "@/components/immobilien/ReferenzHero";
 import { ReferenzDataBlock } from "@/components/immobilien/ReferenzDataBlock";
 import { ReferenzAusstattungList } from "@/components/immobilien/ReferenzAusstattungList";
@@ -38,7 +37,7 @@ type Item = {
   untertitel?: string;
   ort: string;
   image: string | null;
-  preisSeinerzeit?: string;
+  preis?: string;
   eckdaten: Eckdaten;
   bauinfo: Bauinfo;
   verfuegbar?: string;
@@ -48,12 +47,12 @@ type Item = {
 };
 
 function getItem(slug: string): Item | undefined {
-  const found = home.referenzen.items.find((i) => i.slug === slug);
+  const found = home.immobilien.items.find((i) => i.slug === slug);
   return found as Item | undefined;
 }
 
 export function generateStaticParams() {
-  return home.referenzen.items.map((i) => ({ slug: i.slug }));
+  return home.immobilien.items.map((i) => ({ slug: i.slug }));
 }
 
 export async function generateMetadata({
@@ -63,13 +62,13 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const item = getItem(slug);
-  if (!item) return { title: "Referenz nicht gefunden" };
+  if (!item) return { title: "Immobilie nicht gefunden" };
   const title = `${item.titel} — V.I.B. Voß Immobilien Beratung`;
-  const description = `Referenz aus früheren Vermarktungen — ${item.untertitel ?? item.titel} in ${item.ort}. Aktuelle Verfügbarkeit auf Anfrage bei Edith Voss.`;
+  const description = `${item.untertitel ?? item.titel} in ${item.ort}. Verfügbarkeit auf Anfrage bei Edith Voss.`;
   return {
     title,
     description,
-    robots: { index: false, follow: true },
+    robots: { index: true, follow: true },
     openGraph: {
       title,
       description,
@@ -90,7 +89,7 @@ export default async function ImmobilieDetailPage({
   if (!item) notFound();
 
   const quickKpis: { label: string; value: string }[] = [];
-  if (item.preisSeinerzeit) quickKpis.push({ label: "Preis", value: item.preisSeinerzeit });
+  if (item.preis) quickKpis.push({ label: "Preis", value: item.preis });
   if (item.eckdaten.zimmer !== undefined) quickKpis.push({ label: "Zimmer", value: String(item.eckdaten.zimmer) });
   if (item.eckdaten.schlafzimmer !== undefined) quickKpis.push({ label: "Schlafzimmer", value: String(item.eckdaten.schlafzimmer) });
   if (item.eckdaten.wohnflaeche) quickKpis.push({ label: "Wohnfläche", value: item.eckdaten.wohnflaeche });
@@ -99,8 +98,6 @@ export default async function ImmobilieDetailPage({
 
   return (
     <>
-      <ReferenzDisclaimer />
-
       <ReferenzHero
         titel={item.titel}
         untertitel={item.untertitel}
@@ -132,9 +129,9 @@ export default async function ImmobilieDetailPage({
                 </div>
               ))}
             </div>
-            {item.preisSeinerzeit && (
+            {item.preis && (
               <p className="font-body text-body-md text-muted-text italic mt-6 max-w-3xl">
-                Die Preisangabe bezieht sich auf die seinerzeitige Vermarktung. Aktuelle Verfügbarkeit und Konditionen auf Anfrage.
+                Verfügbarkeit und Konditionen auf Anfrage.
               </p>
             )}
           </RevealOnScroll>
@@ -275,8 +272,8 @@ export default async function ImmobilieDetailPage({
               <EditorialButton variant="primary" href="/#kontakt">
                 Mit mir sprechen
               </EditorialButton>
-              <EditorialButton variant="secondary" href="/#referenzen">
-                Weitere Referenzen
+              <EditorialButton variant="secondary" href="/#immobilien">
+                Alle Immobilien ansehen
               </EditorialButton>
             </div>
           </div>

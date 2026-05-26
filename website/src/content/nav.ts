@@ -2,7 +2,6 @@ export const navItems = [
   { label: "ÜBER MICH", href: "/#ueber-mich" },
   { label: "LEISTUNGEN", href: "/#leistungen" },
   { label: "IMMOBILIEN", href: "/#immobilien" },
-  { label: "REFERENZEN", href: "/#referenzen" },
   { label: "REGION", href: "/#region" },
   { label: "ERFOLG", href: "/#erfolgsschluessel" },
   { label: "TIPPGEBER", href: "/#tippgeber" },
