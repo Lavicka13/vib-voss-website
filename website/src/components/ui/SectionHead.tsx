@@ -62,11 +62,12 @@ export function SectionHead({
   return (
     <div
       className={
-        "relative grid grid-cols-12 gap-4 md:gap-6 items-baseline mb-10 md:mb-14 " +
-        (isCentered ? "text-center" : "")
+        "relative mb-10 md:mb-14 " +
+        (isCentered
+          ? "text-center"
+          : "md:grid md:grid-cols-12 md:gap-6 md:items-baseline")
       }
     >
-      {/* Roman numeral — desktop col-span-1, mobile col-span-2 */}
       {numeral && (
         <motion.span
           initial={shouldReduce ? { opacity: 0 } : { opacity: 0, y: 6 }}
@@ -74,10 +75,10 @@ export function SectionHead({
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: EASE }}
           className={
-            "font-display italic text-[26px] md:text-[34px] leading-none text-primary " +
+            "font-display italic text-[26px] md:text-[34px] leading-none text-primary mb-4 md:mb-0 block " +
             (isCentered
-              ? "col-span-12 md:col-span-12 mb-2"
-              : "col-span-2 md:col-span-1")
+              ? "md:col-span-12"
+              : "md:col-span-1")
           }
           aria-hidden="true"
         >
@@ -90,7 +91,7 @@ export function SectionHead({
           (numeral
             ? isCentered
               ? "col-span-12"
-              : "col-span-10 md:col-span-11"
+              : "md:col-span-11"
             : "col-span-12") +
           " " +
           (maxWidth ?? "")

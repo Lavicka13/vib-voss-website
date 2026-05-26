@@ -104,7 +104,7 @@ export function ReferenzenCarousel({ items }: Props) {
 
       <div
         ref={scrollerRef}
-        className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 -mx-margin-mobile px-margin-mobile md:-mx-margin-desktop md:px-margin-desktop scrollbar-hide"
+        className="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth pb-4 pl-margin-mobile md:-mx-margin-desktop md:px-margin-desktop scrollbar-hide"
         style={{
           scrollbarWidth: "none",
           msOverflowStyle: "none",
