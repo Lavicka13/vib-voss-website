@@ -94,7 +94,6 @@ export default async function ImmobilieDetailPage({
   if (item.eckdaten.schlafzimmer !== undefined) quickKpis.push({ label: "Schlafzimmer", value: String(item.eckdaten.schlafzimmer) });
   if (item.eckdaten.wohnflaeche) quickKpis.push({ label: "Wohnfläche", value: item.eckdaten.wohnflaeche });
 
-  const KPI_NUMERALS = ["i", "ii", "iii", "iv"] as const;
 
   return (
     <>
@@ -115,14 +114,9 @@ export default async function ImmobilieDetailPage({
                   key={kpi.label}
                   className="border-t border-primary/30 pt-4 md:pt-5 flex flex-col gap-2 md:gap-3 min-w-0"
                 >
-                  <div className="flex items-baseline gap-3 md:justify-between">
-                    <span className="font-display italic text-[20px] md:text-[34px] leading-none text-primary shrink-0">
-                      {KPI_NUMERALS[i] ?? String(i + 1)}.
-                    </span>
-                    <span className="font-body text-[9px] md:text-[10px] tracking-[0.28em] md:tracking-[0.32em] uppercase text-secondary/80 truncate">
-                      {kpi.label}
-                    </span>
-                  </div>
+                  <span className="font-body text-[9px] md:text-[10px] tracking-[0.28em] md:tracking-[0.32em] uppercase text-secondary/80 truncate">
+                    {kpi.label}
+                  </span>
                   <span className="font-display text-[22px] md:text-headline-md text-primary leading-tight mt-1 break-words">
                     {kpi.value}
                   </span>
