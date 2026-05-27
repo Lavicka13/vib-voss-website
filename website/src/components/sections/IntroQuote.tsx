@@ -20,6 +20,7 @@ export function IntroQuote({ body, attribution }: Props) {
             </p>
           ))}
         </div>
+        <QuoteIcon className="text-border-taupe mt-8 rotate-180" />
         {attribution && (
           <p className="mt-8 font-body text-label-caps text-muted-text uppercase tracking-widest">
             {attribution}

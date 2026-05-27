@@ -322,7 +322,7 @@ export function Hero({
                   ))}
                 </ul>
                 <motion.div
-                  className="flex items-center gap-4 self-start md:self-end shrink-0"
+                  className="flex items-center gap-4 self-center md:self-end shrink-0"
                   initial={shouldReduce ? { opacity: 0 } : { opacity: 0, x: 12 }}
                   animate={shouldReduce ? { opacity: 1 } : { opacity: 1, x: 0 }}
                   transition={{ duration: 1.0, ease: EASE_CINEMA, delay: 2.45 }}
