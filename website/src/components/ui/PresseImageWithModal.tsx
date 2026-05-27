@@ -71,7 +71,7 @@ export function PresseImageWithModal({ src, alt, width, height }: Props) {
           {/* Top bar */}
           <div className="fixed top-0 left-0 right-0 flex items-center justify-between px-4 md:px-8 py-4 md:py-5 z-[110] pointer-events-none">
             <span className="font-body text-[10px] tracking-[0.36em] uppercase text-white/70 pointer-events-auto">
-              Presse · Folio MMXXVI
+              Presse · V.I.B.
             </span>
             <button
               type="button"

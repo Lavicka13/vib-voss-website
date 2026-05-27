@@ -14,17 +14,7 @@ export function ContactSection() {
       className="relative w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe"
     >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-12">
-        <motion.span
-          initial={shouldReduce ? { opacity: 0 } : { opacity: 0, y: 6 }}
-          whileInView={shouldReduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, ease: EASE }}
-          className="col-span-2 md:col-span-1 font-display italic text-[26px] md:text-[34px] leading-none text-primary"
-          aria-hidden="true"
-        >
-          X.
-        </motion.span>
-        <div className="col-span-10 md:col-span-11">
+        <div className="col-span-12">
           <div className="flex items-center gap-4 mb-5">
             <motion.span
               initial={shouldReduce ? { width: 48 } : { width: 0 }}

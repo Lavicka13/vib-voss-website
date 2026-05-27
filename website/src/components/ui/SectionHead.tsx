@@ -68,31 +68,9 @@ export function SectionHead({
           : "md:grid md:grid-cols-12 md:gap-6 md:items-baseline")
       }
     >
-      {numeral && (
-        <motion.span
-          initial={shouldReduce ? { opacity: 0 } : { opacity: 0, y: 6 }}
-          whileInView={shouldReduce ? { opacity: 1 } : { opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, ease: EASE }}
-          className={
-            "font-display italic text-[26px] md:text-[34px] leading-none text-primary mb-4 md:mb-0 block " +
-            (isCentered
-              ? "md:col-span-12"
-              : "md:col-span-1")
-          }
-          aria-hidden="true"
-        >
-          {numeral}.
-        </motion.span>
-      )}
-
       <div
         className={
-          (numeral
-            ? isCentered
-              ? "col-span-12"
-              : "md:col-span-11"
-            : "col-span-12") +
+          "col-span-12" +
           " " +
           (maxWidth ?? "")
         }

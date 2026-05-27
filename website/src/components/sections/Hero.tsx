@@ -188,26 +188,26 @@ export function Hero({
       {/* ── Main composition ── */}
       <div className="relative z-10 w-full max-w-container-max mx-auto min-h-[100svh] pl-margin-mobile pr-margin-mobile md:pl-[120px] md:pr-margin-desktop pt-24 pb-16 md:pt-28 md:pb-20 flex flex-col">
 
-        {/* ─── Top meta row: Roman numeral + eyebrow ─── */}
-        <motion.div
-          className="flex items-baseline gap-6 md:gap-10 mb-10 md:mb-14"
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: EASE_OUT, delay: 0.4 }}
-        >
-          <span
-            className="font-display italic text-[28px] md:text-[36px] leading-none text-primary"
-            aria-hidden="true"
+        {/* ─── Eyebrow row ─── */}
+        {eyebrow && (
+          <motion.div
+            className="flex items-center gap-4 mb-10 md:mb-14"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: EASE_OUT, delay: 0.4 }}
           >
-            I.
-          </span>
-          <span className="block h-px w-12 md:w-24 bg-primary/40 self-center" aria-hidden="true" />
-          {eyebrow && (
+            <motion.span
+              className="block h-px bg-primary/40 origin-left"
+              initial={shouldReduce ? { width: 48, opacity: 1 } : { width: 0, opacity: 0 }}
+              animate={{ width: 48, opacity: 1 }}
+              transition={{ duration: 0.8, ease: EASE_OUT, delay: 0.45 }}
+              aria-hidden="true"
+            />
             <span className="font-body text-[10px] md:text-[11px] tracking-[0.36em] uppercase text-secondary">
               {eyebrow}
             </span>
-          )}
-        </motion.div>
+          </motion.div>
+        )}
 
         {/* ─── Hero composition: type + portrait pillar ─── */}
         <div className="relative flex-1 grid grid-cols-12 gap-x-4 md:gap-x-6 items-start">
@@ -226,52 +226,23 @@ export function Hero({
               aria-hidden="true"
               style={{ fontSize: "clamp(3rem, 11vw, 9.5rem)" }}
             >
-              {words.map((word, i) => {
-                const isOutlined = i === 1; // "aus"
-                return (
-                  <motion.span
-                    key={`${word}-${i}`}
-                    className={
-                      "inline-block mr-[0.18em] " +
-                      (isOutlined
-                        ? "italic font-light text-edge-light"
-                        : "")
-                    }
-                    custom={i}
-                    initial="hidden"
-                    animate="visible"
-                    variants={wordVariants}
-                  >
-                    {word}
-                    {i === 1 && (
-                      <span className="inline-block w-[0.05em]" aria-hidden="true" />
-                    )}
-                  </motion.span>
-                );
-              })}
+              {words.map((word, i) => (
+                <motion.span
+                  key={`${word}-${i}`}
+                  className="inline-block mr-[0.18em]"
+                  custom={i}
+                  initial="hidden"
+                  animate="visible"
+                  variants={wordVariants}
+                >
+                  {word}
+                </motion.span>
+              ))}
             </span>
           </h1>
 
           {/* ── Subline + accent + CTAs — sits below type, left-aligned ── */}
           <div className="col-span-12 md:col-start-1 md:col-span-7 lg:col-span-6 mt-10 md:mt-14 relative z-[4]">
-            <motion.div
-              className="flex items-center gap-4 mb-6"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, ease: EASE_OUT, delay: 1.85 }}
-            >
-              <motion.span
-                className="block h-px bg-primary origin-left"
-                initial={shouldReduce ? { width: 56 } : { width: 0 }}
-                animate={{ width: 56 }}
-                transition={{ duration: 0.9, ease: EASE_CINEMA, delay: 1.85 }}
-                aria-hidden="true"
-              />
-              <span className="font-body text-[10px] tracking-[0.36em] uppercase text-secondary">
-                · ein Versprechen
-              </span>
-            </motion.div>
-
             {subline && (
               <motion.p
                 className="font-body text-[17px] md:text-[19px] leading-[1.55] text-on-surface-variant max-w-[58ch] mb-10"
@@ -385,8 +356,8 @@ export function Hero({
           transition={{ duration: 0.9, delay: 2.6, ease: EASE_OUT }}
           aria-hidden="true"
         >
-          <span className="font-body text-[10px] tracking-[0.36em] uppercase text-secondary">
-            scroll · weiterlesen
+          <span className="font-body text-[11px] tracking-[0.36em] uppercase text-secondary">
+            Weiterlesen
           </span>
           <span className="block w-8 h-px bg-primary/35" />
         </motion.div>

@@ -42,21 +42,15 @@ export function ReferenzHero({ titel, untertitel, ort, image }: Props) {
 
   return (
     <section className="relative w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-12 md:pt-16 pb-4 md:pb-8">
-      {/* Top meta row: roman numeral + hairline + eyebrow */}
+      {/* Top meta row: eyebrow */}
       <motion.div
-        className="flex items-baseline gap-6 md:gap-10 mb-8 md:mb-10"
+        className="flex items-center gap-4 mb-8 md:mb-10"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: EASE_OUT, delay: 0.15 }}
       >
         <span
-          className="font-display italic text-[26px] md:text-[34px] leading-none text-primary"
-          aria-hidden="true"
-        >
-          I.
-        </span>
-        <span
-          className="block h-px w-12 md:w-24 bg-primary/40 self-center"
+          className="block h-px w-12 md:w-24 bg-primary/40"
           aria-hidden="true"
         />
         <span className="font-body text-[10px] md:text-[11px] tracking-[0.36em] uppercase text-secondary">
@@ -138,13 +132,10 @@ export function ReferenzHero({ titel, untertitel, ort, image }: Props) {
             </div>
           </div>
         )}
-        {/* Corner edition marker */}
+        {/* Corner marker */}
         <div className="absolute bottom-4 right-4 flex items-center gap-3 bg-background/85 px-4 py-2 backdrop-blur-sm">
-          <span className="font-display italic text-[14px] text-secondary leading-none" aria-hidden="true">
-            I.
-          </span>
           <span className="font-body text-[10px] tracking-[0.32em] uppercase text-primary/80">
-            Immobilie · Folio MMXXVI
+            Immobilie · {ort}
           </span>
         </div>
       </motion.div>

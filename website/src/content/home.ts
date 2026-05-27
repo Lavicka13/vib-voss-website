@@ -3,7 +3,7 @@ export const home = {
     eyebrow: "V.I.B. Voß Immobilien Beratung",
     headline: "Verkaufen aus Leidenschaft.",
     subline:
-      "Seit fast 29 Jahren mit Leidenschaft und Herzblut als selbstständige Vollblutmaklerin im Immobilienmarkt Rhein-Neckar — bis Karlsruhe und Umgebung, vorderer Odenwald, Rheinland-Pfalz und auch überregional tätig.",
+      "Seit 30 Jahren mit Leidenschaft und Herzblut als selbstständige Vollblutmaklerin im Immobilienmarkt Rhein-Neckar — bis Karlsruhe und Umgebung, vorderer Odenwald, Rheinland-Pfalz und auch überregional tätig.",
     primaryCta: { label: "Mit mir sprechen", href: "#kontakt" },
     secondaryCta: { label: "Über mich", href: "#ueber-mich" },
     trustStrip: ["29 Jahre Erfahrung", "Rhein-Neckar & überregional", "Off-Market-Netzwerk"],
@@ -35,7 +35,7 @@ export const home = {
     eyebrow: "Über mich",
     headline: "Edith Voss",
     paragraphs: [
-      "Seit fast 29 Jahren bin ich mit Leidenschaft und Herzblut als selbstständige Vollblutmaklerin im Immobilienmarkt der Rhein-Neckar-Region tätig — über 20 Jahre mit Sitz in Weinheim, dazu Karlsruhe und Umgebung, vorderer Odenwald, Rheinland-Pfalz und überregional.",
+      "Seit 30 Jahren bin ich mit Leidenschaft und Herzblut als selbstständige Vollblutmaklerin im Immobilienmarkt der Rhein-Neckar-Region tätig — viele Jahre mit Sitz in Weinheim, dazu Karlsruhe und Umgebung, vorderer Odenwald, Rheinland-Pfalz und überregional.",
       "Mein Anfang der 2000er Jahre gegründetes Unternehmen Edith Voss Immobilien in Weinheim habe ich mit viel Fleiß und Freude am Makeln zu einem der etabliertesten Maklerbüros aufgebaut und 2015 verkauft — mein Name ist noch heute das Aushängeschild der Firma, die weiter erfolgreich geführt wird.",
       "Meine Philosophie: „Verkaufen aus Leidenschaft.“ Mein Motto, nach Heraklit von Ephesus: „Nichts ist so beständig wie der Wandel.“",
       "Ein Kunde schrieb mir nach erfolgreichem Verkauf seiner Immobilie, dass ich das Negativ-Image meines Berufstandes eindrucksvoll widerlege — darauf bin ich stolz.",
@@ -45,8 +45,8 @@ export const home = {
     eyebrow: "Was ich für Sie tue",
     headline: "Vom ersten Gespräch bis zur Beurkundung",
     items: [
-      "Fundierte Wertberatung — realistisch, präzise, ohne Online-Tools",
-      "Off-Market-Vermarktung über meinen Kundenstamm",
+      "Fundierte Wertberatung — realistisch, präzise, persönlich",
+      "Off-Market-Vermarktung über meinen langjährigen Kundenstamm",
       "Beschaffung objektbezogener Unterlagen — bei Bedarf direkt mit den Ämtern",
       "Professionelles Exposé mit optimaler Darstellung",
       "Verhandlungen mit potenziellen Kaufinteressenten",
@@ -287,7 +287,7 @@ export const home = {
         untertitel: "Villa sucht neuen Besitzer — diskretes Angebot auf Anfrage",
         ort: "Rhein-Neckar-Raum",
         image: null,
-        preis: "3.100.000 €",
+        preis: "auf Anfrage",
         eckdaten: {
           wohnflaeche: "ca. 240 m²",
           grundstueck: "ca. 1.800 m²",
@@ -407,7 +407,7 @@ export const home = {
   tippgeber: {
     eyebrow: "Tippgeber",
     headline: "Sie kennen jemanden, der verkaufen möchte?",
-    body: "Wenn Sie mir einen Tipp zu einer Immobilie geben und es zum erfolgreichen Verkauf kommt, erhalten Sie eine Tippgeber-Prämie. Zwei Wochen nach der notariellen Beurkundung überweise ich Ihnen die vereinbarte Provision.",
+    body: "Wenn Sie mir einen Tipp zu einer Immobilie geben und es zum erfolgreichen Verkauf kommt, erhalten Sie eine Tippgeber-Prämie. Nach der notariellen Beurkundung und dem Provisionseingang überweise ich Ihnen umgehend die vereinbarte Provision.",
     steps: [
       {
         nr: "01",
@@ -422,17 +422,18 @@ export const home = {
       {
         nr: "03",
         title: "Bei Verkauf erhalten Sie Ihre Provision",
-        body: "Zwei Wochen nach der notariellen Beurkundung überweise ich Ihnen die vereinbarte Tippgeber-Prämie.",
+        body: "Nach der notariellen Beurkundung und dem Provisionseingang überweise ich Ihnen umgehend die vereinbarte Tippgeber-Prämie.",
       },
     ],
     staffelHinweis:
-      "Provisionsstaffel (vorläufig — wird im Erstgespräch individuell bestätigt):",
+      "Provisionsstaffel (wird im Erstgespräch individuell bestätigt):",
     staffel: [
       { range: "bis 400.000 €", provision: "1.500 €" },
       { range: "ab 500.000 €", provision: "3.000 €" },
-      { range: "ab 700.000 €", provision: "4.500 €" },
+      { range: "ab 700.000 €", provision: "4.000 €" },
       { range: "ab 900.000 €", provision: "5.000 €" },
-      { range: "ab 1.000.000 €", provision: "individuell" },
+      { range: "ab 1.000.000 €", provision: "6.000 €" },
+      { range: "ab 1.500.000 €", provision: "8.000 €" },
     ],
     bedingungen: [
       "Der Eigentümer muss mit der Weitergabe seiner Daten einverstanden sein.",

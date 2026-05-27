@@ -144,7 +144,6 @@ export default async function ImmobilieDetailPage({
         <div className="relative">
           <RevealOnScroll>
             <SectionHead
-              numeral="II"
               eyebrow="Konzept"
               headline="Beschreibung des Objekts."
               accentIndex={2}
@@ -182,7 +181,6 @@ export default async function ImmobilieDetailPage({
           <div className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
             <RevealOnScroll>
               <SectionHead
-                numeral="III"
                 eyebrow="Umgebung"
                 headline="Lage & Anbindung."
                 accentIndex={2}
@@ -204,7 +202,6 @@ export default async function ImmobilieDetailPage({
       <section className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe">
         <RevealOnScroll>
           <SectionHead
-            numeral="IV"
             eyebrow="Daten & Fakten"
             headline="Eckdaten im Überblick."
             accentIndex={2}
@@ -225,7 +222,6 @@ export default async function ImmobilieDetailPage({
         <section className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe">
           <RevealOnScroll>
             <SectionHead
-              numeral="V"
               eyebrow="Inventar"
               headline="Ausstattung im Detail."
               accentIndex={2}

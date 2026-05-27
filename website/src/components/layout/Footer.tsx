@@ -126,12 +126,9 @@ export function Footer() {
             © {year} V.I.B. Voß Immobilien Beratung
           </p>
           <div className="flex items-center gap-3 self-start md:self-auto">
-            <span className="font-display italic text-[14px] text-secondary leading-none">
-              Folio
-            </span>
             <span className="block h-px w-8 bg-primary/40" aria-hidden="true" />
             <span className="font-body text-[10px] tracking-[0.4em] uppercase text-primary/70">
-              MMXXVI · Rhein-Neckar
+              Rhein-Neckar
             </span>
           </div>
         </div>

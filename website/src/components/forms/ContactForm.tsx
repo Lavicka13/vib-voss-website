@@ -63,6 +63,8 @@ export function ContactForm() {
   }
 
   return (
+    <>
+      <h3 className="font-display text-headline-md text-primary">Ihre Kontaktdaten</h3>
     <form
       onSubmit={handleSubmit}
       className="relative border border-border-taupe rounded-lg p-8 md:p-10 bg-surface-ivory flex flex-col gap-6"
@@ -98,5 +100,9 @@ export function ContactForm() {
         {status === "submitting" ? "Wird gesendet…" : "Nachricht senden"}
       </Button>
     </form>
+    <p className="font-body text-[12px] text-muted-text">
+      Sie können Ihre Einwilligung jederzeit widerrufen und die Löschung Ihrer Daten verlangen. Schreiben Sie dazu an info@e-vib.de.
+    </p>
+    </>
   );
 }

@@ -54,7 +54,6 @@ export default function HomePage() {
         <div className="relative">
           <RevealOnScroll>
             <SectionHead
-              numeral="II"
               eyebrow={home.ueberMich.eyebrow}
               headline={home.ueberMich.headline}
               accentIndex={1}
@@ -74,22 +73,13 @@ export default function HomePage() {
               />
               {/* corner edition marker */}
               <div className="absolute bottom-4 right-4 flex items-center gap-3 bg-background/85 px-4 py-2 backdrop-blur-sm">
-                <span className="font-display italic text-[14px] text-secondary leading-none" aria-hidden="true">II.</span>
-                <span className="font-body text-[10px] tracking-[0.32em] uppercase text-primary/80">Edith Voss · seit MCMXCVII</span>
+                <span className="font-body text-[10px] tracking-[0.32em] uppercase text-primary/80">Edith Voss · seit 1997</span>
               </div>
             </div>
           </RevealOnScroll>
 
           <RevealOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
-              <div className="md:col-span-4 md:col-start-1 hidden md:block">
-                <div className="font-display italic text-secondary text-[80px] lg:text-[120px] leading-none opacity-30 select-none -mt-4">
-                  &mdash;
-                </div>
-                <span className="font-body text-[10px] tracking-[0.4em] uppercase text-secondary/70 block mt-4">
-                  Ein Versprechen
-                </span>
-              </div>
               <div className="md:col-span-7 md:col-start-6 flex flex-col gap-5">
                 {home.ueberMich.paragraphs.map((p, i) => (
                   <p
@@ -140,7 +130,6 @@ export default function HomePage() {
       >
         <RevealOnScroll>
           <SectionHead
-            numeral="III"
             eyebrow={home.leistungen.eyebrow}
             headline={home.leistungen.headline}
             accentIndex={5}
@@ -220,7 +209,6 @@ export default function HomePage() {
       >
         <RevealOnScroll>
           <SectionHead
-            numeral="IV"
             eyebrow={home.immobilien.eyebrow}
             headline={home.immobilien.headline}
             accentIndex={3}
@@ -274,7 +262,6 @@ export default function HomePage() {
       >
         <RevealOnScroll>
           <SectionHead
-            numeral="V"
             eyebrow="Tätigkeitsgebiet"
             headline={home.region.headline}
             accentIndex={2}
@@ -328,7 +315,6 @@ export default function HomePage() {
         <div className="relative w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <RevealOnScroll>
             <SectionHead
-              numeral="VI"
               eyebrow={home.erfolgsschluessel.eyebrow}
               headline={home.erfolgsschluessel.headline}
               accentIndex={3}
@@ -374,7 +360,6 @@ export default function HomePage() {
         <div className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
           <RevealOnScroll>
             <SectionHead
-              numeral="VII"
               eyebrow={home.tippgeber.eyebrow}
               headline={home.tippgeber.headline}
               accentIndex={4}
@@ -469,7 +454,6 @@ export default function HomePage() {
         <div className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
           <RevealOnScroll>
             <SectionHead
-              numeral="VIII"
               eyebrow={home.google.eyebrow}
               headline={home.google.headline}
               accentIndex={2}
@@ -576,7 +560,7 @@ export default function HomePage() {
           <div className="flex items-center justify-center gap-4 mb-8">
             <span className="block h-px w-12 bg-primary/40" aria-hidden="true" />
             <span className="font-body text-[10px] tracking-[0.4em] uppercase text-secondary">
-              Coda · Folio MMXXVI
+              V.I.B. Voß Immobilien Beratung
             </span>
             <span className="block h-px w-12 bg-primary/40" aria-hidden="true" />
           </div>
