@@ -454,7 +454,7 @@ export default function HomePage() {
               eyebrow={home.google.eyebrow}
               headline={home.google.headline}
               accentIndex={2}
-              align="center"
+              align="left"
             />
           </RevealOnScroll>
 
