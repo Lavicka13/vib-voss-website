@@ -15,13 +15,13 @@ export const impressum = {
     email: "info@e-vib.de",
   },
   steuerliches: {
-    steuernummer: "37401/40895",
+    steuernummer: "37401/40859", // Finanzamt Mannheim-Neckarstadt
     ustId: "TODO_VON_EDITH",
   },
   berufsrechtlich: {
-    aufsichtsbehoerde: "TODO_VON_EDITH",
-    erlaubnisNach34c: "Erlaubnis nach §34c GewO erteilt durch [TODO_VON_EDITH]",
-    berufshaftpflicht: "TODO_VON_EDITH",
+    erlaubnis: "Erlaubnis nach §34c Abs. 1 GewO",
+    erlaubnisBehoerde: "TODO_VON_EDITH", // erteilende Behörde, i.d.R. Gemeinde Ilvesheim / Rhein-Neckar-Kreis
+    aufsichtsbehoerde: "Industrie- und Handelskammer (IHK) Rhein-Neckar, Geschäftsstelle Mannheim",
   },
   hinweise: {
     streitschlichtung: "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr. Ich bin nicht bereit oder verpflichtet, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.",

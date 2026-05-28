@@ -3,10 +3,10 @@ export const home = {
     eyebrow: "V.I.B. Voß Immobilien Beratung",
     headline: "Verkaufen aus Leidenschaft.",
     subline:
-      "Seit 30 Jahren mit Leidenschaft und Herzblut als selbstständige Vollblutmaklerin im Immobilienmarkt Rhein-Neckar — bis Karlsruhe und Umgebung, vorderer Odenwald, Rheinland-Pfalz und auch überregional tätig.",
+      "Mit Leidenschaft und Herzblut bin ich seit 30 Jahren als selbstständige Vollblutmaklerin im Immobilienmarkt Rhein-Neckar tätig: von Karlsruhe und Umgebung über den vorderen Odenwald bis Rheinland-Pfalz, und auf Anfrage auch überregional.",
     primaryCta: { label: "Mit mir sprechen", href: "#kontakt" },
     secondaryCta: { label: "Über mich", href: "#ueber-mich" },
-    trustStrip: ["29 Jahre Erfahrung", "Rhein-Neckar & überregional", "Off-Market-Netzwerk"],
+    trustStrip: ["30 Jahre Erfahrung", "Rhein-Neckar & überregional", "Off-Market-Netzwerk"],
   },
   intro: {
     body: [
@@ -35,11 +35,20 @@ export const home = {
     eyebrow: "Über mich",
     headline: "Edith Voss",
     paragraphs: [
-      "Seit 30 Jahren bin ich mit Leidenschaft und Herzblut als selbstständige Vollblutmaklerin im Immobilienmarkt der Rhein-Neckar-Region tätig — viele Jahre mit Sitz in Weinheim, dazu Karlsruhe und Umgebung, vorderer Odenwald, Rheinland-Pfalz und überregional.",
-      "Mein Anfang der 2000er Jahre gegründetes Unternehmen Edith Voss Immobilien in Weinheim habe ich mit viel Fleiß und Freude am Makeln zu einem der etabliertesten Maklerbüros aufgebaut und 2015 verkauft — mein Name ist noch heute das Aushängeschild der Firma, die weiter erfolgreich geführt wird.",
-      "Meine Philosophie: „Verkaufen aus Leidenschaft.“ Mein Motto, nach Heraklit von Ephesus: „Nichts ist so beständig wie der Wandel.“",
-      "Ein Kunde schrieb mir nach erfolgreichem Verkauf seiner Immobilie, dass ich das Negativ-Image meines Berufstandes eindrucksvoll widerlege — darauf bin ich stolz.",
+      "Seit 30 Jahren bin ich mit Leidenschaft und Herzblut als selbstständige Vollblutmaklerin im Immobilienmarkt der Rhein-Neckar-Region tätig. Über 20 Jahre hatte ich mein Immobilienbüro in Weinheim, dazu Karlsruhe und Umgebung, den vorderen Odenwald, Rheinland-Pfalz und überregional.",
+      "Vor den Immobilien lag ein anderes Leben: Nach einem Fremdsprachenstudium in Frankfurt gründete ich ein internationales Textilhandelsunternehmen und war viele Jahre als Geschäftsführerin in Fernost, New York, Istanbul und Indien tätig. 2003 wechselte ich in die Immobilienbranche und baute mit „Edith Voss Immobilien“ eines der erfolgreichsten Maklerhäuser im Rhein-Neckar-Kreis auf.",
+      "2015 verkaufte ich dieses Unternehmen samt Namen an eine Nachfolgerin, die es bis heute erfolgreich weiterführt. Nach längeren Auslandsaufenthalten, unter anderem in Südafrika, kehrte ich mit frischer Energie zurück. Familie, Freunde und die Geburt meines Enkelkindes machten schnell klar: Mein Platz ist hier, an der Bergstraße.",
+      "Da der alte Name rechtlich gebunden war, gründete ich meine neue Marke: V.I.B. Voß Immobilien Beratung. Meinen Namen habe ich abgegeben, aber nicht meine Haltung. Ich bin und bleibe das Original: mit Herz, Erfahrung und der Leidenschaft, Menschen und Immobilien zusammenzubringen.",
+      "Meine Philosophie: „Verkaufen aus Leidenschaft.“ Mein Motto, nach Heraklit von Ephesus: „Nichts ist so beständig wie der Wandel.“ Ein Kunde schrieb mir nach erfolgreichem Verkauf, dass ich das Negativ-Image meines Berufsstandes eindrucksvoll widerlege. Darauf bin ich stolz.",
     ],
+    partnerschaft: {
+      eyebrow: "Zwei Generationen, ein Anspruch",
+      headline: "Das Original trifft auf frischen Wind.",
+      body: [
+        "2024 haben sich meine Wege mit Tom Dorn gekreuzt, dem Gründer von Dorn Living Solutions Immobilien. Er bringt über 26 Jahre Erfahrung im strategischen Vertrieb, Markenaufbau und Verhandlungsmanagement mit.",
+        "Ich stehe für Tiefe, Erfahrung und ein feines Gespür für Menschen, er für Dynamik, moderne Kommunikation und digitale Sichtbarkeit. Gemeinsam verbinden wir klassisches Werteverständnis mit zeitgemäßer Vermarktung: Erfahrung und Innovation, Herz und Strategie.",
+      ],
+    },
   },
   leistungen: {
     eyebrow: "Was ich für Sie tue",
@@ -337,6 +346,19 @@ export const home = {
       },
     ],
   },
+  // TODO_VON_EDITH: echte verkaufte/vermietete Referenzobjekte + Bilder ergänzen.
+  // Die Einträge sind PLATZHALTER (generische Mock-Bilder) zur Ansicht des Referenz-Sliders.
+  referenzen: {
+    eyebrow: "Referenzen",
+    headline: "Erfolgreich vermittelt.",
+    intro:
+      "Eine Auswahl bereits verkaufter und vermittelter Objekte. Aus Diskretionsgründen nenne ich Details ausschließlich im persönlichen Gespräch.",
+    items: [
+      { slug: "ref-1", titel: "Villa mit Weitblick", ort: "Rhein-Neckar-Raum", image: "/images/object-mock-1-1600.jpg", badge: "Bereits verkauft" },
+      { slug: "ref-2", titel: "Stadthaus in zentraler Lage", ort: "Weinheim", image: "/images/object-mock-2-1600.jpg", badge: "Bereits verkauft" },
+      { slug: "ref-3", titel: "Moderne Eigentumswohnung", ort: "Heidelberg", image: "/images/object-mock-3-1600.jpg", badge: "Bereits vermietet" },
+    ],
+  },
   homeStaging: {
     eyebrow: "Home Staging",
     headline: "Weil Ihre Immobilie es wert ist.",
@@ -349,18 +371,24 @@ export const home = {
   },
   presse: {
     eyebrow: "Aus der Presse",
-    headline: "„Die Philosophie lautet: Verkaufen aus Leidenschaft!“",
+    headline: "„Das Original ist zurück.“",
     zitat:
-      "Über mein Engagement im Immobilienmarkt der Rhein-Neckar-Region berichtete die regionale Presse — Weinheimer Nachrichten / Aus dem Geschäftsleben, 2020.",
-    image: {
-      src: "/images/presse-2020-1600.jpg",
-      alt: "Zeitungsartikel aus den Weinheimer Nachrichten 2020 über Edith Voss und ihre Maklertätigkeit",
-    },
+      "Über den gemeinsamen Neustart von Edith Voß und Tom Dorn berichteten die Weinheimer Nachrichten / Odenwälder Zeitung in der Rubrik „Aus dem Geschäftsleben“.",
+    images: [
+      {
+        src: "/images/presse-neu-1600.jpg",
+        alt: "Zeitungsartikel der Weinheimer Nachrichten / Odenwälder Zeitung über Edith Voß und Tom Dorn — „Das Original ist zurück“",
+      },
+      {
+        src: "/images/presse-alt-1600.jpg",
+        alt: "Älterer Presseartikel über Edith Voß — „Die Philosophie lautet: Verkaufen aus Leidenschaft!“",
+      },
+    ],
   },
   region: {
     headline: "Regional verwurzelt — überregional erfolgreich.",
-    body: "Mein Tätigkeitsgebiet umfasst die Rhein-Neckar-Region mit Schwerpunkt Weinheim, dazu Karlsruhe und Umgebung, den vorderen Odenwald, Rheinland-Pfalz — und auf Anfrage darüber hinaus.",
-    orte: ["Weinheim", "Mannheim", "Heidelberg", "Karlsruhe", "Bergstraße", "Ilvesheim", "Vorderer Odenwald", "Rheinland-Pfalz"],
+    body: "Mein Tätigkeitsgebiet umfasst die Rhein-Neckar-Region mit Weinheim, Karlsruhe und Umgebung, den vorderen Odenwald und Rheinland-Pfalz, auf Anfrage auch darüber hinaus.",
+    orte: ["Weinheim", "Mannheim", "Heidelberg", "Karlsruhe", "Frankfurt", "Bergstraße", "Ilvesheim", "Vorderer Odenwald", "Rheinland-Pfalz"],
   },
   erfolgsschluessel: {
     eyebrow: "Mein Schlüssel zum Erfolg",
@@ -377,32 +405,21 @@ export const home = {
     quote: "Einige meiner Kunden haben die Käufer erst anlässlich des Notartermins kennengelernt.",
     attribution: "Edith Voss",
   },
-  google: {
-    eyebrow: "Bewertungen",
+  // TODO_VON_EDITH: echte, freigegebene Kundenzitate ergänzen (Name/Initialen + Einverständnis).
+  // Bis dahin nur EINE authentische, paraphrasierte Rückmeldung aus einem Kundenschreiben — keine erfundenen Reviews.
+  kundenstimmen: {
+    eyebrow: "Kundenstimmen",
     headline: "Was meine Kunden sagen",
-    rating: "5,0", // TODO_VON_EDITH: tatsächlichen Wert aus Google-Profil eintragen
-    ratingLabel: "Exzellent",
-    bewertungen: "TODO", // TODO_VON_EDITH: Anzahl Bewertungen (z.B. "12 Google-Bewertungen")
-    profilUrl: "TODO_VON_EDITH", // TODO_VON_EDITH: URL zum Google-Business-Profil (z.B. https://maps.google.com/...)
-    hinweis:
-      "Bewertungen werden auf Google öffentlich gesammelt. Sobald das Google-Business-Profil aktiv ist, erscheinen hier echte Kundenbewertungen.",
-    reviews: [
+    stimmen: [
       {
         quote:
-          "Frau Voss hat unsere Immobilie weit über dem Erwartungswert verkauft — und das ganz diskret, ohne öffentliche Vermarktung. Persönliche Betreuung auf höchstem Niveau.",
-        author: "Beispiel-Bewertung",
-      },
-      {
-        quote:
-          "Mein Anliegen war komplex — Erbschaft, mehrere Parteien, schnelle Abwicklung. Frau Voss hat alles fundiert und transparent begleitet, immer erreichbar.",
-        author: "Beispiel-Bewertung",
-      },
-      {
-        quote:
-          "Die etwas andere Maklerin: keine Standardphrasen, sondern echtes Gespür für Menschen und Märkte. Klare Empfehlung.",
-        author: "Beispiel-Bewertung",
+          "Nach dem erfolgreichen Verkauf schrieb mir ein Kunde, dass ich das Negativ-Image meines Berufsstandes eindrucksvoll widerlege.",
+        author: "Aus einem Kundenschreiben",
       },
     ],
+    googleHinweis:
+      "Verifizierte Bewertungen folgen hier, sobald das Google-Business-Profil von V.I.B. Voß Immobilien Beratung aktiv und gelistet ist.",
+    profilUrl: "TODO_VON_EDITH", // TODO_VON_EDITH: URL zum Google-Business-Profil, sobald vorhanden
   },
   tippgeber: {
     eyebrow: "Tippgeber",
