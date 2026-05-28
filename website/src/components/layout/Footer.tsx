@@ -5,39 +5,23 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative w-full overflow-hidden mt-auto bg-background">
-      {/* ── Layer 1: warm radial rose glow anchored at the logo (top-left quadrant) ── */}
+    <footer className="relative w-full overflow-hidden mt-auto bg-background print:hidden">
+      {/* ── Durchgehende, gleichmäßige Warm-Tönung, damit sich das Logo einfügt (kein „Fleck") ── */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(48% 78% at 20% 38%, rgba(250,206,194,0.92) 0%, rgba(250,206,194,0.55) 28%, rgba(250,206,194,0.18) 55%, rgba(250,206,194,0) 75%)",
+            "linear-gradient(180deg, rgba(250,206,194,0.07) 0%, rgba(250,206,194,0.18) 100%)",
         }}
         aria-hidden="true"
       />
 
-      {/* ── Layer 2: subtle secondary rose pool bottom-right for balance ── */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(40% 60% at 88% 88%, rgba(250,206,194,0.22) 0%, rgba(250,206,194,0) 65%)",
-        }}
-        aria-hidden="true"
-      />
-
-      {/* ── Layer 3: editorial grain over everything ── */}
-      <div
-        className="bg-grain absolute inset-0 opacity-[0.07] mix-blend-multiply pointer-events-none"
-        aria-hidden="true"
-      />
-
-      {/* ── Layer 4: top fade — dissolves the rose into the section above for a flowing transition ── */}
+      {/* ── Top fade — weicher Übergang von der Sektion darüber ── */}
       <div
         className="absolute inset-x-0 top-0 h-24 md:h-32 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to bottom, var(--color-background) 0%, rgba(252,249,248,0.55) 50%, transparent 100%)",
+            "linear-gradient(to bottom, var(--color-background) 0%, transparent 100%)",
         }}
         aria-hidden="true"
       />
@@ -45,22 +29,22 @@ export function Footer() {
       {/* ── Main ── */}
       <div className="relative w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-20 md:pt-28 pb-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-          {/* Brand column */}
-          <div className="md:col-span-5 flex flex-row items-center gap-6 md:gap-8">
+          {/* Brand column — Logo als gerahmte Tile, Spruch darunter */}
+          <div className="md:col-span-5 flex flex-col gap-8">
             <Link
               href="/"
-              className="block shrink-0 transition-opacity hover:opacity-90"
+              className="group block w-fit rounded-lg overflow-hidden ring-1 ring-black/[0.06] shadow-[0_10px_34px_-12px_rgba(113,89,78,0.35)] transition-shadow duration-300 hover:shadow-[0_14px_40px_-12px_rgba(113,89,78,0.45)]"
               aria-label="V.I.B. — Startseite"
             >
               <Image
-                src="/images/logo/logo-mono-480.png"
+                src="/images/logo/logo-plaque-centered-720.png"
                 alt="V.I.B. Voß Immobilien Beratung"
-                width={157}
-                height={240}
-                className="h-28 md:h-32 w-auto"
+                width={208}
+                height={261}
+                className="h-36 md:h-44 w-auto block"
               />
             </Link>
-            <p className="font-display italic text-signature-quote text-primary leading-snug max-w-xs">
+            <p className="font-display italic text-signature-quote text-primary leading-snug max-w-sm">
               &bdquo;Man lebt nur einmal &mdash; wir zeigen Ihnen wo.&ldquo;
             </p>
           </div>
@@ -75,9 +59,9 @@ export function Footer() {
             </div>
             <address className="not-italic flex flex-col gap-3 font-body text-body-md text-primary/90">
               <span>
-                Voß Immobilien Beratung
+                V.I.B. Voß Immobilien Beratung
                 <br />
-                Edith Voss
+                Edith Voß
               </span>
               <span>
                 Alte Schulstraße 28
