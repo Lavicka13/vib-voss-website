@@ -8,7 +8,8 @@ import { ReferenzenCarousel } from "@/components/sections/ReferenzenCarousel";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { SectionHead } from "@/components/ui/SectionHead";
 import { EditorialButton } from "@/components/ui/EditorialButton";
-import { PresseImageWithModal } from "@/components/ui/PresseImageWithModal";
+import { PresseSlideshow } from "@/components/ui/PresseSlideshow";
+import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
 import { home } from "@/content/home";
 
 export default function HomePage() {
@@ -80,8 +81,42 @@ export default function HomePage() {
 
           <RevealOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
-              <div className="md:col-span-7 md:col-start-6 flex flex-col gap-5">
-                {home.ueberMich.paragraphs.map((p, i) => (
+              <div className="md:col-span-10 md:col-start-2 flex flex-col gap-8">
+                {/* Lead-Absatz — größer gesetzt für editorialen Einstieg */}
+                <p className="font-display text-[22px] md:text-[26px] text-primary leading-snug max-w-3xl">
+                  {home.ueberMich.paragraphs[0]}
+                </p>
+                {/* Restliche Absätze im zweispaltigen Fließtext */}
+                <div className="md:columns-2 md:gap-gutter">
+                  {home.ueberMich.paragraphs.slice(1).map((p, i) => (
+                    <p
+                      key={i}
+                      className="font-body text-body-lg text-on-surface-variant leading-relaxed mb-5 break-inside-avoid"
+                    >
+                      {p}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </RevealOnScroll>
+
+          {/* Partnerschaft — Zwei Generationen (Edith Voss + Tom Dorn) */}
+          <RevealOnScroll>
+            <div className="mt-16 md:mt-20 pt-12 border-t border-border-taupe grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+              <div className="md:col-span-5">
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="block h-px w-12 bg-primary/40" aria-hidden="true" />
+                  <span className="font-body text-[10px] tracking-[0.36em] uppercase text-secondary">
+                    {home.ueberMich.partnerschaft.eyebrow}
+                  </span>
+                </div>
+                <h3 className="font-display text-headline-md text-primary leading-tight">
+                  {home.ueberMich.partnerschaft.headline}
+                </h3>
+              </div>
+              <div className="md:col-span-7 flex flex-col gap-5">
+                {home.ueberMich.partnerschaft.body.map((p, i) => (
                   <p
                     key={i}
                     className="font-body text-body-lg text-on-surface-variant leading-relaxed"
@@ -111,12 +146,7 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="md:col-span-12 order-1 md:order-2 mt-8">
-                <PresseImageWithModal
-                  src={home.presse.image.src}
-                  alt={home.presse.image.alt}
-                  width={1600}
-                  height={733}
-                />
+                <PresseSlideshow items={home.presse.images} />
               </div>
             </div>
           </RevealOnScroll>
@@ -152,11 +182,9 @@ export default function HomePage() {
             </div>
             <div className="md:col-span-7 md:col-start-6 flex flex-col">
               <ul className="font-body text-body-lg text-on-surface-variant flex-1 flex flex-col justify-between gap-5 md:gap-0">
-                {home.leistungen.items.map((item, i) => (
-                  <li key={item} className="flex items-baseline gap-4 group">
-                    <span className="font-display italic text-[13px] text-secondary leading-none w-8 shrink-0" aria-hidden="true">
-                      {romanize(i + 1).toLowerCase()}.
-                    </span>
+                {home.leistungen.items.map((item) => (
+                  <li key={item} className="flex items-start gap-4 group">
+                    <span className="mt-[0.6em] block w-1.5 h-1.5 rounded-full bg-secondary shrink-0" aria-hidden="true" />
                     <span className="flex-1">{item}</span>
                   </li>
                 ))}
@@ -188,15 +216,12 @@ export default function HomePage() {
                   {home.homeStaging.body}
                 </p>
               </div>
-              <div className="relative w-full aspect-[4/3] overflow-hidden bg-surface-container-low">
-                <Image
-                  src={home.homeStaging.image.src}
-                  alt={home.homeStaging.image.alt}
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
+              <BeforeAfterSlider
+                beforeSrc="/images/home-staging-vorher-1200.jpg"
+                afterSrc="/images/home-staging-nachher-1200.jpg"
+                beforeAlt="Badezimmer vor dem Home Staging — veraltete Ausstattung"
+                afterAlt="Dasselbe Badezimmer nach dem Home Staging — modern und einladend inszeniert"
+              />
             </div>
           </RevealOnScroll>
         </div>
@@ -251,7 +276,33 @@ export default function HomePage() {
           </div>
         </RevealOnScroll>
         <RevealOnScroll>
+          <div className="flex items-center gap-4 mb-8 mt-4">
+            <span className="block h-px w-12 bg-primary/40" aria-hidden="true" />
+            <h3 className="font-body text-[11px] tracking-[0.36em] uppercase text-secondary">
+              Aktuelle Objekte
+            </h3>
+          </div>
+        </RevealOnScroll>
+        <RevealOnScroll>
           <ReferenzenCarousel items={home.immobilien.items} />
+        </RevealOnScroll>
+
+        {/* Referenzen — bereits verkaufte / vermittelte Objekte (ohne Links) */}
+        <RevealOnScroll>
+          <div className="mt-20 md:mt-28 pt-12 border-t border-border-taupe">
+            <SectionHead
+              eyebrow={home.referenzen.eyebrow}
+              headline={home.referenzen.headline}
+              accentIndex={1}
+              headlineClassName="text-display-lg-mobile md:text-headline-md"
+            />
+            <p className="font-body text-body-md text-muted-text leading-relaxed max-w-2xl mb-10 -mt-4">
+              {home.referenzen.intro}
+            </p>
+          </div>
+        </RevealOnScroll>
+        <RevealOnScroll>
+          <ReferenzenCarousel items={home.referenzen.items} reference />
         </RevealOnScroll>
       </section>
 
@@ -274,11 +325,9 @@ export default function HomePage() {
                 {home.region.body}
               </p>
               <ul className="grid grid-cols-2 gap-x-6 gap-y-3 font-body text-body-md text-primary mt-2">
-                {home.region.orte.map((ort, i) => (
-                  <li key={ort} className="flex items-baseline gap-3">
-                    <span className="font-display italic text-[12px] text-secondary leading-none w-6 shrink-0" aria-hidden="true">
-                      {romanize(i + 1).toLowerCase()}.
-                    </span>
+                {home.region.orte.map((ort) => (
+                  <li key={ort} className="flex items-center gap-3">
+                    <span className="block w-1.5 h-1.5 rounded-full bg-secondary shrink-0" aria-hidden="true" />
                     <span>{ort}</span>
                   </li>
                 ))}
@@ -328,20 +377,15 @@ export default function HomePage() {
             </div>
           </RevealOnScroll>
           <RevealOnScroll>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-x-gutter">
-              {home.erfolgsschluessel.items.map((item, i) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-gutter gap-y-8">
+              {home.erfolgsschluessel.items.map((item) => (
                 <article
                   key={item.nr}
-                  className="border-t border-primary/30 pt-8 md:pt-10 pb-10 md:pb-14 group"
+                  className="border-t border-primary/30 pt-8 md:pt-10 pb-6 md:pb-10 group"
                 >
-                  <div className="flex items-center gap-4">
-                    <span className="font-display italic text-[64px] md:text-[88px] leading-none text-primary group-hover:text-secondary transition-colors duration-500 shrink-0">
-                      {romanize(i + 1)}.
-                    </span>
-                    <h3 className="font-display text-headline-md text-primary leading-tight">
-                      {item.title}
-                    </h3>
-                  </div>
+                  <h3 className="font-display text-headline-md text-primary leading-tight group-hover:text-secondary transition-colors duration-500">
+                    {item.title}
+                  </h3>
                 </article>
               ))}
             </div>
@@ -443,7 +487,7 @@ export default function HomePage() {
         />
       </RevealOnScroll>
 
-      {/* ─────────────── VIII. BEWERTUNGEN ─────────────── */}
+      {/* ─────────────── VIII. KUNDENSTIMMEN ─────────────── */}
       <section
         id="bewertungen"
         className="w-full bg-surface-ivory border-y border-border-taupe"
@@ -451,85 +495,40 @@ export default function HomePage() {
         <div className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
           <RevealOnScroll>
             <SectionHead
-              eyebrow={home.google.eyebrow}
-              headline={home.google.headline}
+              eyebrow={home.kundenstimmen.eyebrow}
+              headline={home.kundenstimmen.headline}
               accentIndex={2}
               align="left"
             />
           </RevealOnScroll>
 
           <RevealOnScroll>
-            <div className="flex flex-col items-center gap-3 mb-12">
-              <span className="font-display text-headline-md text-primary">
-                {home.google.ratingLabel}
-              </span>
-              <div className="flex items-center gap-3">
-                <svg
-                  width="36"
-                  height="36"
-                  viewBox="0 0 48 48"
-                  xmlns="http://www.w3.org/2000/svg"
-                  aria-label="Google"
-                >
-                  <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12 c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24 c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z" />
-                  <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039 l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z" />
-                  <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36 c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z" />
-                  <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571 c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z" />
-                </svg>
-                <span className="font-display text-display-lg-mobile md:text-display-lg text-primary leading-none">
-                  {home.google.rating}
-                </span>
-                <div className="flex" aria-label={`${home.google.rating} von 5 Sternen`}>
-                  {[0, 1, 2, 3, 4].map((i) => (
-                    <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                    </svg>
-                  ))}
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+              <div className="md:col-span-8 md:col-start-3 flex flex-col gap-10">
+                {home.kundenstimmen.stimmen.map((s, idx) => (
+                  <figure
+                    key={idx}
+                    className="border-t border-primary/30 pt-8 flex flex-col gap-5"
+                  >
+                    <blockquote className="font-display italic text-[clamp(1.4rem,3vw,2rem)] text-primary leading-snug">
+                      &bdquo;{s.quote}&ldquo;
+                    </blockquote>
+                    <figcaption className="font-body text-label-caps text-muted-text uppercase tracking-widest">
+                      {s.author}
+                    </figcaption>
+                  </figure>
+                ))}
               </div>
-              <span className="font-body text-body-md text-muted-text">
-                Basierend auf {home.google.bewertungen === "TODO" ? "[TODO: Anzahl Bewertungen]" : home.google.bewertungen} Google-Bewertungen
-              </span>
-            </div>
-          </RevealOnScroll>
-
-          <RevealOnScroll>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-x-gutter gap-y-10">
-              {home.google.reviews.map((review, idx) => (
-                <article
-                  key={idx}
-                  className="border-t border-primary/30 pt-8 pb-6 flex flex-col gap-5"
-                >
-                  <div className="flex items-baseline justify-between">
-                    <span className="font-display italic text-[42px] leading-none text-primary">
-                      {romanize(idx + 1)}.
-                    </span>
-                    <div className="flex gap-1" aria-label="5 von 5 Sternen">
-                      {[0, 1, 2, 3, 4].map((i) => (
-                        <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#FBBC04" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
-                        </svg>
-                      ))}
-                    </div>
-                  </div>
-                  <p className="font-body text-body-md text-on-surface-variant leading-relaxed mt-2">
-                    &bdquo;{review.quote}&ldquo;
-                  </p>
-                  <span className="font-body text-label-caps text-muted-text uppercase tracking-widest mt-auto pt-2">
-                    {review.author}
-                  </span>
-                </article>
-              ))}
             </div>
           </RevealOnScroll>
 
           <RevealOnScroll>
             <div className="flex flex-col items-center gap-6 mt-16 text-center">
               <p className="font-body text-body-md text-muted-text max-w-2xl italic">
-                {home.google.hinweis}
+                {home.kundenstimmen.googleHinweis}
               </p>
-              {home.google.profilUrl !== "TODO_VON_EDITH" && (
-                <EditorialButton variant="secondary" href={home.google.profilUrl} external>
+              {home.kundenstimmen.profilUrl !== "TODO_VON_EDITH" && (
+                <EditorialButton variant="secondary" href={home.kundenstimmen.profilUrl} external>
                   Alle Google-Bewertungen ansehen
                 </EditorialButton>
               )}

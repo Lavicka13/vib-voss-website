@@ -10,18 +10,17 @@ type Item = {
   titel: string;
   ort: string;
   image: string | null;
+  /** Badge oben rechts im Bild, z.B. "Bereits verkauft" — nur im Referenz-Modus genutzt. */
+  badge?: string;
 };
 
 type Props = {
   items: readonly Item[];
+  /** true = verkaufte/vermietete Referenzen: keine Links, Badge oben rechts, kein "Details ansehen". */
+  reference?: boolean;
 };
 
-const ROMAN_LOWER = [
-  "i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x",
-  "xi", "xii", "xiii", "xiv", "xv",
-] as const;
-
-export function ReferenzenCarousel({ items }: Props) {
+export function ReferenzenCarousel({ items, reference = false }: Props) {
   const scrollerRef = useRef<HTMLDivElement | null>(null);
   const [canPrev, setCanPrev] = useState(false);
   const [canNext, setCanNext] = useState(true);
@@ -38,7 +37,6 @@ export function ReferenzenCarousel({ items }: Props) {
     if (firstCard) {
       const cardW = firstCard.offsetWidth + 24; // + gap
       const idx = Math.round(el.scrollLeft / cardW);
-      // dynamic page count = how many distinct scroll positions are reachable
       const pages = max > 0 ? Math.max(1, Math.ceil(max / cardW) + 1) : 1;
       const cappedPages = Math.min(items.length, pages);
       setPageCount(cappedPages);
@@ -74,33 +72,68 @@ export function ReferenzenCarousel({ items }: Props) {
     el.scrollTo({ left: step * idx, behavior: "smooth" });
   };
 
-  return (
-    <div className="relative">
-      <div className="flex items-center justify-end gap-6 md:gap-8 mb-8">
-        <button
-          type="button"
-          onClick={() => scrollBy(-1)}
-          disabled={!canPrev}
-          aria-label="Vorheriges Objekt"
-          className="group inline-flex items-center gap-3 font-body text-[10px] md:text-[11px] tracking-[0.32em] uppercase text-primary hover:text-secondary transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
-        >
-          <span className="block w-6 h-px bg-current transition-all duration-500 group-hover:w-10 group-disabled:group-hover:w-6" />
-          <IconArrowLeft size={14} strokeWidth={1.5} />
-          <span>Zurück</span>
-        </button>
-        <span className="block w-px h-4 bg-primary/25" aria-hidden="true" />
-        <button
-          type="button"
-          onClick={() => scrollBy(1)}
-          disabled={!canNext}
-          aria-label="Nächstes Objekt"
-          className="group inline-flex items-center gap-3 font-body text-[10px] md:text-[11px] tracking-[0.32em] uppercase text-primary hover:text-secondary transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
-        >
-          <span>Weiter</span>
-          <IconArrowRight size={14} strokeWidth={1.5} />
-          <span className="block w-6 h-px bg-current transition-all duration-500 group-hover:w-10 group-disabled:group-hover:w-6" />
-        </button>
+  const cardBody = (item: Item) => (
+    <>
+      <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container-low">
+        {item.image ? (
+          <Image
+            src={item.image}
+            alt={item.titel}
+            fill
+            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 85vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div className="flex flex-col items-center justify-center w-full h-full px-4 text-center">
+            <span className="font-display italic text-signature-quote text-secondary">
+              Diskretes Objekt
+            </span>
+            <span className="font-body text-body-md text-muted-text mt-2">
+              Bilder auf Anfrage
+            </span>
+          </div>
+        )}
+        {item.badge && (
+          <span className="absolute top-3 right-3 max-w-[50%] truncate bg-primary/85 text-on-primary font-body text-[10px] tracking-[0.18em] uppercase px-3 py-1.5 backdrop-blur-sm">
+            {item.badge}
+          </span>
+        )}
       </div>
+      <div className="flex flex-col gap-2">
+        <h3 className="font-display text-body-lg text-primary leading-tight group-hover:text-secondary transition-colors duration-300">
+          {item.titel}
+        </h3>
+        <span className="font-body text-body-md text-muted-text">{item.ort}</span>
+        {!reference && (
+          <span className="font-body text-label-caps uppercase tracking-widest text-secondary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Details ansehen &rarr;
+          </span>
+        )}
+      </div>
+    </>
+  );
+
+  return (
+    <div className="group/carousel relative">
+      {/* ── Hover-Pfeile links/rechts (Desktop) für bessere Intuition ── */}
+      <button
+        type="button"
+        onClick={() => scrollBy(-1)}
+        disabled={!canPrev}
+        aria-label="Vorheriges Objekt"
+        className="hidden md:flex absolute left-2 top-[28%] z-10 -translate-y-1/2 items-center justify-center w-11 h-11 rounded-full bg-background/85 text-primary shadow-sm backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300 hover:bg-zartrosa disabled:opacity-0 cursor-pointer"
+      >
+        <IconArrowLeft size={18} strokeWidth={1.5} />
+      </button>
+      <button
+        type="button"
+        onClick={() => scrollBy(1)}
+        disabled={!canNext}
+        aria-label="Nächstes Objekt"
+        className="hidden md:flex absolute right-2 top-[28%] z-10 -translate-y-1/2 items-center justify-center w-11 h-11 rounded-full bg-background/85 text-primary shadow-sm backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300 hover:bg-zartrosa disabled:opacity-0 cursor-pointer"
+      >
+        <IconArrowRight size={18} strokeWidth={1.5} />
+      </button>
 
       <div
         ref={scrollerRef}
@@ -116,79 +149,62 @@ export function ReferenzenCarousel({ items }: Props) {
             data-card
             className="snap-start shrink-0 w-[85%] sm:w-[60%] md:w-[48%] lg:w-[32%]"
           >
-            <Link
-              href={`/immobilien/${item.slug}`}
-              className="group flex flex-col gap-4 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded-lg"
-            >
-              <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container-low">
-                {item.image ? (
-                  <Image
-                    src={item.image}
-                    alt={item.titel}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 85vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                ) : (
-                  <div className="flex flex-col items-center justify-center w-full h-full px-4 text-center">
-                    <span className="font-display italic text-signature-quote text-secondary">
-                      Diskretes Objekt
-                    </span>
-                    <span className="font-body text-body-md text-muted-text mt-2">
-                      Bilder auf Anfrage
-                    </span>
-                  </div>
-                )}
-              </div>
-              <div className="flex flex-col gap-2">
-                <h3 className="font-display text-body-lg text-primary leading-tight group-hover:text-secondary transition-colors duration-300">
-                  {item.titel}
-                </h3>
-                <span className="font-body text-body-md text-muted-text">
-                  {item.ort}
-                </span>
-                <span className="font-body text-label-caps uppercase tracking-widest text-secondary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Details ansehen &rarr;
-                </span>
-              </div>
-            </Link>
+            {reference ? (
+              <div className="group flex flex-col gap-4">{cardBody(item)}</div>
+            ) : (
+              <Link
+                href={`/immobilien/${item.slug}`}
+                className="group flex flex-col gap-4 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-secondary rounded-lg"
+              >
+                {cardBody(item)}
+              </Link>
+            )}
           </article>
         ))}
       </div>
 
-      <div className="flex items-end justify-center gap-7 md:gap-10 mt-10">
-        {Array.from({ length: pageCount }).map((_, idx) => {
-          const isActive = idx === activeIndex;
-          const numeral = ROMAN_LOWER[idx] ?? String(idx + 1);
-          return (
+      {/* ── Navigation: mittig unterhalb (Zurück | Weiter), ohne römische Zahlen ── */}
+      <div className="mt-8 flex items-center justify-center gap-6 md:gap-8">
+        <button
+          type="button"
+          onClick={() => scrollBy(-1)}
+          disabled={!canPrev}
+          aria-label="Vorheriges Objekt"
+          className="group inline-flex items-center gap-3 font-body text-[10px] md:text-[11px] tracking-[0.32em] uppercase text-primary hover:text-secondary transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+        >
+          <span className="block w-6 h-px bg-current transition-all duration-500 group-hover:w-10 group-disabled:group-hover:w-6" />
+          <IconArrowLeft size={14} strokeWidth={1.5} />
+          <span>Zurück</span>
+        </button>
+
+        {/* dezente Positions-Indikatoren (keine Numeralen) */}
+        <div className="flex items-center gap-2" aria-hidden="true">
+          {Array.from({ length: pageCount }).map((_, idx) => (
             <button
               key={idx}
               type="button"
               onClick={() => scrollToIndex(idx)}
               aria-label={`Objekt ${idx + 1} anzeigen`}
-              aria-current={isActive ? "true" : undefined}
-              className="group flex flex-col items-center gap-2 cursor-pointer focus:outline-none"
-            >
-              <span
-                className={`font-display italic leading-none transition-all duration-500 ${
-                  isActive
-                    ? "text-[22px] text-primary"
-                    : "text-[16px] text-muted-text/70 group-hover:text-primary"
-                }`}
-              >
-                {numeral}.
-              </span>
-              <span
-                className={`block h-px transition-all duration-500 ${
-                  isActive
-                    ? "w-8 bg-primary"
-                    : "w-3 bg-border-taupe group-hover:w-5 group-hover:bg-primary/60"
-                }`}
-                aria-hidden="true"
-              />
-            </button>
-          );
-        })}
+              className={`block h-px transition-all duration-500 cursor-pointer ${
+                idx === activeIndex
+                  ? "w-8 bg-primary"
+                  : "w-3 bg-border-taupe hover:w-5 hover:bg-primary/60"
+              }`}
+            />
+          ))}
+        </div>
+
+        <button
+          type="button"
+          onClick={() => scrollBy(1)}
+          disabled={!canNext}
+          aria-label="Nächstes Objekt"
+          className="group inline-flex items-center gap-3 font-body text-[10px] md:text-[11px] tracking-[0.32em] uppercase text-primary hover:text-secondary transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+        >
+          <span>Weiter</span>
+          <IconArrowRight size={14} strokeWidth={1.5} />
+          <span className="block w-6 h-px bg-current transition-all duration-500 group-hover:w-10 group-disabled:group-hover:w-6" />
+        </button>
       </div>
     </div>
   );
