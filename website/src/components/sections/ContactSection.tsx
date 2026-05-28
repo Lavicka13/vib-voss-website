@@ -18,8 +18,7 @@ export function ContactSection() {
           <div className="flex items-center gap-4 mb-5">
             <motion.span
               initial={shouldReduce ? { width: 48 } : { width: 0 }}
-              whileInView={{ width: 48 }}
-              viewport={{ once: true, margin: "-80px" }}
+              animate={{ width: 48 }}
               transition={{ duration: 0.8, ease: EASE, delay: 0.05 }}
               className="block h-px bg-primary/40"
               aria-hidden="true"

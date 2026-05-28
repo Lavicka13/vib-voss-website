@@ -334,8 +334,8 @@ export default function HomePage() {
                   key={item.nr}
                   className="border-t border-primary/30 pt-8 md:pt-10 pb-10 md:pb-14 group"
                 >
-                  <div className="flex items-baseline gap-4">
-                    <span className="font-display italic text-[48px] md:text-[60px] leading-none text-primary group-hover:text-secondary transition-colors duration-500 shrink-0">
+                  <div className="flex items-center gap-4">
+                    <span className="font-display italic text-[64px] md:text-[88px] leading-none text-primary group-hover:text-secondary transition-colors duration-500 shrink-0">
                       {romanize(i + 1)}.
                     </span>
                     <h3 className="font-display text-headline-md text-primary leading-tight">

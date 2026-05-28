@@ -83,8 +83,7 @@ export function SectionHead({
           >
             <motion.span
               initial={shouldReduce ? { width: 48, opacity: 1 } : { width: 0, opacity: 0 }}
-              whileInView={{ width: 48, opacity: 1 }}
-              viewport={{ once: true, margin: "-80px" }}
+              animate={{ width: 48, opacity: 1 }}
               transition={{ duration: 0.8, ease: EASE, delay: 0.05 }}
               className="block h-px bg-primary/40"
               aria-hidden="true"
@@ -108,8 +107,7 @@ export function SectionHead({
                   key={`${word}-${i}`}
                   custom={i}
                   initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, margin: "-60px" }}
+                  animate="visible"
                   variants={variants}
                   className={
                     "inline-block mr-[0.18em] " +
