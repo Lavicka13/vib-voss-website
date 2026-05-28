@@ -70,15 +70,14 @@ export function ContactForm() {
       className="relative border border-border-taupe rounded-lg p-8 md:p-10 bg-surface-ivory flex flex-col gap-6"
       noValidate
     >
-      {/* Honeypot — hidden, never filled by real users */}
-      <input
-        type="text"
-        name="website"
-        tabIndex={-1}
-        autoComplete="off"
-        className="absolute left-[-9999px] w-px h-px"
+      {/* Honeypot — versteckt, ohne horizontalen Overflow (kein left:-9999px → kein Safari-Scroll) */}
+      <div
         aria-hidden="true"
-      />
+        className="absolute h-0 w-0 overflow-hidden"
+        style={{ clip: "rect(0 0 0 0)", clipPath: "inset(50%)" }}
+      >
+        <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+      </div>
       <Input id="kontakt-name" name="name" label="Name" required minLength={2} maxLength={100} />
       <Input id="kontakt-email" name="email" type="email" label="E-Mail" required />
       <Input id="kontakt-telefon" name="telefon" type="tel" label="Telefon (optional)" />

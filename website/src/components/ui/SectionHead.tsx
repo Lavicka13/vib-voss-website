@@ -111,7 +111,10 @@ export function SectionHead({
                   variants={variants}
                   className={
                     "inline-block mr-[0.18em] " +
-                    (isAccent ? "italic font-light text-edge-light" : "")
+                    // Akzentwort: mobil solide/sichtbar, ab md eleganter Outline (wie im Hero).
+                    (isAccent
+                      ? "italic font-light md:text-transparent md:[-webkit-text-stroke:1px_rgba(0,0,0,0.92)]"
+                      : "")
                   }
                 >
                   {word}

@@ -29,15 +29,17 @@ export function EditorialButton({
     "font-body text-[11px] tracking-[0.32em] uppercase overflow-hidden " +
     "transition-all duration-500 cursor-pointer";
 
+  // Beim Hover steigt eine zartrosa Fläche auf — die Schrift muss dann dunkel werden,
+  // weiße Schrift auf zartrosa ist nicht lesbar (Kundenfeedback).
   const variantClass =
     variant === "primary"
-      ? "bg-primary text-on-primary hover:bg-secondary"
-      : "border border-primary/80 text-primary hover:border-secondary hover:text-secondary";
+      ? "bg-primary text-on-primary hover:text-primary"
+      : "border border-primary/80 text-primary hover:text-primary";
 
   const lineClass =
     variant === "primary"
-      ? "bg-on-primary"
-      : "bg-primary group-hover:bg-secondary";
+      ? "bg-on-primary group-hover:bg-primary"
+      : "bg-primary";
 
   const linkProps = external
     ? { target: "_blank", rel: "noopener noreferrer" }
@@ -55,12 +57,10 @@ export function EditorialButton({
         }
         aria-hidden="true"
       />
-      {variant === "primary" && (
-        <span
-          className="absolute inset-0 bg-zartrosa translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]"
-          aria-hidden="true"
-        />
-      )}
+      <span
+        className="absolute inset-0 bg-zartrosa translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]"
+        aria-hidden="true"
+      />
     </>
   );
 

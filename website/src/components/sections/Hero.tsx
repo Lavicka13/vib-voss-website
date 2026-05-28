@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion, useReducedMotion, type Variants } from "framer-motion";
+import { EditorialButton } from "@/components/ui/EditorialButton";
 
 type CTA = { label: string; href: string };
 
@@ -25,11 +25,8 @@ type Props = {
 const EASE_CINEMA: [number, number, number, number] = [0.16, 0.84, 0.24, 1];
 const EASE_OUT: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
-// Today's edition stamp — fixed at build, no Date() runtime
-const EDITION = {
-  vol: "VOL · XXIX",
-  folio: "Folio · MMXXVI",
-};
+// Index des Worts in der Headline, das auf Desktop als Outline gesetzt wird ("aus")
+const ACCENT_WORD = 1;
 
 /**
  * Editorial Cinema Hero
@@ -148,17 +145,14 @@ export function Hero({
         aria-hidden="true"
       />
 
-      {/* ── Left vertical edition strip — desktop only ── */}
+      {/* ── Left vertical brand spine — nur Logo, ohne Editorial-Numeralen ── */}
       <motion.div
-        className="hidden md:flex absolute left-0 top-0 bottom-0 w-[64px] z-[7] flex-col items-center justify-between py-10"
+        className="hidden md:flex absolute left-0 top-0 bottom-0 w-[64px] z-[7] flex-col items-center justify-center py-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.9, ease: EASE_OUT, delay: 0.5 }}
         aria-hidden="true"
       >
-        <span className="font-body text-[10px] tracking-[0.35em] uppercase text-secondary [writing-mode:vertical-rl] rotate-180">
-          {EDITION.vol}
-        </span>
         <Image
           src="/images/logo/logo-mono-240.png"
           alt="V.I.B. Voß Immobilien Beratung"
@@ -167,31 +161,15 @@ export function Hero({
           priority
           className="w-9 h-auto opacity-80 select-none"
         />
-        <span className="font-body text-[10px] tracking-[0.35em] uppercase text-secondary [writing-mode:vertical-rl] rotate-180">
-          {EDITION.folio}
-        </span>
-      </motion.div>
-
-      {/* ── Right vertical caption strip (mirror) — desktop only ── */}
-      <motion.div
-        className="hidden lg:flex absolute right-6 top-0 bottom-0 z-[7] flex-col items-center justify-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.9, ease: EASE_OUT, delay: 0.6 }}
-        aria-hidden="true"
-      >
-        <span className="font-body text-[10px] tracking-[0.45em] uppercase text-muted-text [writing-mode:vertical-rl]">
-          Edith Voss · Rhein-Neckar · seit MCMXCVII
-        </span>
       </motion.div>
 
       {/* ── Main composition ── */}
-      <div className="relative z-10 w-full max-w-container-max mx-auto min-h-[100svh] pl-margin-mobile pr-margin-mobile md:pl-[120px] md:pr-margin-desktop pt-24 pb-16 md:pt-28 md:pb-20 flex flex-col">
+      <div className="relative z-10 w-full max-w-container-max mx-auto min-h-[100svh] pl-margin-mobile pr-margin-mobile md:pl-[120px] md:pr-margin-desktop pt-24 pb-16 md:pt-24 md:pb-10 flex flex-col">
 
         {/* ─── Eyebrow row ─── */}
         {eyebrow && (
           <motion.div
-            className="flex items-center gap-4 mb-10 md:mb-14"
+            className="flex items-center gap-4 mb-8 md:mb-10"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: EASE_OUT, delay: 0.4 }}
@@ -210,26 +188,32 @@ export function Hero({
         )}
 
         {/* ─── Hero composition: type + portrait pillar ─── */}
-        <div className="relative flex-1 grid grid-cols-12 gap-x-4 md:gap-x-6 items-start">
+        <div className="relative flex-1 flex flex-col">
 
           {/* ── HEADLINE TYPOGRAPHY ──
               Spans 9 cols, overlaps portrait. Three weighted lines.
               Middle word ("aus") is outlined for editorial tension.
               Words cascade with blur→sharp choreography. */}
           <h1
-            className="col-span-12 relative z-[4] font-display leading-[0.92] tracking-[-0.02em] text-primary"
+            className="w-full relative z-[4] font-display leading-[0.92] tracking-[-0.02em] text-primary"
             aria-label={headline}
           >
             <span className="sr-only">{headline}</span>
             <span
               className="block"
               aria-hidden="true"
-              style={{ fontSize: "clamp(3rem, 11vw, 9.5rem)" }}
+              style={{ fontSize: "clamp(2.5rem, 8vw, 6.5rem)" }}
             >
               {words.map((word, i) => (
                 <motion.span
                   key={`${word}-${i}`}
-                  className="inline-block mr-[0.18em]"
+                  className={
+                    "inline-block mr-[0.18em] " +
+                    // Akzentwort ("aus"): mobil solide & sichtbar, ab md als eleganter Outline.
+                    (i === ACCENT_WORD
+                      ? "italic font-light md:text-transparent md:[-webkit-text-stroke:1px_rgba(0,0,0,0.92)]"
+                      : "")
+                  }
                   custom={i}
                   initial="hidden"
                   animate="visible"
@@ -242,7 +226,7 @@ export function Hero({
           </h1>
 
           {/* ── Subline + accent + CTAs — sits below type, left-aligned ── */}
-          <div className="col-span-12 md:col-start-1 md:col-span-7 lg:col-span-6 mt-10 md:mt-14 relative z-[4]">
+          <div className="w-full md:max-w-[58%] lg:max-w-[50%] mt-8 md:mt-10 relative z-[4]">
             {subline && (
               <motion.p
                 className="font-body text-[17px] md:text-[19px] leading-[1.55] text-on-surface-variant max-w-[58ch] mb-10"
@@ -256,38 +240,20 @@ export function Hero({
 
             {(primaryCta || secondaryCta) && (
               <motion.div
-                className="flex flex-col sm:flex-row gap-4 mb-12"
+                className="flex flex-col sm:flex-row gap-4 mb-8"
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, ease: EASE_CINEMA, delay: 2.1 }}
               >
                 {primaryCta && (
-                  <Link
-                    href={primaryCta.href}
-                    className="group relative inline-flex items-center justify-center gap-3 px-9 py-[18px] bg-primary text-on-primary font-body text-[11px] tracking-[0.32em] uppercase overflow-hidden transition-all duration-500 hover:bg-secondary cursor-pointer"
-                  >
-                    <span className="relative z-10">{primaryCta.label}</span>
-                    <span
-                      className="relative z-10 block w-4 h-px bg-on-primary transition-all duration-500 group-hover:w-8"
-                      aria-hidden="true"
-                    />
-                    <span
-                      className="absolute inset-0 bg-zartrosa translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.65,0,0.35,1)]"
-                      aria-hidden="true"
-                    />
-                  </Link>
+                  <EditorialButton variant="primary" href={primaryCta.href}>
+                    {primaryCta.label}
+                  </EditorialButton>
                 )}
                 {secondaryCta && (
-                  <Link
-                    href={secondaryCta.href}
-                    className="group inline-flex items-center justify-center gap-3 px-9 py-[18px] border border-primary/80 text-primary font-body text-[11px] tracking-[0.32em] uppercase transition-all duration-500 hover:border-secondary hover:text-secondary cursor-pointer"
-                  >
-                    <span>{secondaryCta.label}</span>
-                    <span
-                      className="block w-4 h-px bg-primary group-hover:bg-secondary transition-all duration-500 group-hover:w-8"
-                      aria-hidden="true"
-                    />
-                  </Link>
+                  <EditorialButton variant="secondary" href={secondaryCta.href}>
+                    {secondaryCta.label}
+                  </EditorialButton>
                 )}
               </motion.div>
             )}
@@ -296,25 +262,19 @@ export function Hero({
           {/* ── Trust strip — bottom row with logo closer on the right ── */}
           {trustStrip && trustStrip.length > 0 && (
             <motion.div
-              className="col-span-12 md:col-start-1 md:col-span-12 mt-8 md:mt-auto md:pt-10 relative z-[4]"
+              className="w-full mt-8 md:mt-auto md:pt-6 relative z-[4]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.9, ease: EASE_OUT, delay: 2.3 }}
             >
               <div className="h-px w-full bg-primary/15 mb-5" aria-hidden="true" />
               <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-12">
-                <ul className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-8 lg:gap-12">
-                  {trustStrip.map((item, i) => (
+                <ul className="flex flex-wrap items-center gap-3">
+                  {trustStrip.map((item) => (
                     <li
                       key={item}
-                      className="flex items-baseline gap-3 group"
+                      className="bg-zartrosa px-[15px] py-[5px]"
                     >
-                      <span
-                        className="font-display italic text-[14px] text-secondary leading-none"
-                        aria-hidden="true"
-                      >
-                        {["i", "ii", "iii", "iv", "v"][i] ?? String(i + 1)}.
-                      </span>
                       <span className="font-body text-[11px] tracking-[0.24em] uppercase text-primary/80">
                         {item}
                       </span>
@@ -347,20 +307,6 @@ export function Hero({
             </motion.div>
           )}
         </div>
-
-        {/* ─── Scroll cue — bottom-left, away from logo closer on the right ─── */}
-        <motion.div
-          className="hidden md:flex absolute bottom-6 left-[120px] items-center gap-3 z-[7]"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.9, delay: 2.6, ease: EASE_OUT }}
-          aria-hidden="true"
-        >
-          <span className="font-body text-[11px] tracking-[0.36em] uppercase text-secondary">
-            Weiterlesen
-          </span>
-          <span className="block w-8 h-px bg-primary/35" />
-        </motion.div>
       </div>
     </section>
   );

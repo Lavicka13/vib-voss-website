@@ -53,6 +53,12 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Anker-Sprünge nicht unter den Sticky-Header rutschen lassen (saubere Höhe). */
+    scroll-padding-top: 88px;
+    /* Opt out of forced/automatic browser dark mode (z.B. Chrome Android "Force Dark").
+       Verhindert, dass der text-edge-light Umriss (transparente Füllung + schwarzer Stroke)
+       in der erzwungenen Schwarz-Ansicht unsichtbar wird ("aus" / "Voß" verschwinden). */
+    color-scheme: only light;
   }
 
   ::selection {
@@ -126,4 +132,23 @@
 
 @media (prefers-reduced-motion: reduce) {
   .reduce-motion-off { animation: none !important; transition: none !important; }
+}
+
+/* ── Druck / PDF-Export (z.B. Datenschutz, Impressum) ── */
+@media print {
+  html {
+    font-size: 11pt;
+    color-scheme: only light;
+  }
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .bg-grain {
+    display: none !important;
+  }
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
 }

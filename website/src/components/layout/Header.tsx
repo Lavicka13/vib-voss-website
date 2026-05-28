@@ -10,7 +10,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="bg-surface/95 backdrop-blur-sm border-b border-border-taupe sticky top-0 z-50 w-full">
+    <header className="bg-surface/95 backdrop-blur-sm border-b border-border-taupe sticky top-0 z-50 w-full print:hidden">
       <div className="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 md:py-5 w-full max-w-container-max mx-auto">
         <Link
           href="/"
