@@ -132,12 +132,6 @@ export function ReferenzHero({ titel, untertitel, ort, image }: Props) {
             </div>
           </div>
         )}
-        {/* Corner marker */}
-        <div className="absolute bottom-4 right-4 flex items-center gap-3 bg-background/85 px-4 py-2 backdrop-blur-sm">
-          <span className="font-body text-[10px] tracking-[0.32em] uppercase text-primary/80">
-            Immobilie · {ort}
-          </span>
-        </div>
       </motion.div>
     </section>
   );

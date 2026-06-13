@@ -2,7 +2,6 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { ContactForm } from "@/components/forms/ContactForm";
-import { widerruf } from "@/content/widerruf";
 
 const EASE: [number, number, number, number] = [0.16, 0.84, 0.24, 1];
 
@@ -69,31 +68,16 @@ export function ContactSection() {
         </div>
       </div>
 
-      {/* Widerrufsbelehrung — ausklappbar (Maklervertrag, V.I.B. Voß als Anbieter) */}
-      <details className="group mt-12 border-t border-border-taupe pt-6">
-        <summary className="flex items-center justify-between cursor-pointer list-none font-body text-[11px] tracking-[0.28em] uppercase text-secondary hover:text-primary transition-colors">
-          <span>{widerruf.title}</span>
-          <span className="font-display text-[20px] leading-none transition-transform duration-300 group-open:rotate-45" aria-hidden="true">
-            +
-          </span>
-        </summary>
-        <div className="mt-6 flex flex-col gap-6 max-w-3xl">
-          <p className="font-body text-body-md text-on-surface-variant leading-relaxed">
-            {widerruf.intro}
-          </p>
-          {widerruf.sections.map((s) => (
-            <div key={s.heading} className="flex flex-col gap-2">
-              <h3 className="font-display text-body-lg text-primary">{s.heading}</h3>
-              {s.body.map((p, i) => (
-                <p key={i} className="font-body text-body-md text-muted-text leading-relaxed">
-                  {p}
-                </p>
-              ))}
-            </div>
-          ))}
-          <p className="font-body text-[12px] text-muted-text italic">{widerruf.pruefHinweis}</p>
-        </div>
-      </details>
+      {/* Widerrufsbelehrung — als eigene Seite verlinkt (Checkbox im Formular) */}
+      <div className="mt-12 border-t border-border-taupe pt-6">
+        <a
+          href="/widerruf"
+          className="inline-flex items-center gap-3 font-body text-[11px] tracking-[0.28em] uppercase text-secondary hover:text-primary transition-colors"
+        >
+          <span>Widerrufsbelehrung</span>
+          <span aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
     </section>
   );
 }

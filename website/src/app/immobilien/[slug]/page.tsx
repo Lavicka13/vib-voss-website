@@ -123,11 +123,6 @@ export default async function ImmobilieDetailPage({
                 </div>
               ))}
             </div>
-            {item.preis && (
-              <p className="font-body text-body-md text-muted-text italic mt-6 max-w-3xl">
-                Verfügbarkeit und Konditionen auf Anfrage.
-              </p>
-            )}
           </RevealOnScroll>
         </section>
       )}
@@ -228,6 +223,41 @@ export default async function ImmobilieDetailPage({
         </section>
       )}
 
+      {/* ─────────────── Exposé-Anfrage & Hinweise zur Haftung ─────────────── */}
+      <section className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap border-t border-border-taupe">
+        <RevealOnScroll>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+            <div className="md:col-span-5 flex flex-col gap-5">
+              <h2 className="font-display text-display-lg-mobile md:text-headline-md text-primary leading-tight">
+                Sie möchten ein ausführliches Exposé erhalten?
+              </h2>
+              <p className="font-body text-body-md text-muted-text leading-relaxed">
+                Sprechen Sie mich direkt an, telefonisch oder über das Kontaktformular. Das vollständige Exposé mit allen Unterlagen erhalten Sie persönlich von mir.
+              </p>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 mt-1">
+                <EditorialButton variant="primary" href="/#kontakt">
+                  Mit mir sprechen
+                </EditorialButton>
+                <a
+                  href="tel:+491733601936"
+                  className="font-body text-body-md text-primary hover:text-secondary transition-colors"
+                >
+                  +49 173 360 19 36
+                </a>
+              </div>
+            </div>
+            <div className="md:col-span-6 md:col-start-7 flex flex-col gap-4 border-t border-primary/20 pt-6 md:border-t-0 md:pt-1">
+              <span className="font-body text-[10px] tracking-[0.32em] uppercase text-secondary/80">
+                Hinweise zur Haftung
+              </span>
+              <p className="font-body text-[13px] text-muted-text leading-relaxed">
+                Virtuelle Beispiele eines Home Stagings dienen ausschließlich der Visualisierung und sind nicht Bestandteil des Angebots. Alle Angaben beruhen auf den Informationen des Eigentümers; für deren Richtigkeit und Vollständigkeit wird keine Haftung übernommen. Änderungen bleiben vorbehalten.
+              </p>
+            </div>
+          </div>
+        </RevealOnScroll>
+      </section>
+
       {/* ─────────────── Closer (Hero-echo) ─────────────── */}
       <section className="relative w-full overflow-hidden bg-zartrosa/25 border-y border-border-taupe">
         <div className="bg-grain absolute inset-0 opacity-[0.05] mix-blend-multiply pointer-events-none" aria-hidden="true" />
@@ -256,13 +286,13 @@ export default async function ImmobilieDetailPage({
               <span className="italic font-light text-edge-light">Objekt?</span>
             </h2>
             <p className="font-body text-body-lg text-on-surface-variant leading-relaxed">
-              Aktuelle Objekte vermittle ich diskret aus meinem gewachsenen Netzwerk — oft schon vor der offiziellen Vermarktung. Hinterlegen Sie Ihr Suchprofil oder besprechen Sie Ihre Verkaufsabsicht persönlich mit mir.
+              Aktuelle Immobilien vermittle ich diskret aus meinem gewachsenen Netzwerk, oft schon vor der offiziellen Vermarktung. Hinterlegen Sie Ihr Suchprofil oder besprechen Sie Ihre Verkaufsabsicht persönlich mit mir.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-2">
               <EditorialButton variant="primary" href="/#kontakt">
                 Mit mir sprechen
               </EditorialButton>
-              <EditorialButton variant="secondary" href="/#immobilien">
+              <EditorialButton variant="secondary" href="/#aktuelle-immobilien">
                 Alle Immobilien ansehen
               </EditorialButton>
             </div>

@@ -10,8 +10,10 @@ type Item = {
   titel: string;
   ort: string;
   image: string | null;
-  /** Badge oben rechts im Bild, z.B. "Bereits verkauft" — nur im Referenz-Modus genutzt. */
+  /** Badge oben rechts im Bild, z.B. "Verkauft" / "Vermietet" — nur im Referenz-Modus genutzt. */
   badge?: string;
+  /** Eckdaten, die im Referenz-Modus beim Mouseover erscheinen (z.B. Immobilienart, Fläche, Zimmer). */
+  meta?: readonly string[];
 };
 
 type Props = {
@@ -100,14 +102,24 @@ export function ReferenzenCarousel({ items, reference = false }: Props) {
         )}
       </div>
       <div className="flex flex-col gap-2">
-        <h3 className="font-display text-body-lg text-primary leading-tight group-hover:text-secondary transition-colors duration-300">
+        <h3 className="font-display text-body-lg text-primary leading-tight line-clamp-2 min-h-[2.6em] group-hover:text-secondary transition-colors duration-300">
           {item.titel}
         </h3>
         <span className="font-body text-body-md text-muted-text">{item.ort}</span>
-        {!reference && (
+        {!reference ? (
           <span className="font-body text-label-caps uppercase tracking-widest text-secondary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             Details ansehen &rarr;
           </span>
+        ) : (
+          item.meta && item.meta.length > 0 && (
+            <ul className="mt-1 flex flex-wrap gap-x-4 gap-y-1 max-h-0 overflow-hidden opacity-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300">
+              {item.meta.map((m) => (
+                <li key={m} className="font-body text-[12px] tracking-[0.02em] text-muted-text">
+                  {m}
+                </li>
+              ))}
+            </ul>
+          )
         )}
       </div>
     </>
@@ -121,7 +133,7 @@ export function ReferenzenCarousel({ items, reference = false }: Props) {
         onClick={() => scrollBy(-1)}
         disabled={!canPrev}
         aria-label="Vorheriges Objekt"
-        className="hidden md:flex absolute left-2 top-[28%] z-10 -translate-y-1/2 items-center justify-center w-11 h-11 rounded-full bg-background/85 text-primary shadow-sm backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300 hover:bg-zartrosa disabled:opacity-0 cursor-pointer"
+        className="hidden md:flex absolute -left-4 lg:-left-6 top-[33%] z-20 -translate-y-1/2 items-center justify-center w-12 h-12 rounded-full bg-surface text-primary shadow-md border border-border-taupe opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300 hover:bg-zartrosa disabled:opacity-0 cursor-pointer"
       >
         <IconArrowLeft size={18} strokeWidth={1.5} />
       </button>
@@ -130,7 +142,7 @@ export function ReferenzenCarousel({ items, reference = false }: Props) {
         onClick={() => scrollBy(1)}
         disabled={!canNext}
         aria-label="Nächstes Objekt"
-        className="hidden md:flex absolute right-2 top-[28%] z-10 -translate-y-1/2 items-center justify-center w-11 h-11 rounded-full bg-background/85 text-primary shadow-sm backdrop-blur-sm opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300 hover:bg-zartrosa disabled:opacity-0 cursor-pointer"
+        className="hidden md:flex absolute -right-4 lg:-right-6 top-[33%] z-20 -translate-y-1/2 items-center justify-center w-12 h-12 rounded-full bg-surface text-primary shadow-md border border-border-taupe opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300 hover:bg-zartrosa disabled:opacity-0 cursor-pointer"
       >
         <IconArrowRight size={18} strokeWidth={1.5} />
       </button>

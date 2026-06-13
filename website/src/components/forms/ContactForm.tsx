@@ -94,6 +94,18 @@ export function ContactForm() {
           </span>
         }
       />
+      <Checkbox
+        id="kontakt-widerruf"
+        name="widerruf"
+        value="true"
+        label={
+          <span>
+            Ich habe die{" "}
+            <a href="/widerruf" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">Widerrufsbelehrung</a>{" "}
+            zur Kenntnis genommen (gilt im Falle eines zustande kommenden Maklervertrages).
+          </span>
+        }
+      />
       {errorMsg && <p className="text-error font-body text-body-md">{errorMsg}</p>}
       <Button type="submit" disabled={status === "submitting"} fullWidth>
         {status === "submitting" ? "Wird gesendet…" : "Nachricht senden"}

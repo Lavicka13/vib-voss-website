@@ -74,7 +74,7 @@ export default function HomePage() {
               />
               {/* corner edition marker */}
               <div className="absolute bottom-4 right-4 flex items-center gap-3 bg-background/85 px-4 py-2 backdrop-blur-sm">
-                <span className="font-body text-[10px] tracking-[0.32em] uppercase text-primary/80">Edith Voss · seit 1997</span>
+                <span className="font-body text-[10px] tracking-[0.32em] uppercase text-primary/80">Edith Voss · seit 1996</span>
               </div>
             </div>
           </RevealOnScroll>
@@ -97,33 +97,6 @@ export default function HomePage() {
                     </p>
                   ))}
                 </div>
-              </div>
-            </div>
-          </RevealOnScroll>
-
-          {/* Partnerschaft — Zwei Generationen (Edith Voss + Tom Dorn) */}
-          <RevealOnScroll>
-            <div className="mt-16 md:mt-20 pt-12 border-t border-border-taupe grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
-              <div className="md:col-span-5">
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="block h-px w-12 bg-primary/40" aria-hidden="true" />
-                  <span className="font-body text-[10px] tracking-[0.36em] uppercase text-secondary">
-                    {home.ueberMich.partnerschaft.eyebrow}
-                  </span>
-                </div>
-                <h3 className="font-display text-headline-md text-primary leading-tight">
-                  {home.ueberMich.partnerschaft.headline}
-                </h3>
-              </div>
-              <div className="md:col-span-7 flex flex-col gap-5">
-                {home.ueberMich.partnerschaft.body.map((p, i) => (
-                  <p
-                    key={i}
-                    className="font-body text-body-lg text-on-surface-variant leading-relaxed"
-                  >
-                    {p}
-                  </p>
-                ))}
               </div>
             </div>
           </RevealOnScroll>
@@ -183,8 +156,7 @@ export default function HomePage() {
             <div className="md:col-span-7 md:col-start-6 flex flex-col">
               <ul className="font-body text-body-lg text-on-surface-variant flex-1 flex flex-col justify-between gap-5 md:gap-0">
                 {home.leistungen.items.map((item) => (
-                  <li key={item} className="flex items-start gap-4 group">
-                    <span className="mt-[0.6em] block w-1.5 h-1.5 rounded-full bg-secondary shrink-0" aria-hidden="true" />
+                  <li key={item} className="border-b border-border-taupe/60 py-3 first:pt-0 group">
                     <span className="flex-1">{item}</span>
                   </li>
                 ))}
@@ -278,8 +250,8 @@ export default function HomePage() {
         <RevealOnScroll>
           <div className="flex items-center gap-4 mb-8 mt-4">
             <span className="block h-px w-12 bg-primary/40" aria-hidden="true" />
-            <h3 className="font-body text-[11px] tracking-[0.36em] uppercase text-secondary">
-              Aktuelle Objekte
+            <h3 id="aktuelle-immobilien" className="font-body text-[11px] tracking-[0.36em] uppercase text-secondary scroll-mt-28">
+              Aktuelle Immobilien
             </h3>
           </div>
         </RevealOnScroll>
@@ -416,14 +388,14 @@ export default function HomePage() {
 
           <RevealOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-12">
-              {home.tippgeber.steps.map((step, i) => (
+              {home.tippgeber.steps.map((step) => (
                 <div
                   key={step.nr}
                   className="bg-surface border-t border-primary/30 pt-9 md:pt-10 pb-10 md:pb-12 px-7 md:px-9 flex flex-col gap-5"
                 >
                   <div className="flex items-baseline gap-5">
-                    <span className="font-display italic text-[48px] md:text-[64px] leading-none text-primary">
-                      {romanize(i + 1)}.
+                    <span className="text-[40px] md:text-[52px] leading-none text-secondary font-bold" aria-hidden="true">
+                      ✓
                     </span>
                     <span className="font-body text-[14px] md:text-[16px] tracking-[0.28em] uppercase text-secondary/80 pb-2">
                       Schritt
@@ -462,8 +434,8 @@ export default function HomePage() {
                 <ul className="space-y-3 font-body text-body-md text-muted-text">
                   {home.tippgeber.bedingungen.map((b, i) => (
                     <li key={i} className="flex items-baseline gap-3">
-                      <span className="font-display italic text-[12px] text-secondary leading-none w-6 shrink-0" aria-hidden="true">
-                        {romanize(i + 1).toLowerCase()}.
+                      <span className="text-[14px] text-secondary leading-none w-6 shrink-0 font-bold" aria-hidden="true">
+                        ✓
                       </span>
                       <span>{b}</span>
                     </li>
@@ -583,33 +555,4 @@ export default function HomePage() {
       </section>
     </>
   );
-}
-
-/**
- * Compact roman numeralizer for 1–20 — sufficient for any list length on this page.
- */
-function romanize(n: number): string {
-  const map: Record<number, string> = {
-    1: "I",
-    2: "II",
-    3: "III",
-    4: "IV",
-    5: "V",
-    6: "VI",
-    7: "VII",
-    8: "VIII",
-    9: "IX",
-    10: "X",
-    11: "XI",
-    12: "XII",
-    13: "XIII",
-    14: "XIV",
-    15: "XV",
-    16: "XVI",
-    17: "XVII",
-    18: "XVIII",
-    19: "XIX",
-    20: "XX",
-  };
-  return map[n] ?? String(n);
 }
