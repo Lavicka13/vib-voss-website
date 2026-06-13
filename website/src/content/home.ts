@@ -105,7 +105,6 @@ export const home = {
           "Weinheim ist eine beliebte Stadt an der idyllischen Bergstraße mit mediteranem Flair, der romantischen Altstadt, dem wunderschönen Marktplatz sowie dem Wahrzeichen Weinheims — die 2 Burgen. Die Region ist äußerst beliebt und sehr gefragt. Highlights sind der bekannte Exotenwald, der malerische Schlosspark und der weit über die Grenzen hinaus bekannte Hermannshof. Die Kreisklinik bietet beste medizinische Versorgung. Die Stadt ist mit ihren ca. 49.000 Einwohnern und dem Sitz namhafter Unternehmen Mittelzentrum in der prosperierenden Metropolregion Rhein-Neckar mit ca. 2,3 Mio. Einwohnern. Durch die sehr gute Anbindung an A 5, A 6, A 61, A 65 und an den ÖPNV (DB ICE + IC) erreichen Sie in kürzester Zeit die umliegenden Städte Mannheim, Heidelberg, Darmstadt, Frankfurt und den internationalen Frankfurter Flughafen. Weltbekannte Universitäten in Heidelberg, Mannheim, Darmstadt und Frankfurt und viele renommierte Universitätskliniken mit allen Fakultäten befinden sich in direkter Nachbarschaft.",
         ausstattung: [
           "Balkon",
-          "4 Stellplätze",
           "Gehobene Ausstattung",
           "Dusche",
           "Bad mit Badewanne",
@@ -165,7 +164,6 @@ export const home = {
           "Die Dachgeschosswohnung befindet sich in bester, gesuchter Wohnlage von Weinheim, einer der gefragtesten Städte an der Badischen Bergstraße. Die Umgebung vereint urbanes Leben mit naturnaher Wohnqualität und zählt zur wirtschaftsstarken Metropolregion Rhein-Neckar. In fußläufiger Entfernung erreichen Sie die charmante Weinheimer Altstadt mit ihrem historischen Marktplatz, zahlreichen Cafés, Restaurants und individuellen Geschäften. Auch der Schlosspark, der Exotenwald sowie vielfältige Freizeit- und Naherholungsmöglichkeiten befinden sich in unmittelbarer Nähe. Die Verkehrsanbindung ist hervorragend: Der Bahnhof Weinheim bietet Anschluss an den Regional- und Fernverkehr, die Straßenbahn entlang der Bergstraße eine schnelle Verbindung nach Heidelberg und Mannheim. Zudem sind die Autobahnen A5 und A659 in wenigen Minuten erreichbar. Weinheim gilt als „Zwei-Burgen-Stadt“ und überzeugt durch seine einzigartige Lage zwischen Odenwald und Rheinebene.",
         ausstattung: [
           "2 Balkone (Ost und Süd)",
-          "4 Stellplätze",
           "Doppelgarage",
           "Gehobene Ausstattung",
           "Dusche",
@@ -221,7 +219,6 @@ export const home = {
           "Die Villa liegt in einer der exklusivsten Wohngegenden Weinheims — geprägt von Privatsphäre und einem hochwertigen Wohnumfeld. Eingebettet in die idyllische Landschaft der Bergstraße genießen Sie hier Natur, Komfort, urbane Nähe sowie den Blick in die Rheinebene. Die charmante Weinheimer Altstadt mit ihrem historischen Marktplatz, Boutiquen, Cafés und Restaurants ist in wenigen Minuten erreichbar, ebenso wie Schulen, Kindergärten und vielfältige Freizeitmöglichkeiten. Dank der hervorragenden Verkehrsanbindung erreichen Sie Heidelberg und Mannheim in weniger als 20 Minuten, den Flughafen Frankfurt in rund 45 Minuten. Gleichzeitig laden Weinberge und der Odenwald direkt vor der Haustür zu Spaziergängen, Wanderungen oder sportlichen Aktivitäten ein. Eine Lage, die für hohe Lebensqualität und stilvolles Wohnen steht.",
         ausstattung: [
           "Balkon",
-          "4 Stellplätze",
           "Luxus-Ausstattung",
           "Dusche",
           "Bad mit Badewanne",
@@ -323,7 +320,6 @@ export const home = {
           "Die Immobilie liegt im beliebten Ortsteil Gölshausen-Bretten in einer ruhigen, gewachsenen Wohnlage mit überwiegend Ein- und Zweifamilienhäusern. Einkaufsmöglichkeiten, Kindergarten, Schule, Bushaltestelle sowie Ärzte sind im nahen Umfeld vorhanden. Die Brettener Innenstadt ist in wenigen Autominuten erreichbar. Eine gute Verkehrsanbindung in Richtung Karlsruhe, Bruchsal und Stuttgart rundet die Lage ab.",
         ausstattung: [
           "Balkon",
-          "2 Stellplätze",
           "Einzelgarage",
           "Standard-Ausstattung",
           "Dusche",
@@ -372,7 +368,6 @@ export const home = {
           "Die Villa befindet sich in einer der begehrtesten Lagen der Rhein-Neckar-Region mit Blick auf den Neckar. Nur wenige Schritte trennen Sie von einer malerischen Altstadt mit ihren historischen Gassen, Cafés und Restaurants, Schulen, Kindergärten, Ärzten, Einkaufsmöglichkeiten und Sportangeboten. Eine ausgezeichnete Verkehrsanbindung an die Universitätsstädte Heidelberg und Mannheim mit Pkw oder öffentlichen Verkehrsmitteln rundet die Lage ab.",
         ausstattung: [
           "Balkon",
-          "2 Stellplätze",
           "Gehobene Ausstattung",
           "Dusche",
           "Bad mit Badewanne",

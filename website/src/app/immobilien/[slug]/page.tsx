@@ -260,7 +260,10 @@ export default async function ImmobilieDetailPage({
                 Hinweise zur Haftung
               </span>
               <p className="font-body text-[13px] text-muted-text leading-relaxed">
-                Virtuelle Beispiele eines Home Stagings dienen ausschließlich der Visualisierung und sind nicht Bestandteil des Angebots. Alle Angaben beruhen auf den Informationen des Eigentümers; für deren Richtigkeit und Vollständigkeit wird keine Haftung übernommen. Änderungen bleiben vorbehalten.
+                Einige Bilder wurden zur besseren Visualisierung der Nutzungsmöglichkeiten digital möbliert (virtuelles Homestaging). Die dargestellte Einrichtung dient lediglich der Illustration und ist nicht Bestandteil des Angebots.
+              </p>
+              <p className="font-body text-[13px] text-muted-text leading-relaxed">
+                Alle Angaben zu diesem Objekt beruhen auf den Informationen des Eigentümers. Eine Haftung für die Richtigkeit, Vollständigkeit oder Aktualität können wir nicht übernehmen. Es obliegt dem Interessenten, die Angaben eigenständig zu prüfen. Unsere Angebote sind freibleibend; Zwischenverkauf, Vermietung und sonstige Änderungen bleiben vorbehalten.
               </p>
             </div>
           </div>
