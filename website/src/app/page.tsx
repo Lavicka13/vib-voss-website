@@ -10,6 +10,7 @@ import { SectionHead } from "@/components/ui/SectionHead";
 import { EditorialButton } from "@/components/ui/EditorialButton";
 import { PresseSlideshow } from "@/components/ui/PresseSlideshow";
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
+import { IconStarFilled } from "@tabler/icons-react";
 import { home } from "@/content/home";
 
 export default function HomePage() {
@@ -475,22 +476,28 @@ export default function HomePage() {
           </RevealOnScroll>
 
           <RevealOnScroll>
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
-              <div className="md:col-span-8 md:col-start-3 flex flex-col gap-10">
-                {home.kundenstimmen.stimmen.map((s, idx) => (
-                  <figure
-                    key={idx}
-                    className="border-t border-primary/30 pt-8 flex flex-col gap-5"
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter mt-2">
+              {home.kundenstimmen.stimmen.map((s, idx) => (
+                <figure
+                  key={idx}
+                  className="flex flex-col gap-6 bg-surface border border-border-taupe rounded-lg p-8 md:p-10"
+                >
+                  <div
+                    className="flex items-center gap-1 text-secondary"
+                    aria-label="5 von 5 Sternen"
                   >
-                    <blockquote className="font-display italic text-[clamp(1.4rem,3vw,2rem)] text-primary leading-snug">
-                      &bdquo;{s.quote}&ldquo;
-                    </blockquote>
-                    <figcaption className="font-body text-label-caps text-muted-text uppercase tracking-widest">
-                      {s.author}
-                    </figcaption>
-                  </figure>
-                ))}
-              </div>
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <IconStarFilled key={i} size={18} />
+                    ))}
+                  </div>
+                  <blockquote className="font-display italic text-[clamp(1.1rem,1.8vw,1.45rem)] text-primary leading-snug flex-1">
+                    &bdquo;{s.quote}&ldquo;
+                  </blockquote>
+                  <figcaption className="font-body text-label-caps text-muted-text uppercase tracking-widest border-t border-border-taupe pt-5">
+                    {s.author}
+                  </figcaption>
+                </figure>
+              ))}
             </div>
           </RevealOnScroll>
 
