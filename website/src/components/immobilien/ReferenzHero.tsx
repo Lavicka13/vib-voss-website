@@ -8,6 +8,8 @@ type Props = {
   untertitel?: string;
   ort: string;
   image: string | null;
+  /** true, wenn unterhalb eine Galerie folgt — dann wird das Einzelbild im Hero ausgeblendet. */
+  hideImage?: boolean;
 };
 
 const EASE_CINEMA: [number, number, number, number] = [0.16, 0.84, 0.24, 1];
@@ -35,7 +37,7 @@ const reducedVariants: Variants = {
  * cascading headline reveal, optional outlined accent. The portrait
  * carries a corner edition mark like the about chapter.
  */
-export function ReferenzHero({ titel, untertitel, ort, image }: Props) {
+export function ReferenzHero({ titel, untertitel, ort, image, hideImage = false }: Props) {
   const shouldReduce = useReducedMotion();
   const variants = shouldReduce ? reducedVariants : wordVariants;
   const words = titel.split(" ");
@@ -104,7 +106,8 @@ export function ReferenzHero({ titel, untertitel, ort, image }: Props) {
         </motion.div>
       )}
 
-      {/* Image with corner edition marker */}
+      {/* Image — entfällt, wenn unterhalb eine Galerie folgt */}
+      {!hideImage && (
       <motion.div
         className="relative w-full aspect-[16/10] md:aspect-[21/9] overflow-hidden bg-surface-container-low mt-4"
         initial={shouldReduce ? { opacity: 0 } : { opacity: 0, y: 20 }}
@@ -133,6 +136,7 @@ export function ReferenzHero({ titel, untertitel, ort, image }: Props) {
           </div>
         )}
       </motion.div>
+      )}
     </section>
   );
 }

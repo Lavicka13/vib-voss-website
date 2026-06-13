@@ -128,6 +128,14 @@ export const home = {
         untertitel: "Exklusive Eigentumswohnung in bester, gesuchter Lage Weinheim",
         ort: "69469 Weinheim",
         image: "/images/referenzen/ref-dachwohnung-rheinebene-1600.jpg",
+        bilder: [
+          "/images/referenzen/dachwohnung-1-1600.jpg",
+          "/images/referenzen/dachwohnung-2-1600.jpg",
+          "/images/referenzen/dachwohnung-3-1600.jpg",
+          "/images/referenzen/dachwohnung-4-1600.jpg",
+          "/images/referenzen/dachwohnung-5-1600.jpg",
+          "/images/referenzen/dachwohnung-6-1600.jpg",
+        ],
         preis: "650.000 €",
         eckdaten: {
           wohnflaeche: "ca. 105 m²",

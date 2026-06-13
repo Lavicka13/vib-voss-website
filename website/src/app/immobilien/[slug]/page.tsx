@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { home } from "@/content/home";
 import { ReferenzHero } from "@/components/immobilien/ReferenzHero";
+import { ReferenzGalerie } from "@/components/immobilien/ReferenzGalerie";
 import { ReferenzDataBlock } from "@/components/immobilien/ReferenzDataBlock";
 import { ReferenzAusstattungList } from "@/components/immobilien/ReferenzAusstattungList";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
@@ -44,6 +45,7 @@ type Item = {
   beschreibung: readonly string[];
   lage?: string;
   ausstattung: readonly string[];
+  bilder?: readonly string[];
 };
 
 function getItem(slug: string): Item | undefined {
@@ -88,6 +90,8 @@ export default async function ImmobilieDetailPage({
   const item = getItem(slug);
   if (!item) notFound();
 
+  const hasGalerie = (item.bilder?.length ?? 0) > 1;
+
   const quickKpis: { label: string; value: string }[] = [];
   if (item.preis) quickKpis.push({ label: "Preis", value: item.preis });
   if (item.eckdaten.zimmer !== undefined) quickKpis.push({ label: "Zimmer", value: String(item.eckdaten.zimmer) });
@@ -102,7 +106,12 @@ export default async function ImmobilieDetailPage({
         untertitel={item.untertitel}
         ort={item.ort}
         image={item.image}
+        hideImage={hasGalerie}
       />
+
+      {hasGalerie && item.bilder && (
+        <ReferenzGalerie images={item.bilder} titel={item.titel} />
+      )}
 
       {/* ─────────────── KPI strip (editorial) ─────────────── */}
       {quickKpis.length > 0 && (
