@@ -54,11 +54,17 @@ export function BeforeAfterSlider({
         />
       </div>
 
-      {/* Labels */}
-      <span className="absolute top-3 left-3 bg-primary/80 text-on-primary font-body text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 backdrop-blur-sm pointer-events-none">
+      {/* Labels — blenden sich aus, sobald ihr Bildanteil nicht mehr sichtbar ist */}
+      <span
+        className="absolute top-3 left-3 bg-primary/80 text-on-primary font-body text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 backdrop-blur-sm pointer-events-none transition-opacity duration-200"
+        style={{ opacity: Math.min(1, pos / 12) }}
+      >
         {beforeLabel}
       </span>
-      <span className="absolute top-3 right-3 bg-primary/80 text-on-primary font-body text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 backdrop-blur-sm pointer-events-none">
+      <span
+        className="absolute top-3 right-3 bg-primary/80 text-on-primary font-body text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 backdrop-blur-sm pointer-events-none transition-opacity duration-200"
+        style={{ opacity: Math.min(1, (100 - pos) / 12) }}
+      >
         {afterLabel}
       </span>
 
