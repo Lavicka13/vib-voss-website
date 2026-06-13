@@ -385,17 +385,27 @@ export const home = {
       },
     ],
   },
-  // TODO_VON_EDITH: echte verkaufte/vermietete Referenzobjekte + Bilder ergänzen.
-  // Die Einträge sind PLATZHALTER (generische Mock-Bilder) zur Ansicht des Referenz-Sliders.
+  // Echte verkaufte/vermittelte Referenzobjekte (Quelle: Änderungsdokument 11.06.2026).
+  // Birkenau und Weinheim-West folgen, sobald Edith die Angaben nachliefert.
   referenzen: {
     eyebrow: "Referenzen",
     headline: "Erfolgreich vermittelt.",
     intro:
-      "Eine Auswahl bereits verkaufter und vermittelter Objekte. Aus Diskretionsgründen nenne ich Details ausschließlich im persönlichen Gespräch.",
+      "Eine Auswahl bereits verkaufter und vermittelter Objekte. Aus Diskretionsgründen nenne ich weitere Details ausschließlich im persönlichen Gespräch.",
     items: [
-      { slug: "ref-1", titel: "Villa mit Weitblick", ort: "Rhein-Neckar-Raum", image: "/images/object-mock-1-1600.jpg", badge: "Bereits verkauft" },
-      { slug: "ref-2", titel: "Stadthaus in zentraler Lage", ort: "Weinheim", image: "/images/object-mock-2-1600.jpg", badge: "Bereits verkauft" },
-      { slug: "ref-3", titel: "Moderne Eigentumswohnung", ort: "Heidelberg", image: "/images/object-mock-3-1600.jpg", badge: "Bereits vermietet" },
+      { slug: "ref-edenkoben-villa", titel: "Juwel in der Südpfalz", ort: "Edenkoben, Südpfalz", image: "/images/referenzen/ref-edenkoben-villa-1600.jpg", badge: "Verkauft", meta: ["Villa", "ca. 240 m² Wohnfläche", "ca. 730 m² Grundstück", "6 Zimmer"] },
+      { slug: "ref-hockenheim-wohnung", titel: "Gemütliche Wohnoase in zentraler Lage", ort: "Hockenheim", image: "/images/referenzen/ref-hockenheim-wohnung-1600.jpg", badge: "Verkauft", meta: ["Etagenwohnung", "ca. 62 m² Wohnfläche", "2 Zimmer"] },
+      { slug: "ref-rheingoenheim-dg", titel: "Sonnige Dachgeschosswohnung", ort: "Ludwigshafen-Rheingönheim", image: "/images/referenzen/ref-rheingoenheim-dg-1600.jpg", badge: "Verkauft", meta: ["Wohnung", "ca. 78 m² Wohnfläche", "2,5 Zimmer"] },
+      { slug: "ref-weinheim-weststadt", titel: "Attraktive, sonnige Wohnung", ort: "Weinheim-Weststadt", image: "/images/referenzen/ref-weinheim-weststadt-1600.jpg", badge: "Vermietet", meta: ["Wohnung", "ca. 65 m² Wohnfläche", "2 Zimmer"] },
+      { slug: "ref-mainz-wohnung", titel: "Attraktive, sonnige 2-Zimmer-Wohnung", ort: "Mainz", image: "/images/referenzen/ref-mainz-wohnung-1600.jpg", badge: "Vermietet", meta: ["Wohnung", "ca. 64 m² Wohnfläche", "2 Zimmer"] },
+      { slug: "ref-weinheim-musikerviertel", titel: "Sonniges Einfamilienhaus mit Blick in die Rheinebene", ort: "Weinheim-Musikerviertel", image: "/images/referenzen/ref-weinheim-musikerviertel-1600.jpg", badge: "Verkauft", meta: ["Einfamilienhaus", "ca. 188 m² Wohnfläche", "ca. 735 m² Grundstück", "6 Zimmer"] },
+      { slug: "ref-weinheim-villa", titel: "Repräsentative Villa in beneidenswerter Lage", ort: "Weinheim", image: "/images/referenzen/ref-weinheim-villa-1600.jpg", badge: "Verkauft", meta: ["Villa", "ca. 600 m² Wohnfläche", "ca. 2.227 m² Grundstück", "13 Zimmer"] },
+      { slug: "ref-gorxheimertal", titel: "Außergewöhnliches Kleinod", ort: "Gorxheimertal", image: "/images/referenzen/ref-gorxheimertal-1600.jpg", badge: "Verkauft", meta: ["Einfamilienhaus", "ca. 170 m² Wohnfläche", "ca. 567 m² Grundstück", "8 Zimmer"] },
+      { slug: "ref-weinheim-sulzbach", titel: "Französisches Flair, ganz nah", ort: "Weinheim-Sulzbach", image: "/images/referenzen/ref-weinheim-sulzbach-1600.jpg", badge: "Verkauft", meta: ["Einfamilienhaus", "ca. 117 m² Wohnfläche", "ca. 204 m² Grundstück", "4 Zimmer"] },
+      { slug: "ref-weinheim-stadthaus", titel: "Beeindruckendes Stadthaus in gesuchter Lage", ort: "Weinheim, Fußgängerzone", image: "/images/referenzen/ref-weinheim-stadthaus-1600.jpg", badge: "Verkauft", meta: ["Mehrfamilienhaus", "ca. 396 m² Wohnfläche", "ca. 274 m² Grundstück", "11 Zimmer"] },
+      { slug: "ref-weinheim-zweifamilien", titel: "Großzügiges Zweifamilienhaus", ort: "Weinheim", image: "/images/referenzen/ref-weinheim-zweifamilien-1600.jpg", badge: "Verkauft", meta: ["Mehrfamilienhaus", "ca. 330 m² Wohnfläche", "ca. 800 m² Grundstück", "8 Zimmer"] },
+      { slug: "ref-heddesheim-doppelhaus", titel: "Gemütliches Doppelhaus", ort: "Heddesheim", image: "/images/referenzen/ref-heddesheim-doppelhaus-1600.jpg", badge: "Verkauft", meta: ["Mehrfamilienhaus", "ca. 140 m² Wohnfläche", "ca. 369 m² Grundstück", "5 Zimmer"] },
+      { slug: "ref-weinheim-mfh", titel: "Charmantes Mehrfamilienhaus", ort: "Weinheim", image: "/images/referenzen/ref-weinheim-mfh-1600.jpg", badge: "Verkauft", meta: ["Mehrfamilienhaus", "ca. 425 m² Wohnfläche", "ca. 365 m² Grundstück", "15 Zimmer"] },
     ],
   },
   homeStaging: {
@@ -416,11 +426,7 @@ export const home = {
     images: [
       {
         src: "/images/presse-neu-1600.jpg",
-        alt: "Zeitungsartikel der Weinheimer Nachrichten / Odenwälder Zeitung über Edith Voß und Tom Dorn — „Das Original ist zurück“",
-      },
-      {
-        src: "/images/presse-alt-1600.jpg",
-        alt: "Älterer Presseartikel über Edith Voß — „Die Philosophie lautet: Verkaufen aus Leidenschaft!“",
+        alt: "Zeitungsartikel der Weinheimer Nachrichten / Odenwälder Zeitung über Edith Voß und Tom Dorn: „Das Original ist zurück“",
       },
     ],
   },

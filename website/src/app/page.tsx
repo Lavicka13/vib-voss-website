@@ -191,8 +191,8 @@ export default function HomePage() {
               <BeforeAfterSlider
                 beforeSrc="/images/home-staging-vorher-1200.jpg"
                 afterSrc="/images/home-staging-nachher-1200.jpg"
-                beforeAlt="Badezimmer vor dem Home Staging — veraltete Ausstattung"
-                afterAlt="Dasselbe Badezimmer nach dem Home Staging — modern und einladend inszeniert"
+                beforeAlt="Leerer Wohnraum vor dem Home Staging, kahle Wände und unmöblierter Boden"
+                afterAlt="Derselbe Raum nach dem Home Staging, als moderne offene Wohnküche stilvoll inszeniert"
               />
             </div>
           </RevealOnScroll>
