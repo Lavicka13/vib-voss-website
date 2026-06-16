@@ -44,9 +44,6 @@ export function Footer() {
                 className="h-36 md:h-44 w-auto block"
               />
             </Link>
-            <p className="font-display italic text-signature-quote text-primary leading-snug max-w-sm">
-              &bdquo;Man lebt nur einmal &mdash; wir zeigen Ihnen wo.&ldquo;
-            </p>
           </div>
 
           {/* Kontakt column */}
@@ -109,12 +106,6 @@ export function Footer() {
           <p className="font-body text-[11px] tracking-[0.18em] uppercase text-primary/70">
             © {year} V.I.B. Voß Immobilien Beratung
           </p>
-          <div className="flex items-center gap-3 self-start md:self-auto">
-            <span className="block h-px w-8 bg-primary/40" aria-hidden="true" />
-            <span className="font-body text-[10px] tracking-[0.4em] uppercase text-primary/70">
-              Rhein-Neckar
-            </span>
-          </div>
         </div>
       </div>
     </footer>
