@@ -32,11 +32,11 @@ export function Header() {
         </Link>
         {isDetail ? (
           <Link
-            href="/"
+            href="/#aktuelle-immobilien"
             className="flex items-center gap-2 font-body text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300"
           >
             <IconArrowLeft size={16} strokeWidth={1.5} />
-            <span>Zurück zur Website</span>
+            <span>Zurück zu den Immobilien</span>
           </Link>
         ) : (
           <>

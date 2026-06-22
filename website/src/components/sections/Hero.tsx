@@ -79,7 +79,7 @@ export function Hero({
 
   return (
     <section
-      className="relative w-full min-h-[100svh] overflow-hidden bg-background text-primary"
+      className="relative w-full min-h-[100svh] md:min-h-0 md:h-[calc(100svh-5.5rem)] overflow-hidden bg-background text-primary"
       aria-label="Hero"
     >
       {/* ── Architectural atmosphere: classical stucco + arch, right-aligned ── */}
@@ -137,39 +137,31 @@ export function Hero({
         transition={{ duration: 1.4, ease: EASE_OUT, delay: 0.0 }}
         aria-hidden="true"
       />
+      {/* ── Transparentes creme-Logo als dezenter Watermark, links mittig ── */}
       <motion.div
-        className="hidden md:block absolute top-0 bottom-0 left-[64px] w-px bg-primary/12 origin-top z-[6]"
-        initial={shouldReduce ? { opacity: 0 } : { scaleY: 0 }}
-        animate={shouldReduce ? { opacity: 1 } : { scaleY: 1 }}
-        transition={{ duration: 1.6, ease: EASE_OUT, delay: 0.15 }}
-        aria-hidden="true"
-      />
-
-      {/* ── Left vertical brand spine — nur Logo, ohne Editorial-Numeralen ── */}
-      <motion.div
-        className="hidden md:flex absolute left-0 top-0 bottom-0 w-[64px] z-[7] flex-col items-center justify-center py-10"
+        className="hidden md:flex absolute left-0 top-0 bottom-0 w-[120px] lg:w-[140px] z-[3] flex-col items-center justify-center pointer-events-none select-none"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.9, ease: EASE_OUT, delay: 0.5 }}
+        transition={{ duration: 1.2, ease: EASE_OUT, delay: 0.5 }}
         aria-hidden="true"
       >
         <Image
-          src="/images/logo/logo-mono-240.png"
-          alt="V.I.B. Voß Immobilien Beratung"
+          src="/images/logo/logo-creme-720.png"
+          alt=""
           width={157}
           height={240}
           priority
-          className="w-9 h-auto opacity-80 select-none"
+          className="w-20 lg:w-24 h-auto opacity-70 select-none"
         />
       </motion.div>
 
       {/* ── Main composition ── */}
-      <div className="relative z-10 w-full max-w-container-max mx-auto min-h-[100svh] pl-margin-mobile pr-margin-mobile md:pl-[120px] md:pr-margin-desktop pt-24 pb-16 md:pt-24 md:pb-10 flex flex-col">
+      <div className="relative z-10 w-full max-w-container-max mx-auto min-h-[100svh] md:min-h-0 md:h-full pl-margin-mobile pr-margin-mobile md:pl-[120px] md:pr-margin-desktop pt-24 pb-16 md:pt-16 md:pb-8 flex flex-col">
 
         {/* ─── Eyebrow row ─── */}
         {eyebrow && (
           <motion.div
-            className="flex items-center gap-4 mb-8 md:mb-10"
+            className="flex items-center gap-4 mb-8 md:mb-6"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: EASE_OUT, delay: 0.4 }}
@@ -226,10 +218,10 @@ export function Hero({
           </h1>
 
           {/* ── Subline + accent + CTAs — sits below type, left-aligned ── */}
-          <div className="w-full md:max-w-[58%] lg:max-w-[50%] mt-8 md:mt-10 relative z-[4]">
+          <div className="w-full md:max-w-[58%] lg:max-w-[50%] mt-8 md:mt-6 relative z-[4]">
             {subline && (
               <motion.p
-                className="font-body text-[17px] md:text-[19px] leading-[1.55] text-on-surface-variant max-w-[58ch] mb-10"
+                className="font-body text-[17px] md:text-[19px] leading-[1.55] text-on-surface-variant max-w-[58ch] mb-8 md:mb-6"
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.0, ease: EASE_CINEMA, delay: 1.95 }}
@@ -240,7 +232,7 @@ export function Hero({
 
             {(primaryCta || secondaryCta) && (
               <motion.div
-                className="flex flex-col sm:flex-row gap-4 mb-8"
+                className="flex flex-col sm:flex-row gap-4 mb-8 md:mb-4"
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, ease: EASE_CINEMA, delay: 2.1 }}
@@ -262,7 +254,7 @@ export function Hero({
           {/* ── Trust strip — bottom row with logo closer on the right ── */}
           {trustStrip && trustStrip.length > 0 && (
             <motion.div
-              className="w-full mt-8 md:mt-auto md:pt-6 relative z-[4]"
+              className="w-full mt-8 md:mt-auto md:pt-4 relative z-[4]"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.9, ease: EASE_OUT, delay: 2.3 }}

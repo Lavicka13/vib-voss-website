@@ -287,8 +287,8 @@ export default async function ImmobilieDetailPage({
               className="font-display text-primary leading-[0.95]"
               style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
             >
-              Sie suchen ein ähnliches{" "}
-              <span className="italic font-light text-edge-light">Objekt?</span>
+              Sie suchen eine ähnliche{" "}
+              <span className="italic font-light text-edge-light">Immobilie?</span>
             </h2>
             <p className="font-body text-body-lg text-on-surface-variant leading-relaxed">
               Aktuelle Immobilien vermittle ich diskret aus meinem gewachsenen Netzwerk, oft schon vor der offiziellen Vermarktung. Hinterlegen Sie Ihr Suchprofil oder besprechen Sie Ihre Verkaufsabsicht persönlich mit mir.
