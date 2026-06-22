@@ -106,6 +106,14 @@ export function Footer() {
           <p className="font-body text-[11px] tracking-[0.18em] uppercase text-primary/70">
             © {year} V.I.B. Voß Immobilien Beratung
           </p>
+          <a
+            href="https://lukaslavicka.de"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-body text-[11px] tracking-[0.18em] uppercase text-primary/60 hover:text-secondary transition-colors self-start md:self-auto"
+          >
+            Digitale Präsenz: Lukas Lavicka
+          </a>
         </div>
       </div>
     </footer>
