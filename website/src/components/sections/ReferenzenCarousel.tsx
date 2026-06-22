@@ -100,26 +100,28 @@ export function ReferenzenCarousel({ items, reference = false }: Props) {
             {item.badge}
           </span>
         )}
+        {/* Referenz-Eckdaten als Overlay (überlagert das Bild, kein Layout-Sprung) */}
+        {reference && item.meta && item.meta.length > 0 && (
+          <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-primary/85 via-primary/45 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <ul className="flex flex-wrap gap-x-4 gap-y-1">
+              {item.meta.map((m) => (
+                <li key={m} className="font-body text-[12px] tracking-[0.02em] text-on-primary/95">
+                  {m}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
       <div className="flex flex-col gap-2">
         <h3 className="font-display text-body-lg text-primary leading-tight line-clamp-2 min-h-[2.6em] group-hover:text-secondary transition-colors duration-300">
           {item.titel}
         </h3>
         <span className="font-body text-body-md text-muted-text">{item.ort}</span>
-        {!reference ? (
+        {!reference && (
           <span className="font-body text-label-caps uppercase tracking-widest text-secondary mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             Details ansehen &rarr;
           </span>
-        ) : (
-          item.meta && item.meta.length > 0 && (
-            <ul className="mt-1 flex flex-wrap gap-x-4 gap-y-1 max-h-0 overflow-hidden opacity-0 group-hover:max-h-24 group-hover:opacity-100 transition-all duration-300">
-              {item.meta.map((m) => (
-                <li key={m} className="font-body text-[12px] tracking-[0.02em] text-muted-text">
-                  {m}
-                </li>
-              ))}
-            </ul>
-          )
         )}
       </div>
     </>
@@ -175,14 +177,15 @@ export function ReferenzenCarousel({ items, reference = false }: Props) {
         ))}
       </div>
 
-      {/* ── Navigation: mittig unterhalb (Zurück | Weiter), ohne römische Zahlen ── */}
-      <div className="mt-8 flex items-center justify-center gap-6 md:gap-8">
+      {/* ── Navigation: Zurück links, Weiter rechts fixiert, Indikatoren mittig ── */}
+      {/* justify-between + flex-1-Mitte verhindert, dass die Buttons beim Hover-Unterstrich „springen". */}
+      <div className="mt-8 flex items-center justify-between gap-6">
         <button
           type="button"
           onClick={() => scrollBy(-1)}
           disabled={!canPrev}
           aria-label="Vorheriges Objekt"
-          className="group inline-flex items-center gap-3 font-body text-[10px] md:text-[11px] tracking-[0.32em] uppercase text-primary hover:text-secondary transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+          className="group inline-flex items-center gap-3 font-body text-[10px] md:text-[11px] tracking-[0.32em] uppercase text-primary hover:text-secondary transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer shrink-0"
         >
           <span className="block w-6 h-px bg-current transition-all duration-500 group-hover:w-10 group-disabled:group-hover:w-6" />
           <IconArrowLeft size={14} strokeWidth={1.5} />
@@ -190,7 +193,7 @@ export function ReferenzenCarousel({ items, reference = false }: Props) {
         </button>
 
         {/* dezente Positions-Indikatoren (keine Numeralen) */}
-        <div className="flex items-center gap-2" aria-hidden="true">
+        <div className="flex-1 flex items-center justify-center gap-2" aria-hidden="true">
           {Array.from({ length: pageCount }).map((_, idx) => (
             <button
               key={idx}
@@ -211,7 +214,7 @@ export function ReferenzenCarousel({ items, reference = false }: Props) {
           onClick={() => scrollBy(1)}
           disabled={!canNext}
           aria-label="Nächstes Objekt"
-          className="group inline-flex items-center gap-3 font-body text-[10px] md:text-[11px] tracking-[0.32em] uppercase text-primary hover:text-secondary transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
+          className="group inline-flex items-center gap-3 font-body text-[10px] md:text-[11px] tracking-[0.32em] uppercase text-primary hover:text-secondary transition-colors disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer shrink-0"
         >
           <span>Weiter</span>
           <IconArrowRight size={14} strokeWidth={1.5} />

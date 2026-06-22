@@ -283,13 +283,6 @@ export default async function ImmobilieDetailPage({
         />
         <div className="relative w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
           <div className="flex flex-col items-center text-center gap-8 max-w-3xl mx-auto">
-            <div className="flex items-center justify-center gap-4">
-              <span className="block h-px w-12 bg-primary/40" aria-hidden="true" />
-              <span className="font-body text-[10px] tracking-[0.4em] uppercase text-secondary">
-                Coda · Folio MMXXVI
-              </span>
-              <span className="block h-px w-12 bg-primary/40" aria-hidden="true" />
-            </div>
             <h2
               className="font-display text-primary leading-[0.95]"
               style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}

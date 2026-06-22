@@ -3,7 +3,7 @@ export const home = {
     eyebrow: "V.I.B. Voß Immobilien Beratung",
     headline: "Verkaufen aus Leidenschaft.",
     subline:
-      "Mit Leidenschaft und Herzblut bin ich seit 30 Jahren als selbstständige Vollblutmaklerin im Immobilienmarkt Rhein-Neckar tätig: von Karlsruhe und Umgebung über den vorderen Odenwald bis Rheinland-Pfalz, und auf Anfrage auch überregional.",
+      "Seit 30 Jahren bin ich mit Leidenschaft und Herzblut als selbstständige Immobilienmaklerin tätig, regional verwurzelt in der Rhein-Neckar-Region, sowie bis Karlsruhe, aber auch jederzeit überregional.",
     primaryCta: { label: "Mit mir sprechen", href: "#kontakt" },
     secondaryCta: { label: "Über mich", href: "#ueber-mich" },
     trustStrip: ["30 Jahre Erfahrung", "Rhein-Neckar & überregional", "Off-Market-Netzwerk"],
@@ -29,6 +29,8 @@ export const home = {
       icon: "person",
       title: "Professionelles Auftreten, persönlicher Umgang",
       body: "Ein kleines, sehr angesehenes Maklerbüro — transparent, unbürokratisch, auch am Wochenende erreichbar.",
+      href: "#aktuelle-immobilien",
+      hrefLabel: "Aktuelle Immobilien ansehen",
     },
   ],
   ueberMich: {
@@ -462,7 +464,7 @@ export const home = {
     eyebrow: "Referenzen",
     headline: "Erfolgreich vermittelt.",
     intro:
-      "Eine Auswahl bereits verkaufter und vermittelter Objekte. Aus Diskretionsgründen nenne ich weitere Details ausschließlich im persönlichen Gespräch.",
+      "Eine Auswahl bereits verkaufter oder vermittelter Immobilien. Aus Diskretionsgründen nenne ich weitere Details ausschließlich im persönlichen Gespräch.",
     items: [
       { slug: "ref-edenkoben-villa", titel: "Juwel in der Südpfalz", ort: "Edenkoben, Südpfalz", image: "/images/referenzen/ref-edenkoben-villa-1600.jpg", badge: "Verkauft", meta: ["Villa", "ca. 240 m² Wohnfläche", "ca. 730 m² Grundstück", "6 Zimmer"] },
       { slug: "ref-hockenheim-wohnung", titel: "Gemütliche Wohnoase in zentraler Lage", ort: "Hockenheim", image: "/images/referenzen/ref-hockenheim-wohnung-1600.jpg", badge: "Verkauft", meta: ["Etagenwohnung", "ca. 62 m² Wohnfläche", "2 Zimmer"] },
@@ -493,7 +495,7 @@ export const home = {
     eyebrow: "Aus der Presse",
     headline: "„Verkaufen aus Leidenschaft!“",
     zitat:
-      "Über Edith Voß und ihre Haltung berichtete die regionale Presse unter dem Titel „Die Philosophie lautet: Verkaufen aus Leidenschaft!“.",
+      "Unter dem Titel „Die Philosophie lautet: Verkaufen aus Leidenschaft!“ wurde Edith Voß und ihre Haltung zum Maklerberuf in einem regionalen Zeitungsbeitrag vorgestellt.",
     images: [
       {
         src: "/images/presse-verkaufen-aus-leidenschaft-1600.jpg",
@@ -535,6 +537,11 @@ export const home = {
         quote:
           "Wir haben Frau Voss mehrfach mit der Vermarktung und Vermittlung einiger Projekte beauftragt. Dank ihrer hervorragenden Marktkenntnisse, ihrem großen Netzwerk sowie der ansprechenden Präsentation der Objekte hat sie in kurzer Zeit die von uns gewünschten Abschlüsse zu unseren Preisvorstellungen erreicht. Ihre Kompetenz und Zuverlässigkeit hat uns sehr beeindruckt.",
         author: "Alfred Wimmer, Weinheim",
+      },
+      {
+        quote:
+          "Frau Edith Voss, die ich eines Tages in ihrem Büro aufsuchte, hat mich von da an sehr effizient in allen Immobilien betreffenden Fragen beraten. Ganz besonders effizient hat sie sich bei der Suche nach einem Objekt zum Kauf und anschließender Vermietung erwiesen. Überhaupt ist ihr besonderes Händchen im Umgang mit Kunden und ihre Menschenkenntnis, geschult durch jahrelange Erfahrung, mehr als bemerkenswert. Da verliert man keine Zeit und fühlt sich sofort gut aufgehoben. Beauftragt man sie mit etwas, das eine Immobilie betrifft, so hat man gleichzeitig ein „Rund-um-sorglos-Paket“ gebucht und kann sicher sein, dass sämtliche Optionen, die den Kunden weiterbringen, von ihr ausgelotet und mit sicherer Hand in die richtigen Bahnen gelenkt werden.",
+        author: "Barbara Stüssel",
       },
     ],
     googleHinweis:

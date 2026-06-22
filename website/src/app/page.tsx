@@ -174,8 +174,8 @@ export default function HomePage() {
       >
         <div className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap-mobile md:py-section-gap">
           <RevealOnScroll>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter items-center">
-              <div className="flex flex-col gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter items-center">
+              <div className="flex flex-col gap-6 md:col-span-1">
                 <div className="flex items-center gap-4">
                   <span className="block h-px w-12 bg-primary/40" aria-hidden="true" />
                   <span className="font-body text-[10px] tracking-[0.36em] uppercase text-secondary">
@@ -189,12 +189,14 @@ export default function HomePage() {
                   {home.homeStaging.body}
                 </p>
               </div>
-              <BeforeAfterSlider
-                beforeSrc="/images/home-staging-vorher-1200.jpg"
-                afterSrc="/images/home-staging-nachher-1200.jpg"
-                beforeAlt="Leerer Wohnraum vor dem Home Staging, kahle Wände und unmöblierter Boden"
-                afterAlt="Derselbe Raum nach dem Home Staging, als moderne offene Wohnküche stilvoll inszeniert"
-              />
+              <div className="md:col-span-2">
+                <BeforeAfterSlider
+                  beforeSrc="/images/home-staging-vorher-1200.jpg"
+                  afterSrc="/images/home-staging-nachher-1200.jpg"
+                  beforeAlt="Leerer Wohnraum vor dem Home Staging, kahle Wände und unmöblierter Boden"
+                  afterAlt="Derselbe Raum nach dem Home Staging, als moderne offene Wohnküche stilvoll inszeniert"
+                />
+              </div>
             </div>
           </RevealOnScroll>
         </div>
@@ -476,11 +478,11 @@ export default function HomePage() {
           </RevealOnScroll>
 
           <RevealOnScroll>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter mt-2">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-2 items-stretch">
               {home.kundenstimmen.stimmen.map((s, idx) => (
                 <figure
                   key={idx}
-                  className="flex flex-col gap-6 bg-surface border border-border-taupe rounded-lg p-8 md:p-10"
+                  className="flex flex-col gap-6 bg-surface border border-border-taupe rounded-lg p-8 md:p-9"
                 >
                   <div
                     className="flex items-center gap-1 text-secondary"

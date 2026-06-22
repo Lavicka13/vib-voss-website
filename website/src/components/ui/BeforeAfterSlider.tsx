@@ -30,7 +30,7 @@ export function BeforeAfterSlider({
   const [pos, setPos] = useState(50);
 
   return (
-    <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg bg-surface-container-low select-none">
+    <div className="relative w-full aspect-[1600/956] overflow-hidden rounded-lg bg-surface-container-low select-none">
       {/* Nachher — vollflächiger Hintergrund */}
       <Image
         src={afterSrc}
