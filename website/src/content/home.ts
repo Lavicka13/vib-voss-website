@@ -3,7 +3,7 @@ export const home = {
     eyebrow: "V.I.B. Voß Immobilien Beratung",
     headline: "Verkaufen aus Leidenschaft.",
     subline:
-      "Seit 30 Jahren bin ich mit Leidenschaft und Herzblut als selbstständige Immobilienmaklerin tätig, regional verwurzelt in der Rhein-Neckar-Region, Karlsruhe und Umgebung, dem vorderen Odenwald und Rheinland-Pfalz, sowie überregional.",
+      "Seit 30 Jahren bin ich mit Leidenschaft und Herzblut als selbstständige Immobilienmaklerin tätig, regional verwurzelt in der Rhein-Neckar-Region und Karlsruhe und Umgebung, dem vorderen Odenwald und Rheinland-Pfalz, sowie überregional.",
     primaryCta: { label: "Mit mir sprechen", href: "#kontakt" },
     secondaryCta: { label: "Über mich", href: "#ueber-mich" },
     trustStrip: ["30 Jahre Erfahrung", "Rhein-Neckar & überregional", "Off-Market-Netzwerk"],
@@ -37,7 +37,7 @@ export const home = {
     eyebrow: "Über mich",
     headline: "Edith Voss",
     paragraphs: [
-      "Seit 30 Jahren bin ich mit Leidenschaft und Herzblut als selbstständige Vollblutmaklerin im Immobilienmarkt der Rhein-Neckar-Region tätig, sowie in Karlsruhe und Umgebung, dem vorderen Odenwald, Rheinland-Pfalz und überregional.",
+      "Seit 30 Jahren bin ich mit Leidenschaft und Herzblut als selbstständige Immobilienmaklerin tätig, regional verwurzelt in der Rhein-Neckar-Region und Karlsruhe und Umgebung, dem vorderen Odenwald und Rheinland-Pfalz, sowie überregional.",
       "Nach einem Fremdsprachenstudium in Frankfurt arbeitete ich für ein internationales Textilhandelsunternehmen und war viele Jahre als Geschäftsführerin und Mitinhaberin in Fernost, New York, Istanbul und Indien tätig. 1996 wechselte ich in die Immobilienbranche und baute mit Edith Voss Immobilien eines der erfolgreichsten Maklerbüros im Rhein-Neckarkreis auf.",
       "Mein Unternehmen Edith Voss Immobilien in Weinheim habe ich mit viel Fleiß und Freude am Makeln zu einem der etabliertesten Maklerbüros geführt und 2015 verkauft, mein Name ist noch heute das Aushängeschild der Firma, die weiter erfolgreich geführt wird. Nach längeren Auslandsaufenthalten, unter anderem in Südafrika, kehrte ich mit frischer Energie zurück. Familie, Freunde und die Geburt meines Enkelkindes machten schnell klar: Mein Platz ist hier, an der Bergstraße.",
       "Da der alte Name rechtlich gebunden war, gründete ich meine neue Marke: V.I.B. Voß Immobilien Beratung. Meinen Namen habe ich abgegeben, aber nicht meine Haltung. Ich bin und bleibe das Original: mit Herz, Erfahrung und der Leidenschaft, Menschen und Immobilien zusammenzubringen.",
