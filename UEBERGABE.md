@@ -27,15 +27,10 @@ Punkte unten lassen sich im Rahmen des Wartungsvertrags erledigen.
 
 ## Offene Punkte (brauchen Input von Edith Voß / Auftraggeber)
 
-1. **Presse-Quelle.** Für den Artikel „Die Philosophie lautet: Verkaufen aus
-   Leidenschaft!" fehlen **exakte Zeitung + Erscheinungsdatum**. Der Beitrag ist
-   in der Zeitung als **ANZEIGE** in der Rubrik „Aus dem Geschäftsleben"
-   erschienen (also ein bezahltes Advertorial, keine redaktionelle
-   Berichterstattung). Belegt ist nur der Verlag des *anderen*, entfernten
-   Artikels („Das Original ist zurück"): Weinheimer Nachrichten / Odenwälder
-   Zeitung, Verlag DiesbachMedien GmbH. Der aktuelle Seitentext nennt daher
-   bewusst **kein Datum** und keine konkrete Zeitung. Sobald die Quelle vorliegt:
-   `presse.zitat` in `website/src/content/home.ts` ergänzen.
+1. **Presse-Sektion entfernt.** Die „Aus der Presse"-Sektion wurde auf
+   Kundenwunsch komplett entfernt (Render-Block aus `page.tsx`). Die zugehörigen
+   Daten (`presse` in `home.ts`) und Bilder liegen ungenutzt im Repo, falls die
+   Sektion später wieder gewünscht wird.
 
 2. **„Icon nahbar" (Annahme getroffen).** Die Notiz „Icon nahbar → direkt zu den
    aktuellen Objekten" war mehrdeutig. Umgesetzt: Die USP-Kachel „Professionelles

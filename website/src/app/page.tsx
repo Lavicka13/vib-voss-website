@@ -8,7 +8,6 @@ import { ReferenzenCarousel } from "@/components/sections/ReferenzenCarousel";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { SectionHead } from "@/components/ui/SectionHead";
 import { EditorialButton } from "@/components/ui/EditorialButton";
-import { PresseSlideshow } from "@/components/ui/PresseSlideshow";
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
 import { IconStarFilled } from "@tabler/icons-react";
 import { home } from "@/content/home";
@@ -102,28 +101,6 @@ export default function HomePage() {
             </div>
           </RevealOnScroll>
 
-          {/* Presse block — nested into Über-Mich chapter */}
-          <RevealOnScroll>
-            <div className="mt-16 md:mt-20 pt-12 border-t border-border-taupe grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
-              <div className="md:col-span-7 flex flex-col gap-4 order-2 md:order-1">
-                <div className="flex items-center gap-4 mb-2">
-                  <span className="block h-px w-12 bg-primary/40" aria-hidden="true" />
-                  <span className="font-body text-[10px] tracking-[0.36em] uppercase text-secondary">
-                    {home.presse.eyebrow}
-                  </span>
-                </div>
-                <h3 className="font-display italic text-signature-quote text-primary">
-                  {home.presse.headline}
-                </h3>
-                <p className="font-body text-body-md text-muted-text leading-relaxed">
-                  {home.presse.zitat}
-                </p>
-              </div>
-              <div className="md:col-span-12 order-1 md:order-2 mt-8">
-                <PresseSlideshow items={home.presse.images} />
-              </div>
-            </div>
-          </RevealOnScroll>
         </div>
       </section>
 
