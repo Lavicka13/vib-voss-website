@@ -47,7 +47,6 @@ Punkte unten lassen sich im Rahmen des Wartungsvertrags erledigen.
    im Wartungsvertrag justieren (`Hero.tsx`).
 
 5. **Bildmaterial.**
-   - Referenz „Edenkoben" ist noch ein Listing-Screenshot → sauberes Foto nachliefern.
    - Galerien der Objekte stammen aus den Dorn-Exposés und enthalten teils
      **digital gestagte / KI-generierte** Visualisierungen. Haftungshinweis ist
      auf den Detailseiten vorhanden. Bei Bedarf durch reine Echtfotos ersetzen.
