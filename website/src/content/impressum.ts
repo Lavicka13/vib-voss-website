@@ -16,7 +16,6 @@ export const impressum = {
   },
   steuerliches: {
     steuernummer: "37401/40859", // Finanzamt Mannheim-Neckarstadt
-    ustId: "TODO_VON_EDITH",
   },
   berufsrechtlich: {
     erlaubnis: "Erlaubnis nach §34c Abs. 1 GewO",

@@ -82,10 +82,6 @@ export default function ImpressumPage() {
             <dl className="font-body text-body-lg text-on-surface-variant grid grid-cols-1 md:grid-cols-[200px_1fr] gap-y-2 gap-x-6">
               <dt className="text-muted-text">Steuernummer:</dt>
               <dd>{impressum.steuerliches.steuernummer}</dd>
-              <dt className="text-muted-text">USt-IdNr.:</dt>
-              <dd>
-                <TodoMarker value={impressum.steuerliches.ustId} />
-              </dd>
             </dl>
           </section>
 
