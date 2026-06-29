@@ -540,8 +540,18 @@ export const home = {
       },
       {
         quote:
-          "Frau Edith Voss, die ich eines Tages in ihrem Büro aufsuchte, hat mich von da an sehr effizient in allen Immobilien betreffenden Fragen beraten. Ganz besonders effizient hat sie sich bei der Suche nach einem Objekt zum Kauf und anschließender Vermietung erwiesen. Überhaupt ist ihr besonderes Händchen im Umgang mit Kunden und ihre Menschenkenntnis, geschult durch jahrelange Erfahrung, mehr als bemerkenswert. Da verliert man keine Zeit und fühlt sich sofort gut aufgehoben. Beauftragt man sie mit etwas, das eine Immobilie betrifft, so hat man gleichzeitig ein „Rund-um-sorglos-Paket“ gebucht und kann sicher sein, dass sämtliche Optionen, die den Kunden weiterbringen, von ihr ausgelotet und mit sicherer Hand in die richtigen Bahnen gelenkt werden.",
+          "Frau Edith Voss, die ich über eine Empfehlung kontaktierte, hat mich von da an sehr effizient in allen Immobilien betreffenden Fragen beraten. Ganz besonders effizient hat sie sich bei der Suche nach einem Objekt zum Kauf und anschließender Vermietung erwiesen. Überhaupt ist ihr besonderes Händchen im Umgang mit Kunden und ihre Menschenkenntnis, geschult durch jahrelange Erfahrung, mehr als bemerkenswert. Da verliert man keine Zeit und fühlt sich sofort gut aufgehoben. Beauftragt man sie mit etwas, das eine Immobilie betrifft, so hat man gleichzeitig ein „Rund-um-sorglos-Paket“ gebucht und kann sicher sein, dass sämtliche Optionen, die den Kunden weiterbringen, von ihr ausgelotet und mit sicherer Hand in die richtigen Bahnen gelenkt werden.",
         author: "B. Stüssel",
+      },
+      {
+        quote:
+          "Nach dem Tod meines Mannes stand ich vor der schwierigen Entscheidung, mein für mich allein zu groß gewordenes Haus zu verkaufen und gleichzeitig eine passende Eigentumswohnung zu finden. Über eine Freundin wurde mir Frau Edith Voss empfohlen. Eine Empfehlung, für die ich bis heute sehr dankbar bin. Frau Voss hat mich in dieser besonderen Lebenssituation mit großer Kompetenz, Einfühlungsvermögen und Professionalität begleitet. Vom ansprechenden Exposé über die Organisation und Durchführung der Besichtigungen bis hin zur Vorbereitung aller notwendigen Unterlagen und Notartermine verlief jeder Schritt bestens organisiert und zuverlässig. Besonders beeindruckt hat mich, dass innerhalb weniger Monate sowohl der Verkauf meines Hauses als auch der Kauf einer passenden Eigentumswohnung erfolgreich abgeschlossen werden konnten. Während des gesamten Prozesses fühlte ich mich jederzeit hervorragend beraten und betreut. Frau Voss verbindet fachliche Expertise mit menschlicher Wärme und schafft dadurch ein hohes Maß an Vertrauen und Sicherheit. Ich kann sie uneingeschränkt weiterempfehlen und danke ihr herzlich für ihre Unterstützung in einer für mich nicht einfachen Zeit.",
+        author: "I. Zelinka",
+      },
+      {
+        quote:
+          "Frau Voss hat uns beim Verkauf unseres Hauses im Jahr 2016 hervorragend begleitet. Vom ersten Gespräch bis zum erfolgreichen Abschluss fühlten wir uns jederzeit bestens beraten und betreut. Besonders geschätzt haben wir ihre Fachkompetenz, ihre professionelle Arbeitsweise und ihre freundliche, menschliche Art. Sie war stets zuverlässig, gut erreichbar und hat uns während des gesamten Verkaufsprozesses mit Rat und Tat zur Seite gestanden. Dank ihres Engagements verlief der Hausverkauf für uns reibungslos und erfolgreich. Frau Voss versteht es, fachliche Expertise mit persönlicher Betreuung zu verbinden und schafft dadurch ein hohes Maß an Vertrauen und Sicherheit. Wir blicken auch heute noch gerne auf die Zusammenarbeit zurück und können Frau Voss uneingeschränkt weiterempfehlen. Vielen Dank für die ausgezeichnete Unterstützung und den erfolgreichen Verkauf unseres Hauses!",
+        author: "I. Tagne",
       },
     ],
     googleHinweis:
