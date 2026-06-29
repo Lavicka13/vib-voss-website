@@ -11,14 +11,14 @@ export const home = {
   intro: {
     body: [
       "Mir geht es nicht darum, die typischen Eigenschaften aufzuzählen, die die meisten Makler nennen — Diskretion, Vertrauen, beste Wertermittlung.",
-      "Mein Schwerpunkt sind drei Dinge: mein Gespür für die beste Verkaufsmöglichkeit, mein weit über die Grenzen hinausgehendes Netzwerk und das professionelle Auftreten sowie der persönliche Umgang mit Käufer und Verkäufer.",
+      "Mein Schwerpunkt sind drei Dinge: mein Gespür für die beste Verkaufsmöglichkeit, mein weit über die Grenzen hinausgehendes Netzwerk und der persönliche Umgang mit Käufer und Verkäufer.",
     ],
   },
   usps: [
     {
       icon: "diamond",
       title: "Gespür für die beste Verkaufsmöglichkeit",
-      body: "Aufgrund meiner langjährigen Tätigkeit berate ich Sie realistisch, präzise und fundiert — ohne die gängigen Online-Wertermittlungen wie ImmoScout, Sprengnetter und andere.",
+      body: "Aufgrund meiner langjährigen Tätigkeit berate ich Sie realistisch, präzise und fundiert — ohne die gängigen Online-Wertermittlungen wie ImmoScout und andere.",
     },
     {
       icon: "hub",
@@ -103,7 +103,7 @@ export const home = {
           schlafzimmer: 6,
           badezimmer: 4,
           balkonTerrasse: 1,
-          stellplaetze: 4,
+          stellplaetze: 1,
         },
         bauinfo: {
           baujahr: 1970,
@@ -134,7 +134,7 @@ export const home = {
           "Stein",
           "Parkett",
           "Kamin",
-          "Garage",
+          "Doppelgarage",
           "Garten",
           "Sauna",
           "Keller",
