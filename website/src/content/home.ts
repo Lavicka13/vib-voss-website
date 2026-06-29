@@ -469,9 +469,9 @@ export const home = {
       { slug: "ref-edenkoben-villa", titel: "Juwel in der Südpfalz", ort: "Edenkoben, Südpfalz", image: "/images/referenzen/ref-edenkoben-villa-1600.jpg", badge: "Verkauft", meta: ["Villa", "ca. 240 m² Wohnfläche", "ca. 730 m² Grundstück", "6 Zimmer"] },
       { slug: "ref-hockenheim-wohnung", titel: "Gemütliche Wohnoase in zentraler Lage", ort: "Hockenheim", image: "/images/referenzen/ref-hockenheim-wohnung-1600.jpg", badge: "Verkauft", meta: ["Etagenwohnung", "ca. 62 m² Wohnfläche", "2 Zimmer"] },
       { slug: "ref-rheingoenheim-dg", titel: "Sonnige Dachgeschosswohnung", ort: "Ludwigshafen-Rheingönheim", image: "/images/referenzen/ref-rheingoenheim-dg-1600.jpg", meta: ["Wohnung", "ca. 78 m² Wohnfläche", "2,5 Zimmer"] },
-      { slug: "ref-weinheim-weststadt", titel: "Attraktive, sonnige Wohnung", ort: "Weinheim-Weststadt", image: "/images/referenzen/ref-weinheim-weststadt-1600.jpg", badge: "Vermietet", meta: ["Wohnung", "ca. 65 m² Wohnfläche", "2 Zimmer"] },
+      { slug: "ref-weinheim-weststadt", titel: "Moderne lichtdurchflutete Wohnung mit Südbalkon", ort: "Weinheim-Weststadt", image: "/images/referenzen/ref-weinheim-weststadt-1600.jpg", badge: "Vermietet", meta: ["Wohnung", "ca. 65 m² Wohnfläche", "2 Zimmer"] },
       { slug: "ref-mainz-wohnung", titel: "Attraktive, sonnige 2-Zimmer-Wohnung", ort: "Mainz", image: "/images/referenzen/ref-mainz-wohnung-1600.jpg", badge: "Vermietet", meta: ["Wohnung", "ca. 64 m² Wohnfläche", "2 Zimmer"] },
-      { slug: "ref-weinheim-musikerviertel", titel: "Sonniges Einfamilienhaus mit Blick in die Rheinebene", ort: "Weinheim-Musikerviertel", image: "/images/referenzen/ref-weinheim-musikerviertel-1600.jpg", badge: "Verkauft", meta: ["Einfamilienhaus", "ca. 188 m² Wohnfläche", "ca. 735 m² Grundstück", "6 Zimmer"] },
+      { slug: "ref-weinheim-musikerviertel", titel: "Sonniges Einfamilienhaus mit Blick in die Rheinebene", ort: "Weinheim-Musikerviertel", image: "/images/referenzen/ref-weinheim-musikerviertel-1600.jpg", badge: "Vermietet", meta: ["Einfamilienhaus", "ca. 188 m² Wohnfläche", "ca. 735 m² Grundstück", "6 Zimmer"] },
       { slug: "ref-weinheim-villa", titel: "Repräsentative Villa in beneidenswerter Lage", ort: "Weinheim", image: "/images/referenzen/ref-weinheim-villa-1600.jpg", badge: "Verkauft", meta: ["Villa", "ca. 600 m² Wohnfläche", "ca. 2.227 m² Grundstück", "13 Zimmer"] },
       { slug: "ref-gorxheimertal", titel: "Außergewöhnliches Kleinod", ort: "Gorxheimertal", image: "/images/referenzen/ref-gorxheimertal-1600.jpg", badge: "Verkauft", meta: ["Einfamilienhaus", "ca. 170 m² Wohnfläche", "ca. 567 m² Grundstück", "8 Zimmer"] },
       { slug: "ref-weinheim-sulzbach", titel: "Französisches Flair, ganz nah", ort: "Weinheim-Sulzbach", image: "/images/referenzen/ref-weinheim-sulzbach-1600.jpg", badge: "Verkauft", meta: ["Einfamilienhaus", "ca. 117 m² Wohnfläche", "ca. 204 m² Grundstück", "4 Zimmer"] },
@@ -531,17 +531,17 @@ export const home = {
       {
         quote:
           "Frau Voss ist seit vielen Jahren eine höchst kompetente, engagierte und empathische Immobilienmaklerin. Die Erstellung der Exposés, die Durchführung der Besichtigungen und die Vorbereitung bis zur Übergabe waren von Anfang bis Abschluss absolut professionell. Aufgrund ihres hervorragenden Netzwerks konnten die Objekte in kurzer Zeit erfolgreich und mit einem sehr guten Ergebnis vermarktet werden. Ich kann sie uneingeschränkt und wärmstens weiterempfehlen.",
-        author: "Dr. Gerd Fischer, Weinheim",
+        author: "Dr. G. Fischer, Weinheim",
       },
       {
         quote:
           "Wir haben Frau Voss mehrfach mit der Vermarktung und Vermittlung einiger Projekte beauftragt. Dank ihrer hervorragenden Marktkenntnisse, ihrem großen Netzwerk sowie der ansprechenden Präsentation der Objekte hat sie in kurzer Zeit die von uns gewünschten Abschlüsse zu unseren Preisvorstellungen erreicht. Ihre Kompetenz und Zuverlässigkeit hat uns sehr beeindruckt.",
-        author: "Alfred Wimmer, Weinheim",
+        author: "A. Wimmer, Weinheim",
       },
       {
         quote:
           "Frau Edith Voss, die ich eines Tages in ihrem Büro aufsuchte, hat mich von da an sehr effizient in allen Immobilien betreffenden Fragen beraten. Ganz besonders effizient hat sie sich bei der Suche nach einem Objekt zum Kauf und anschließender Vermietung erwiesen. Überhaupt ist ihr besonderes Händchen im Umgang mit Kunden und ihre Menschenkenntnis, geschult durch jahrelange Erfahrung, mehr als bemerkenswert. Da verliert man keine Zeit und fühlt sich sofort gut aufgehoben. Beauftragt man sie mit etwas, das eine Immobilie betrifft, so hat man gleichzeitig ein „Rund-um-sorglos-Paket“ gebucht und kann sicher sein, dass sämtliche Optionen, die den Kunden weiterbringen, von ihr ausgelotet und mit sicherer Hand in die richtigen Bahnen gelenkt werden.",
-        author: "Barbara Stüssel",
+        author: "B. Stüssel",
       },
     ],
     googleHinweis:
@@ -577,7 +577,6 @@ export const home = {
       { range: "ab 700.000 €", provision: "4.000 €" },
       { range: "ab 900.000 €", provision: "5.000 €" },
       { range: "ab 1.000.000 €", provision: "6.000 €" },
-      { range: "ab 1.500.000 €", provision: "8.000 €" },
     ],
     bedingungen: [
       "Der Eigentümer muss mit der Weitergabe seiner Daten einverstanden sein.",

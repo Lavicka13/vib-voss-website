@@ -3,7 +3,6 @@ export const datenschutz = {
     headline: "Datenschutz",
     subline: "Informationen zur Verarbeitung personenbezogener Daten auf dieser Website gemäß Art. 13 DSGVO.",
   },
-  hinweis: "Diese Datenschutzerklärung ist ein erster Entwurf und muss vor Live-Schaltung der Website durch einen Anwalt oder Datenschutzbeauftragten geprüft werden.",
   sections: [
     { title: "1. Verantwortlicher", body: ["Verantwortlich für die Datenverarbeitung auf dieser Website ist:", "V.I.B. Voß Immobilien Beratung", "Edith Voß", "Alte Schulstraße 28, 68549 Ilvesheim", "Telefon: +49 173 360 19 36", "E-Mail: info@e-vib.de"] },
     { title: "2. Erhebung allgemeiner Informationen", body: ["Beim Aufruf dieser Website werden automatisch Informationen technischer Natur erhoben (z.B. Browsertyp, Betriebssystem, IP-Adresse, Zugriffszeit). Diese Daten werden ausschließlich zur Sicherstellung des reibungslosen Betriebs der Seite verarbeitet und nach kurzer Zeit gelöscht. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO."] },

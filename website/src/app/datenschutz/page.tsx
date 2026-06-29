@@ -30,9 +30,6 @@ export default function DatenschutzPage() {
       </header>
       <section className="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop pt-16 md:pt-24 pb-section-gap-mobile md:pb-section-gap">
         <div className="max-w-3xl flex flex-col gap-12">
-          <div className="bg-zartrosa/40 border border-border-taupe rounded-lg p-6 font-body text-body-md text-primary">
-            <strong>Hinweis:</strong> {datenschutz.hinweis}
-          </div>
           {datenschutz.sections.map((section) => (
             <section key={section.title} className="flex flex-col gap-3">
               <h2 className="font-display text-headline-md text-primary">{section.title}</h2>
