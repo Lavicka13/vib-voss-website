@@ -86,16 +86,28 @@ export default function HomePage() {
                 <p className="font-display text-[22px] md:text-[26px] text-primary leading-snug max-w-3xl">
                   {home.ueberMich.paragraphs[0]}
                 </p>
-                {/* Restliche Absätze im zweispaltigen Fließtext */}
-                <div className="md:columns-2 md:gap-gutter">
-                  {home.ueberMich.paragraphs.slice(1).map((p, i) => (
-                    <p
-                      key={i}
-                      className="font-body text-body-lg text-on-surface-variant leading-relaxed mb-5 break-inside-avoid"
-                    >
-                      {p}
-                    </p>
-                  ))}
+                {/* Werdegang als editoriale Stichpunktliste */}
+                <div className="flex flex-col gap-6 max-w-3xl">
+                  <div className="flex items-center gap-4">
+                    <span className="block h-px w-12 bg-primary/40" aria-hidden="true" />
+                    <span className="font-body text-[10px] tracking-[0.36em] uppercase text-secondary">
+                      {home.ueberMich.werdegangLabel}
+                    </span>
+                  </div>
+                  <ul className="flex flex-col gap-4">
+                    {home.ueberMich.werdegang.map((item, i) => (
+                      <li
+                        key={i}
+                        className="font-body text-body-lg text-on-surface-variant leading-relaxed flex gap-4"
+                      >
+                        <span
+                          className="mt-[0.7em] block h-px w-5 shrink-0 bg-secondary/60"
+                          aria-hidden="true"
+                        />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             </div>

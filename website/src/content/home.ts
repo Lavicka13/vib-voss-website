@@ -38,10 +38,14 @@ export const home = {
     headline: "Edith Voss",
     paragraphs: [
       "Seit 30 Jahren bin ich mit Leidenschaft und Herzblut als selbstständige Immobilienmaklerin tätig, regional verwurzelt in der Rhein-Neckar-Region, im Raum Karlsruhe, dem vorderen Odenwald und Rheinland-Pfalz, sowie überregional.",
-      "Nach einem Fremdsprachenstudium in Frankfurt arbeitete ich für ein internationales Textilhandelsunternehmen und war viele Jahre als Geschäftsführerin und Mitinhaberin in Fernost, New York, Istanbul und Indien tätig. 1996 wechselte ich in die Immobilienbranche und baute mit Edith Voss Immobilien eines der erfolgreichsten Maklerbüros im Rhein-Neckarkreis auf.",
-      "Mein Unternehmen Edith Voss Immobilien in Weinheim habe ich mit viel Fleiß und Freude am Makeln zu einem der etabliertesten Maklerbüros geführt und 2015 verkauft, mein Name ist noch heute das Aushängeschild der Firma, die weiter erfolgreich geführt wird. Nach längeren Auslandsaufenthalten, unter anderem in Südafrika, kehrte ich mit frischer Energie zurück. Familie, Freunde und die Geburt meines Enkelkindes machten schnell klar: Mein Platz ist hier, an der Bergstraße.",
-      "Da der alte Name rechtlich gebunden war, gründete ich meine neue Marke: V.I.B. Voß Immobilien Beratung. Meinen Namen habe ich abgegeben, aber nicht meine Haltung. Ich bin und bleibe das Original: mit Herz, Erfahrung und der Leidenschaft, Menschen und Immobilien zusammenzubringen.",
-      "Meine Philosophie: „Verkaufen aus Leidenschaft.“ Mein Motto, nach Heraklit von Ephesus: „Nichts ist so beständig wie der Wandel.“ Ein Kunde schrieb mir nach erfolgreichem Verkauf, dass ich das Negativ-Image meines Berufsstandes eindrucksvoll widerlege. Darauf bin ich stolz.",
+    ],
+    werdegangLabel: "Werdegang",
+    werdegang: [
+      "Fremdsprachenstudium in Frankfurt",
+      "Geschäftsführerin/Miteigentümerin einer Textilhandelsgesellschaft u.a. in Hongkong, NY, Istanbul und Indien",
+      "Aufbau eines sehr erfolgreichen, etablierten Maklerbüros in Weinheim",
+      "Verkauf des Maklerbüros in Weinheim (bis heute unter meinem Namen, dem Aushängeschild der Firma)",
+      "Gründung der Fa. VIB Immobilien Beratung - Edith Voss",
     ],
   },
   leistungen: {
