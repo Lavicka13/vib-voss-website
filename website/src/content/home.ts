@@ -169,7 +169,7 @@ export const home = {
           schlafzimmer: 3,
           badezimmer: 2,
           balkonTerrasse: 2,
-          stellplaetze: 4,
+          stellplaetze: 1,
         },
         bauinfo: {
           baujahr: 1993,
@@ -183,7 +183,7 @@ export const home = {
           "Die großzügige Dachgeschosswohnung befindet sich in einem sehr gepflegten Vier-Parteienhaus in begehrter, zentrumsnaher Wohnlage mit hoher Wohn- und Lebensqualität.",
           "Die Wohnfläche verteilt sich auf vier Räume: ein großzügiges Wohn- und Esszimmer mit bodentiefen Fenstern und beeindruckendem Blick in die Rheinebene, zwei Schlafzimmer sowie ein flexibel nutzbares Arbeits- oder Gästezimmer. Zwei Balkone erweitern den Wohnraum ins Freie: ein großer Ostbalkon als geschützte Rückzugsoase sowie ein sonniger Südbalkon mit weitem Ausblick.",
           "Das helle Tageslichtbad ist mit Badewanne sowie einer hochwertigen, multifunktionalen Duschkabine mit integrierter Wellnessfunktion ausgestattet. Ergänzt wird das Raumangebot durch ein weiteres Duschbad. Die separate Einbauküche verfügt über alle gängigen Markengeräte und fügt sich funktional in das Gesamtbild der Wohnung ein.",
-          "Für ein angenehmes Wohnklima sorgt die durchgehend vorhandene Fußbodenheizung. Hochwertiges Parkett unterstreicht den behaglichen Charakter der Räume. Zur Wohnung gehören ein separater Kellerraum sowie eine Doppelgarage und vier Stellplätze.",
+          "Für ein angenehmes Wohnklima sorgt die durchgehend vorhandene Fußbodenheizung. Hochwertiges Parkett unterstreicht den behaglichen Charakter der Räume. Zur Wohnung gehören ein separater Kellerraum sowie eine Doppelgarage und ein Stellplatz.",
           "Hinweis: Die Gesamtfläche der Wohnung beträgt ca. 131 m². Aufgrund der Dachschrägen werden hiervon ca. 105 m² als anrechenbare Wohnfläche zugrunde gelegt.",
         ],
         lage:

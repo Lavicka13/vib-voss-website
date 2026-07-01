@@ -19,7 +19,7 @@ export const impressum = {
   },
   berufsrechtlich: {
     erlaubnis: "Erlaubnis nach §34c Abs. 1 GewO",
-    erlaubnisBehoerde: "TODO_VON_EDITH", // erteilende Behörde, i.d.R. Gemeinde Ilvesheim / Rhein-Neckar-Kreis
+    erlaubnisBehoerde: "Gewerbeamt der Gemeinde Ilvesheim", // vom Kunden bestätigt: zuständige/erteilende Behörde
     aufsichtsbehoerde: "Industrie- und Handelskammer (IHK) Rhein-Neckar, Geschäftsstelle Mannheim",
   },
   hinweise: {
