@@ -19,6 +19,7 @@ type Eckdaten = {
   balkonTerrasse?: number;
   balkonFlaeche?: string;
   stellplaetze?: number;
+  garage?: string;
 };
 
 type Bauinfo = {

@@ -8,6 +8,7 @@ type Eckdaten = {
   balkonTerrasse?: number;
   balkonFlaeche?: string;
   stellplaetze?: number;
+  garage?: string;
 };
 
 type Bauinfo = {
@@ -44,6 +45,7 @@ export function ReferenzDataBlock({ eckdaten, bauinfo, verfuegbar }: Props) {
     objektRows.push({ label: "Balkon / Terrasse", value: val });
   }
   if (eckdaten.stellplaetze !== undefined) objektRows.push({ label: "Stellplätze", value: String(eckdaten.stellplaetze) });
+  if (eckdaten.garage) objektRows.push({ label: "Garage", value: eckdaten.garage });
 
   const bauRows: Row[] = [];
   if (bauinfo.baujahr) bauRows.push({ label: "Baujahr", value: String(bauinfo.baujahr) });

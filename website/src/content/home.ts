@@ -170,6 +170,7 @@ export const home = {
           badezimmer: 2,
           balkonTerrasse: 2,
           stellplaetze: 1,
+          garage: "Doppelgarage",
         },
         bauinfo: {
           baujahr: 1993,
