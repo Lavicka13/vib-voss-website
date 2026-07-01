@@ -9,7 +9,7 @@ import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import { SectionHead } from "@/components/ui/SectionHead";
 import { EditorialButton } from "@/components/ui/EditorialButton";
 import { BeforeAfterSlider } from "@/components/ui/BeforeAfterSlider";
-import { IconStarFilled } from "@tabler/icons-react";
+import { KundenstimmeCard } from "@/components/ui/KundenstimmeCard";
 import { home } from "@/content/home";
 
 export default function HomePage() {
@@ -457,34 +457,18 @@ export default function HomePage() {
           <RevealOnScroll>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter mt-2 items-stretch">
               {home.kundenstimmen.stimmen.map((s, idx) => (
-                <figure
+                <KundenstimmeCard
                   key={idx}
-                  className="flex flex-col gap-6 bg-surface border border-border-taupe rounded-lg p-8 md:p-9"
-                >
-                  <div
-                    className="flex items-center gap-1 text-secondary"
-                    aria-label="5 von 5 Sternen"
-                  >
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <IconStarFilled key={i} size={18} />
-                    ))}
-                  </div>
-                  <blockquote className="font-display italic text-[clamp(1.1rem,1.8vw,1.45rem)] text-primary leading-snug flex-1">
-                    &bdquo;{s.quote}&ldquo;
-                  </blockquote>
-                  <figcaption className="font-body text-label-caps text-muted-text uppercase tracking-widest border-t border-border-taupe pt-5">
-                    {s.author}
-                  </figcaption>
-                </figure>
+                  teaser={s.teaser}
+                  quote={s.quote}
+                  author={s.author}
+                />
               ))}
             </div>
           </RevealOnScroll>
 
           <RevealOnScroll>
             <div className="flex flex-col items-center gap-6 mt-16 text-center">
-              <p className="font-body text-body-md text-muted-text max-w-2xl italic">
-                {home.kundenstimmen.googleHinweis}
-              </p>
               {home.kundenstimmen.profilUrl !== "TODO_VON_EDITH" && (
                 <EditorialButton variant="secondary" href={home.kundenstimmen.profilUrl} external>
                   Alle Google-Bewertungen ansehen
